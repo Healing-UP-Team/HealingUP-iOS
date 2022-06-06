@@ -190,6 +190,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE33ADC5284D8B97007F9FA8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AE33ADC8284D8BCC007F9FA8 /* Resource */,
+				AE33ADC7284D8BB8007F9FA8 /* Features */,
+				AE33ADC6284D8BB3007F9FA8 /* Main */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AE33ADC6284D8BB3007F9FA8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477F1283CA5A1005567CA /* ComplicationController.swift */,
+				AEB477EF283CA5A1005567CA /* HealingUP_iOSApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AE33ADC7284D8BB8007F9FA8 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				AE33ADCA284D8D1C007F9FA8 /* HeartRate */,
+				AE33ADC9284D8D15007F9FA8 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		AE33ADC8284D8BCC007F9FA8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477F3283CA5A2005567CA /* Assets.xcassets */,
+				AEB477F8283CA5A2005567CA /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AE33ADC9284D8D15007F9FA8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477ED283CA5A1005567CA /* ContentView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AE33ADCA284D8D1C007F9FA8 /* HeartRate */ = {
+			isa = PBXGroup;
+			children = (
+				AEB47804283CABF9005567CA /* HeartRateTest.swift */,
+			);
+			path = HeartRate;
+			sourceTree = "<group>";
+		};
 		AEB477B2283B55E2005567CA /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,13 +365,8 @@
 		AEB477EC283CA5A1005567CA /* HealingUp-Watch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AE33ADC5284D8B97007F9FA8 /* App */,
 				AEB47806283CADF4005567CA /* HealingUp-Watch WatchKit Extension.entitlements */,
-				AEB477ED283CA5A1005567CA /* ContentView.swift */,
-				AEB477EF283CA5A1005567CA /* HealingUP_iOSApp.swift */,
-				AEB477F1283CA5A1005567CA /* ComplicationController.swift */,
-				AEB47804283CABF9005567CA /* HeartRateTest.swift */,
-				AEB477F3283CA5A2005567CA /* Assets.xcassets */,
-				AEB477F8283CA5A2005567CA /* Info.plist */,
 				AEB477F5283CA5A2005567CA /* Preview Content */,
 			);
 			path = "HealingUp-Watch WatchKit Extension";
@@ -772,7 +820,7 @@
 				DEVELOPMENT_TEAM = 8KKWD6QU49;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch WatchKit Extension";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -805,7 +853,7 @@
 				DEVELOPMENT_TEAM = 8KKWD6QU49;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch WatchKit Extension";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
