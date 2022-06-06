@@ -10,6 +10,7 @@ import Firebase
 
 enum FirestoreCollection: String {
   case membership
+  case kesslerQuiz
 }
 
 func firestoreCollection(_ collectionRefrence: FirestoreCollection) -> CollectionReference {

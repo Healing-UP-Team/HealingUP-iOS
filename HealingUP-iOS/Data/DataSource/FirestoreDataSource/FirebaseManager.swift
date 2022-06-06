@@ -13,6 +13,7 @@ import FirebaseFirestoreSwift
 typealias CompletionResult<T> = (Result<T, FirebaseError>) -> Void
 
 protocol FirebaseManager {
+  //User
   func registerUser(email: String, password: String, completion: @escaping CompletionResult<Bool>)
   func signInUser(email: String, password: String, completion: @escaping CompletionResult<Bool>)
   func signOutUser(completion: @escaping CompletionResult<Bool>)
@@ -21,6 +22,9 @@ protocol FirebaseManager {
   func fetchUser(completion: @escaping CompletionResult<UserEntity>)
   func fetchUsers(isUser: Bool, completion: @escaping CompletionResult<[UserEntity]>)
   
+  
+  //Kessler
+  func fetchQuiz(completion: @escaping CompletionResult<[KesslerQuizEntity]>)
 }
 
 class DefaultFirebaseManager: FirebaseManager {

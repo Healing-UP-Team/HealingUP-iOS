@@ -22,13 +22,9 @@ struct ProgressHUDModifier<Presenting>: View where Presenting: View {
   let presenting: () -> Presenting
 
   var body: some View {
-    GeometryReader { geometry in
       ZStack(alignment: .center) {
-
         presenting()
           .blur(radius: (isShowing && isBlurBackground) ? 1.7 : 0)
-          //.foregroundColor(.white.opacity((isShowing && isBlurBackground) ? 0.5 : 0))
-
         VStack {
           switch type {
           case .default:
@@ -64,22 +60,5 @@ struct ProgressHUDModifier<Presenting>: View where Presenting: View {
         .cornerRadius(10)
         .opacity(isShowing ? 1 : 0)
       }
-    }
-  }
-}
-
-
-extension View {
-  func progressHUD(
-    isShowing: Binding<Bool>,
-    type: ProgressHUDType = .default,
-    isBlurBackground: Bool = true
-  ) -> some View {
-    ProgressHUDModifier(
-      isShowing: isShowing,
-      type: type,
-      isBlurBackground: isBlurBackground,
-      presenting: { self }
-    )
   }
 }

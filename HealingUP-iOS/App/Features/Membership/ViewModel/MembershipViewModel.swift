@@ -40,7 +40,6 @@ class MembershipViewModel: ObservableObject {
 
   func fetchUsers(isUser: Bool = false) {
     allUserState = .success(data: [])
-
     firebaseManager.fetchUsers(isUser: isUser) { result in
       switch result {
       case .success(let data):

@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+struct KesslerQuizEntity: Codable, BodyCodable {
+  
+  enum CodingKeys: String, CodingKey {
+    case question = "question"
+    case answer = "answer"
+  }
+  
+  var question: String?
+  var answer: [String]?
+  
+  init(question: String?, answer: [String]?) {
+    self.question = question
+    self.answer = answer
+  }
+}

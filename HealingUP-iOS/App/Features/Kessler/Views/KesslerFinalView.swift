@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct KesslerFinalView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  var score: Int?
+  var body: some View {
+    VStack{
+      Text("Final Score : \(score ?? 0)")
     }
+  }
 }
 
 struct KesslerFinalView_Previews: PreviewProvider {
-    static var previews: some View {
-        KesslerFinalView()
-    }
+  static var previews: some View {
+    KesslerFinalView(score: 10)
+  }
 }

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct KesslerQuiz: Equatable {
+  var question: String = ""
+  var answer = [String]()
+}

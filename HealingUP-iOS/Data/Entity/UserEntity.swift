@@ -12,7 +12,7 @@ enum UserRoleEntity: String, Codable {
   case psikolog = "Psikolog"
 }
 
-class UserEntity: Codable, BodyCodable {
+struct UserEntity: Codable, BodyCodable {
   
   enum CodingKeys: String, CodingKey {
     case userId = "user_id"
