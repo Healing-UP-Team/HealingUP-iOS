@@ -1,0 +1,1186 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AEB47796283B3851005567CA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AEB47795283B3851005567CA /* SDWebImageSwiftUI */; };
+		AEB4779B283B3A16005567CA /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = AEB4779A283B3A16005567CA /* FirebaseAppDistribution-Beta */; };
+		AEB4779D283B3A16005567CA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AEB4779C283B3A16005567CA /* FirebaseAuth */; };
+		AEB4779F283B3A16005567CA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = AEB4779E283B3A16005567CA /* FirebaseDatabase */; };
+		AEB477A1283B3A16005567CA /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEB477A0283B3A16005567CA /* FirebaseDatabaseSwift */; };
+		AEB477A3283B3A16005567CA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AEB477A2283B3A16005567CA /* FirebaseFirestore */; };
+		AEB477A5283B3A16005567CA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEB477A4283B3A16005567CA /* FirebaseFirestoreSwift */; };
+		AEB477A7283B3A16005567CA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AEB477A6283B3A16005567CA /* FirebaseStorage */; };
+		AEB477A9283B3A16005567CA /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AEB477A8283B3A16005567CA /* FirebaseStorageCombine-Community */; };
+		AEB477AB283B3B2A005567CA /* FirebaseManager+Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477AA283B3B2A005567CA /* FirebaseManager+Membership.swift */; };
+		AEB477AD283B3BB1005567CA /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477AC283B3BB1005567CA /* FirebaseReference.swift */; };
+		AEB477AF283B3C25005567CA /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477AE283B3C25005567CA /* Query.swift */; };
+		AEB477B1283B556D005567CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477B0283B556D005567CA /* HomeView.swift */; };
+		AEB477B7283B561C005567CA /* HomeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477B6283B561C005567CA /* HomeNavigator.swift */; };
+		AEB477B9283B574A005567CA /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477B8283B574A005567CA /* HomeAssembler.swift */; };
+		AEB477BC283B6E95005567CA /* ProgressHUDModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477BB283B6E95005567CA /* ProgressHUDModifier.swift */; };
+		AEB477BF283B6ECD005567CA /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477BE283B6ECD005567CA /* BlurView.swift */; };
+		AEB477C1283B70C4005567CA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477C0283B70C4005567CA /* ActivityIndicator.swift */; };
+		AEB477C3283B71F1005567CA /* ViewStateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477C2283B71F1005567CA /* ViewStateModifier.swift */; };
+		AEB477C7283BE254005567CA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477C6283BE254005567CA /* SignUpView.swift */; };
+		AEB477CD283C77A8005567CA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477CC283C77A8005567CA /* ProfileView.swift */; };
+		AEB477CF283C7A09005567CA /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477CE283C7A09005567CA /* ProfileNavigator.swift */; };
+		AEB477D1283C7A86005567CA /* ProfileAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477D0283C7A86005567CA /* ProfileAssembler.swift */; };
+		AEB477D3283C8C52005567CA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477D2283C8C52005567CA /* Constant.swift */; };
+		AEB477D8283C90D8005567CA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB477D7283C90D8005567CA /* HealthKit.framework */; };
+		AEB477DB283C91A0005567CA /* HeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477DA283C91A0005567CA /* HeartRateView.swift */; };
+		AEB477DD283C981F005567CA /* GetHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477DC283C981F005567CA /* GetHeartRate.swift */; };
+		AEB477E3283CA5A0005567CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB477E2283CA5A0005567CA /* Assets.xcassets */; };
+		AEB477E9283CA5A1005567CA /* HealingUp-Watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AEB477E8283CA5A0005567CA /* HealingUp-Watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AEB477EE283CA5A1005567CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477ED283CA5A1005567CA /* ContentView.swift */; };
+		AEB477F0283CA5A1005567CA /* HealingUP_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477EF283CA5A1005567CA /* HealingUP_iOSApp.swift */; };
+		AEB477F2283CA5A1005567CA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477F1283CA5A1005567CA /* ComplicationController.swift */; };
+		AEB477F4283CA5A2005567CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB477F3283CA5A2005567CA /* Assets.xcassets */; };
+		AEB477F7283CA5A2005567CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB477F6283CA5A2005567CA /* Preview Assets.xcassets */; };
+		AEB477FB283CA5A2005567CA /* HealingUp-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AEB477E0283CA59F005567CA /* HealingUp-Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AEB47805283CABF9005567CA /* HeartRateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB47804283CABF9005567CA /* HeartRateTest.swift */; };
+		AEB47808283CADF4005567CA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB47807283CADF4005567CA /* HealthKit.framework */; };
+		AED86DA6283B181900C62B98 /* HealingUP_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DA5283B181900C62B98 /* HealingUP_iOSApp.swift */; };
+		AED86DA8283B181900C62B98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DA7283B181900C62B98 /* ContentView.swift */; };
+		AED86DAA283B181A00C62B98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED86DA9283B181A00C62B98 /* Assets.xcassets */; };
+		AED86DAF283B181A00C62B98 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DAE283B181A00C62B98 /* Persistence.swift */; };
+		AED86DB2283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AED86DB0283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld */; };
+		AED86DE4283B1D1800C62B98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AED86DE3283B1D1800C62B98 /* GoogleService-Info.plist */; };
+		AED86DEB283B281000C62B98 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DEA283B281000C62B98 /* SignInView.swift */; };
+		AED86DED283B282900C62B98 /* MembershipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DEC283B282900C62B98 /* MembershipViewModel.swift */; };
+		AED86DEF283B283800C62B98 /* MembershipNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DEE283B283800C62B98 /* MembershipNavigator.swift */; };
+		AED86DF2283B285600C62B98 /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DF1283B285600C62B98 /* AppAssembler.swift */; };
+		AED86DF4283B286800C62B98 /* MembershipAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DF3283B286800C62B98 /* MembershipAssembler.swift */; };
+		AED86DF6283B2A4300C62B98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DF5283B2A4300C62B98 /* User.swift */; };
+		AED86DF8283B2AE600C62B98 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DF7283B2AE600C62B98 /* UserEntity.swift */; };
+		AED86DFA283B2BB000C62B98 /* BodyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DF9283B2BB000C62B98 /* BodyCodable.swift */; };
+		AED86DFC283B2D4000C62B98 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DFB283B2D4000C62B98 /* UserMapper.swift */; };
+		AED86E00283B2DAE00C62B98 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DFF283B2DAE00C62B98 /* String.swift */; };
+		AED86E02283B2E5500C62B98 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86E01283B2E5500C62B98 /* ViewState.swift */; };
+		AED86E04283B2E8C00C62B98 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86E03283B2E8C00C62B98 /* FirebaseError.swift */; };
+		AED86E06283B2F3100C62B98 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86E05283B2F3100C62B98 /* FirebaseManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AEB477EA283CA5A1005567CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AED86D9A283B181900C62B98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEB477E7283CA5A0005567CA;
+			remoteInfo = "HealingUp-Watch WatchKit Extension";
+		};
+		AEB477F9283CA5A2005567CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AED86D9A283B181900C62B98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEB477DF283CA59F005567CA;
+			remoteInfo = "HealingUp-Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AEB477FF283CA5A2005567CA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AEB477E9283CA5A1005567CA /* HealingUp-Watch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEB47803283CA5A2005567CA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				AEB477FB283CA5A2005567CA /* HealingUp-Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AEB477AA283B3B2A005567CA /* FirebaseManager+Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseManager+Membership.swift"; sourceTree = "<group>"; };
+		AEB477AC283B3BB1005567CA /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
+		AEB477AE283B3C25005567CA /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		AEB477B0283B556D005567CA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AEB477B6283B561C005567CA /* HomeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigator.swift; sourceTree = "<group>"; };
+		AEB477B8283B574A005567CA /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
+		AEB477BB283B6E95005567CA /* ProgressHUDModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUDModifier.swift; sourceTree = "<group>"; };
+		AEB477BE283B6ECD005567CA /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		AEB477C0283B70C4005567CA /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		AEB477C2283B71F1005567CA /* ViewStateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateModifier.swift; sourceTree = "<group>"; };
+		AEB477C6283BE254005567CA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		AEB477CC283C77A8005567CA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		AEB477CE283C7A09005567CA /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
+		AEB477D0283C7A86005567CA /* ProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembler.swift; sourceTree = "<group>"; };
+		AEB477D2283C8C52005567CA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		AEB477D5283C90D8005567CA /* HealingUP-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HealingUP-iOS.entitlements"; sourceTree = "<group>"; };
+		AEB477D7283C90D8005567CA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		AEB477DA283C91A0005567CA /* HeartRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateView.swift; sourceTree = "<group>"; };
+		AEB477DC283C981F005567CA /* GetHeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeartRate.swift; sourceTree = "<group>"; };
+		AEB477E0283CA59F005567CA /* HealingUp-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealingUp-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB477E2283CA5A0005567CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AEB477E8283CA5A0005567CA /* HealingUp-Watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HealingUp-Watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB477ED283CA5A1005567CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AEB477EF283CA5A1005567CA /* HealingUP_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealingUP_iOSApp.swift; sourceTree = "<group>"; };
+		AEB477F1283CA5A1005567CA /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		AEB477F3283CA5A2005567CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AEB477F6283CA5A2005567CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AEB477F8283CA5A2005567CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEB47804283CABF9005567CA /* HeartRateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateTest.swift; sourceTree = "<group>"; };
+		AEB47806283CADF4005567CA /* HealingUp-Watch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HealingUp-Watch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		AEB47807283CADF4005567CA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		AED86DA2283B181900C62B98 /* HealingUP-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealingUP-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED86DA5283B181900C62B98 /* HealingUP_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealingUP_iOSApp.swift; sourceTree = "<group>"; };
+		AED86DA7283B181900C62B98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AED86DA9283B181A00C62B98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AED86DAE283B181A00C62B98 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		AED86DB1283B181A00C62B98 /* HealingUP_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealingUP_iOS.xcdatamodel; sourceTree = "<group>"; };
+		AED86DE3283B1D1800C62B98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AED86DEA283B281000C62B98 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		AED86DEC283B282900C62B98 /* MembershipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewModel.swift; sourceTree = "<group>"; };
+		AED86DEE283B283800C62B98 /* MembershipNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipNavigator.swift; sourceTree = "<group>"; };
+		AED86DF1283B285600C62B98 /* AppAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
+		AED86DF3283B286800C62B98 /* MembershipAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipAssembler.swift; sourceTree = "<group>"; };
+		AED86DF5283B2A4300C62B98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AED86DF7283B2AE600C62B98 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		AED86DF9283B2BB000C62B98 /* BodyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyCodable.swift; sourceTree = "<group>"; };
+		AED86DFB283B2D4000C62B98 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		AED86DFF283B2DAE00C62B98 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		AED86E01283B2E5500C62B98 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		AED86E03283B2E8C00C62B98 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
+		AED86E05283B2F3100C62B98 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEB477E5283CA5A0005567CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEB47808283CADF4005567CA /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AED86D9F283B181900C62B98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEB477A1283B3A16005567CA /* FirebaseDatabaseSwift in Frameworks */,
+				AEB4779F283B3A16005567CA /* FirebaseDatabase in Frameworks */,
+				AEB477D8283C90D8005567CA /* HealthKit.framework in Frameworks */,
+				AEB477A9283B3A16005567CA /* FirebaseStorageCombine-Community in Frameworks */,
+				AEB477A7283B3A16005567CA /* FirebaseStorage in Frameworks */,
+				AEB47796283B3851005567CA /* SDWebImageSwiftUI in Frameworks */,
+				AEB4779B283B3A16005567CA /* FirebaseAppDistribution-Beta in Frameworks */,
+				AEB4779D283B3A16005567CA /* FirebaseAuth in Frameworks */,
+				AEB477A3283B3A16005567CA /* FirebaseFirestore in Frameworks */,
+				AEB477A5283B3A16005567CA /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AEB477B2283B55E2005567CA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477B3283B55E8005567CA /* Navigator */,
+				AEB477B4283B55F0005567CA /* ViewModel */,
+				AEB477B5283B55F8005567CA /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AEB477B3283B55E8005567CA /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477B6283B561C005567CA /* HomeNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		AEB477B4283B55F0005567CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AEB477B5283B55F8005567CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DA7283B181900C62B98 /* ContentView.swift */,
+				AEB477B0283B556D005567CA /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AEB477BA283B6E7C005567CA /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477BB283B6E95005567CA /* ProgressHUDModifier.swift */,
+				AEB477C2283B71F1005567CA /* ViewStateModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		AEB477BD283B6EC0005567CA /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477BE283B6ECD005567CA /* BlurView.swift */,
+				AEB477C0283B70C4005567CA /* ActivityIndicator.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		AEB477C8283C7758005567CA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477CB283C7772005567CA /* Navigator */,
+				AEB477CA283C776C005567CA /* ViewModel */,
+				AEB477C9283C7763005567CA /* Views */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		AEB477C9283C7763005567CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477CC283C77A8005567CA /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AEB477CA283C776C005567CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AEB477CB283C7772005567CA /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477CE283C7A09005567CA /* ProfileNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		AEB477D4283C901D005567CA /* HeartRate */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477D9283C9173005567CA /* Views */,
+			);
+			path = HeartRate;
+			sourceTree = "<group>";
+		};
+		AEB477D6283C90D8005567CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEB47807283CADF4005567CA /* HealthKit.framework */,
+				AEB477D7283C90D8005567CA /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEB477D9283C9173005567CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477DA283C91A0005567CA /* HeartRateView.swift */,
+				AEB477DC283C981F005567CA /* GetHeartRate.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AEB477E1283CA59F005567CA /* HealingUp-Watch */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477E2283CA5A0005567CA /* Assets.xcassets */,
+			);
+			path = "HealingUp-Watch";
+			sourceTree = "<group>";
+		};
+		AEB477EC283CA5A1005567CA /* HealingUp-Watch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AEB47806283CADF4005567CA /* HealingUp-Watch WatchKit Extension.entitlements */,
+				AEB477ED283CA5A1005567CA /* ContentView.swift */,
+				AEB477EF283CA5A1005567CA /* HealingUP_iOSApp.swift */,
+				AEB477F1283CA5A1005567CA /* ComplicationController.swift */,
+				AEB47804283CABF9005567CA /* HeartRateTest.swift */,
+				AEB477F3283CA5A2005567CA /* Assets.xcassets */,
+				AEB477F8283CA5A2005567CA /* Info.plist */,
+				AEB477F5283CA5A2005567CA /* Preview Content */,
+			);
+			path = "HealingUp-Watch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		AEB477F5283CA5A2005567CA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477F6283CA5A2005567CA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AED86D99283B181900C62B98 = {
+			isa = PBXGroup;
+			children = (
+				AED86DA4283B181900C62B98 /* HealingUP-iOS */,
+				AEB477E1283CA59F005567CA /* HealingUp-Watch */,
+				AEB477EC283CA5A1005567CA /* HealingUp-Watch WatchKit Extension */,
+				AED86DA3283B181900C62B98 /* Products */,
+				AEB477D6283C90D8005567CA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AED86DA3283B181900C62B98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DA2283B181900C62B98 /* HealingUP-iOS.app */,
+				AEB477E0283CA59F005567CA /* HealingUp-Watch.app */,
+				AEB477E8283CA5A0005567CA /* HealingUp-Watch WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AED86DA4283B181900C62B98 /* HealingUP-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477D5283C90D8005567CA /* HealingUP-iOS.entitlements */,
+				AED86DD4283B1A3400C62B98 /* Depedency */,
+				AED86DD5283B1A3D00C62B98 /* App */,
+				AED86DD6283B1A4800C62B98 /* Data */,
+			);
+			path = "HealingUP-iOS";
+			sourceTree = "<group>";
+		};
+		AED86DD4283B1A3400C62B98 /* Depedency */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DD7283B1A8800C62B98 /* Features */,
+				AED86DF1283B285600C62B98 /* AppAssembler.swift */,
+			);
+			path = Depedency;
+			sourceTree = "<group>";
+		};
+		AED86DD5283B1A3D00C62B98 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DDB283B1AA200C62B98 /* Utils */,
+				AED86DDA283B1A9C00C62B98 /* Resource */,
+				AED86DD9283B1A9700C62B98 /* Main */,
+				AED86DD8283B1A9200C62B98 /* Features */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AED86DD6283B1A4800C62B98 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DDD283B1AF100C62B98 /* Model */,
+				AED86DDF283B1AFC00C62B98 /* Entity */,
+				AED86DDC283B1AEB00C62B98 /* Mapper */,
+				AED86DDE283B1AF700C62B98 /* DataSource */,
+				AED86DE0283B1B0200C62B98 /* Utils */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AED86DD7283B1A8800C62B98 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DF3283B286800C62B98 /* MembershipAssembler.swift */,
+				AEB477B8283B574A005567CA /* HomeAssembler.swift */,
+				AEB477D0283C7A86005567CA /* ProfileAssembler.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		AED86DD8283B1A9200C62B98 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477D4283C901D005567CA /* HeartRate */,
+				AEB477C8283C7758005567CA /* Profile */,
+				AEB477B2283B55E2005567CA /* Home */,
+				AED86DE6283B27DA00C62B98 /* Membership */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		AED86DD9283B1A9700C62B98 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DA5283B181900C62B98 /* HealingUP_iOSApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AED86DDA283B1A9C00C62B98 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DA9283B181A00C62B98 /* Assets.xcassets */,
+				AED86DE3283B1D1800C62B98 /* GoogleService-Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AED86DDB283B1AA200C62B98 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AEB477BD283B6EC0005567CA /* CustomViews */,
+				AEB477BA283B6E7C005567CA /* Modifier */,
+				AED86DFE283B2DA000C62B98 /* Extensions */,
+				AED86E01283B2E5500C62B98 /* ViewState.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AED86DDC283B1AEB00C62B98 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DFB283B2D4000C62B98 /* UserMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		AED86DDD283B1AF100C62B98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DF5283B2A4300C62B98 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AED86DDE283B1AF700C62B98 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DE2283B1C1D00C62B98 /* FirestoreDataSource */,
+				AED86DE1283B1C1400C62B98 /* LocalDataSource */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		AED86DDF283B1AFC00C62B98 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DF7283B2AE600C62B98 /* UserEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AED86DE0283B1B0200C62B98 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DF9283B2BB000C62B98 /* BodyCodable.swift */,
+				AED86E03283B2E8C00C62B98 /* FirebaseError.swift */,
+				AEB477AC283B3BB1005567CA /* FirebaseReference.swift */,
+				AEB477D2283C8C52005567CA /* Constant.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AED86DE1283B1C1400C62B98 /* LocalDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DAE283B181A00C62B98 /* Persistence.swift */,
+				AED86DB0283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld */,
+			);
+			path = LocalDataSource;
+			sourceTree = "<group>";
+		};
+		AED86DE2283B1C1D00C62B98 /* FirestoreDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				AED86E05283B2F3100C62B98 /* FirebaseManager.swift */,
+				AEB477AA283B3B2A005567CA /* FirebaseManager+Membership.swift */,
+			);
+			path = FirestoreDataSource;
+			sourceTree = "<group>";
+		};
+		AED86DE6283B27DA00C62B98 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DE7283B27E400C62B98 /* Navigator */,
+				AED86DE8283B27E900C62B98 /* ViewModel */,
+				AED86DE9283B27F100C62B98 /* Views */,
+			);
+			path = Membership;
+			sourceTree = "<group>";
+		};
+		AED86DE7283B27E400C62B98 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DEE283B283800C62B98 /* MembershipNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		AED86DE8283B27E900C62B98 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DEC283B282900C62B98 /* MembershipViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AED86DE9283B27F100C62B98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DEA283B281000C62B98 /* SignInView.swift */,
+				AEB477C6283BE254005567CA /* SignUpView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AED86DFE283B2DA000C62B98 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AED86DFF283B2DAE00C62B98 /* String.swift */,
+				AEB477AE283B3C25005567CA /* Query.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEB477DF283CA59F005567CA /* HealingUp-Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEB47800283CA5A2005567CA /* Build configuration list for PBXNativeTarget "HealingUp-Watch" */;
+			buildPhases = (
+				AEB477DE283CA59F005567CA /* Resources */,
+				AEB477FF283CA5A2005567CA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEB477EB283CA5A1005567CA /* PBXTargetDependency */,
+			);
+			name = "HealingUp-Watch";
+			productName = "HealingUp-Watch";
+			productReference = AEB477E0283CA59F005567CA /* HealingUp-Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		AEB477E7283CA5A0005567CA /* HealingUp-Watch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEB477FC283CA5A2005567CA /* Build configuration list for PBXNativeTarget "HealingUp-Watch WatchKit Extension" */;
+			buildPhases = (
+				AEB477E4283CA5A0005567CA /* Sources */,
+				AEB477E5283CA5A0005567CA /* Frameworks */,
+				AEB477E6283CA5A0005567CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HealingUp-Watch WatchKit Extension";
+			productName = "HealingUp-Watch WatchKit Extension";
+			productReference = AEB477E8283CA5A0005567CA /* HealingUp-Watch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		AED86DA1283B181900C62B98 /* HealingUP-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AED86DCB283B181B00C62B98 /* Build configuration list for PBXNativeTarget "HealingUP-iOS" */;
+			buildPhases = (
+				AED86D9E283B181900C62B98 /* Sources */,
+				AED86D9F283B181900C62B98 /* Frameworks */,
+				AED86DA0283B181900C62B98 /* Resources */,
+				AEB47803283CA5A2005567CA /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEB477FA283CA5A2005567CA /* PBXTargetDependency */,
+			);
+			name = "HealingUP-iOS";
+			packageProductDependencies = (
+				AEB47795283B3851005567CA /* SDWebImageSwiftUI */,
+				AEB4779A283B3A16005567CA /* FirebaseAppDistribution-Beta */,
+				AEB4779C283B3A16005567CA /* FirebaseAuth */,
+				AEB4779E283B3A16005567CA /* FirebaseDatabase */,
+				AEB477A0283B3A16005567CA /* FirebaseDatabaseSwift */,
+				AEB477A2283B3A16005567CA /* FirebaseFirestore */,
+				AEB477A4283B3A16005567CA /* FirebaseFirestoreSwift */,
+				AEB477A6283B3A16005567CA /* FirebaseStorage */,
+				AEB477A8283B3A16005567CA /* FirebaseStorageCombine-Community */,
+			);
+			productName = "HealingUP-iOS";
+			productReference = AED86DA2283B181900C62B98 /* HealingUP-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AED86D9A283B181900C62B98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					AEB477DF283CA59F005567CA = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AEB477E7283CA5A0005567CA = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AED86DA1283B181900C62B98 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = AED86D9D283B181900C62B98 /* Build configuration list for PBXProject "HealingUP-iOS" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AED86D99283B181900C62B98;
+			packageReferences = (
+				AEB47794283B3851005567CA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = AED86DA3283B181900C62B98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AED86DA1283B181900C62B98 /* HealingUP-iOS */,
+				AEB477DF283CA59F005567CA /* HealingUp-Watch */,
+				AEB477E7283CA5A0005567CA /* HealingUp-Watch WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEB477DE283CA59F005567CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEB477E3283CA5A0005567CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEB477E6283CA5A0005567CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEB477F7283CA5A2005567CA /* Preview Assets.xcassets in Resources */,
+				AEB477F4283CA5A2005567CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AED86DA0283B181900C62B98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AED86DAA283B181A00C62B98 /* Assets.xcassets in Resources */,
+				AED86DE4283B1D1800C62B98 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEB477E4283CA5A0005567CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEB477EE283CA5A1005567CA /* ContentView.swift in Sources */,
+				AEB477F0283CA5A1005567CA /* HealingUP_iOSApp.swift in Sources */,
+				AEB47805283CABF9005567CA /* HeartRateTest.swift in Sources */,
+				AEB477F2283CA5A1005567CA /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AED86D9E283B181900C62B98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEB477C3283B71F1005567CA /* ViewStateModifier.swift in Sources */,
+				AEB477AF283B3C25005567CA /* Query.swift in Sources */,
+				AEB477D1283C7A86005567CA /* ProfileAssembler.swift in Sources */,
+				AEB477BC283B6E95005567CA /* ProgressHUDModifier.swift in Sources */,
+				AED86DF8283B2AE600C62B98 /* UserEntity.swift in Sources */,
+				AED86DED283B282900C62B98 /* MembershipViewModel.swift in Sources */,
+				AEB477C1283B70C4005567CA /* ActivityIndicator.swift in Sources */,
+				AEB477DB283C91A0005567CA /* HeartRateView.swift in Sources */,
+				AED86E02283B2E5500C62B98 /* ViewState.swift in Sources */,
+				AEB477DD283C981F005567CA /* GetHeartRate.swift in Sources */,
+				AED86DAF283B181A00C62B98 /* Persistence.swift in Sources */,
+				AED86DB2283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld in Sources */,
+				AED86E00283B2DAE00C62B98 /* String.swift in Sources */,
+				AEB477B9283B574A005567CA /* HomeAssembler.swift in Sources */,
+				AEB477CD283C77A8005567CA /* ProfileView.swift in Sources */,
+				AED86DFA283B2BB000C62B98 /* BodyCodable.swift in Sources */,
+				AED86DEF283B283800C62B98 /* MembershipNavigator.swift in Sources */,
+				AEB477AD283B3BB1005567CA /* FirebaseReference.swift in Sources */,
+				AEB477BF283B6ECD005567CA /* BlurView.swift in Sources */,
+				AEB477AB283B3B2A005567CA /* FirebaseManager+Membership.swift in Sources */,
+				AED86DFC283B2D4000C62B98 /* UserMapper.swift in Sources */,
+				AEB477D3283C8C52005567CA /* Constant.swift in Sources */,
+				AED86E04283B2E8C00C62B98 /* FirebaseError.swift in Sources */,
+				AED86DF2283B285600C62B98 /* AppAssembler.swift in Sources */,
+				AED86DA8283B181900C62B98 /* ContentView.swift in Sources */,
+				AEB477B1283B556D005567CA /* HomeView.swift in Sources */,
+				AED86DA6283B181900C62B98 /* HealingUP_iOSApp.swift in Sources */,
+				AED86DEB283B281000C62B98 /* SignInView.swift in Sources */,
+				AED86DF6283B2A4300C62B98 /* User.swift in Sources */,
+				AEB477C7283BE254005567CA /* SignUpView.swift in Sources */,
+				AED86DF4283B286800C62B98 /* MembershipAssembler.swift in Sources */,
+				AEB477CF283C7A09005567CA /* ProfileNavigator.swift in Sources */,
+				AEB477B7283B561C005567CA /* HomeNavigator.swift in Sources */,
+				AED86E06283B2F3100C62B98 /* FirebaseManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEB477EB283CA5A1005567CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEB477E7283CA5A0005567CA /* HealingUp-Watch WatchKit Extension */;
+			targetProxy = AEB477EA283CA5A1005567CA /* PBXContainerItemProxy */;
+		};
+		AEB477FA283CA5A2005567CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEB477DF283CA59F005567CA /* HealingUp-Watch */;
+			targetProxy = AEB477F9283CA5A2005567CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AEB477FD283CA5A2005567CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HealingUp-Watch WatchKit Extension/HealingUp-Watch WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 8KKWD6QU49;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rangga.HealingUP-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.1;
+			};
+			name = Debug;
+		};
+		AEB477FE283CA5A2005567CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HealingUp-Watch WatchKit Extension/HealingUp-Watch WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 8KKWD6QU49;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rangga.HealingUP-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.1;
+			};
+			name = Release;
+		};
+		AEB47801283CA5A2005567CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8KKWD6QU49;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.rangga.HealingUP-iOS";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rangga.HealingUP-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.1;
+			};
+			name = Debug;
+		};
+		AEB47802283CA5A2005567CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8KKWD6QU49;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.rangga.HealingUP-iOS";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rangga.HealingUP-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.1;
+			};
+			name = Release;
+		};
+		AED86DC9283B181B00C62B98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AED86DCA283B181B00C62B98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AED86DCC283B181B00C62B98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 8KKWD6QU49;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need record your heart rate";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Healing UP need share your heart rate";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Healing UP need record update heart rate";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rangga.HealingUP-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AED86DCD283B181B00C62B98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 8KKWD6QU49;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need record your heart rate";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Healing UP need share your heart rate";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Healing UP need record update heart rate";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rangga.HealingUP-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEB477FC283CA5A2005567CA /* Build configuration list for PBXNativeTarget "HealingUp-Watch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEB477FD283CA5A2005567CA /* Debug */,
+				AEB477FE283CA5A2005567CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEB47800283CA5A2005567CA /* Build configuration list for PBXNativeTarget "HealingUp-Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEB47801283CA5A2005567CA /* Debug */,
+				AEB47802283CA5A2005567CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AED86D9D283B181900C62B98 /* Build configuration list for PBXProject "HealingUP-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AED86DC9283B181B00C62B98 /* Debug */,
+				AED86DCA283B181B00C62B98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AED86DCB283B181B00C62B98 /* Build configuration list for PBXNativeTarget "HealingUP-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AED86DCC283B181B00C62B98 /* Debug */,
+				AED86DCD283B181B00C62B98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AEB47794283B3851005567CA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AEB47795283B3851005567CA /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB47794283B3851005567CA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		AEB4779A283B3A16005567CA /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		AEB4779C283B3A16005567CA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AEB4779E283B3A16005567CA /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		AEB477A0283B3A16005567CA /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		AEB477A2283B3A16005567CA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		AEB477A4283B3A16005567CA /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		AEB477A6283B3A16005567CA /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		AEB477A8283B3A16005567CA /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB47797283B3A16005567CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		AED86DB0283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AED86DB1283B181A00C62B98 /* HealingUP_iOS.xcdatamodel */,
+			);
+			currentVersion = AED86DB1283B181A00C62B98 /* HealingUP_iOS.xcdatamodel */;
+			path = HealingUP_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AED86D9A283B181900C62B98 /* Project object */;
+}
