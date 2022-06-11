@@ -25,6 +25,8 @@ protocol FirebaseManager {
   
   //Kessler
   func fetchQuiz(completion: @escaping CompletionResult<[KesslerQuizEntity]>)
+  func addKesslerResult(kResult: KesslerResultEntity, completion: @escaping CompletionResult<Bool>)
+  func fetchKesslerResult(completion: @escaping CompletionResult<[KesslerResultEntity]>)
 }
 
 class DefaultFirebaseManager: FirebaseManager {

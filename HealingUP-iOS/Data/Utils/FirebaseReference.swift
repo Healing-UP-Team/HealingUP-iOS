@@ -11,6 +11,7 @@ import Firebase
 enum FirestoreCollection: String {
   case membership
   case kesslerQuiz
+  case kesslerResult
 }
 
 func firestoreCollection(_ collectionRefrence: FirestoreCollection) -> CollectionReference {

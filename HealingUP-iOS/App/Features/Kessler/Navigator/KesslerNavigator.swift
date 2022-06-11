@@ -18,11 +18,15 @@ struct KesslerNavigator {
     return KesslerTabItem(navigator: assembler.resolve(), kesslerViewModel: assembler.resolve())
   }
   
-  func navigateToKesslerQuizView(kesslerQuizs: [KesslerQuiz]) -> KesslerQuizView {
-    return KesslerQuizView(kesslerQuiz: kesslerQuizs)
+  func navigateToKesslerQuizView(kesslerQuizs: [KesslerQuiz], isFirstTime: Binding<Bool>?) -> KesslerQuizView {
+    return KesslerQuizView(navigator: assembler.resolve(), kesslerQuiz: kesslerQuizs, isFirstTime: isFirstTime)
   }
   
   func navigateToKesslerFinalView(score: Int) -> KesslerFinalView {
-    return KesslerFinalView(score: score)
+    return KesslerFinalView(score: score, kesslerViewModel: assembler.resolve())
+  }
+  
+  func navigateToKesslerDataListView(isFirsTime: Binding<Bool>? = nil) -> KesslerDataListView {
+    return KesslerDataListView(kesslerViewModel: assembler.resolve(), isFirsTime: isFirsTime)
   }
 }

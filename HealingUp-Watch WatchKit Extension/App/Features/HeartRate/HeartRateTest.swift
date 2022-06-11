@@ -107,7 +107,7 @@ class HeartHistoryTest: NSObject, ObservableObject, WCSessionDelegate {
         
         
         //Transfer data from watch to iPhone
-        self.defaultSession.sendMessage(message, replyHandler:nil, errorHandler: { (error) in
+        self.defaultSession.sendMessage(message, replyHandler: nil, errorHandler: { (error) in
           print("Error in send message : \(error)")
         })
       }

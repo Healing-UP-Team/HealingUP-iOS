@@ -36,9 +36,12 @@ class HeartHistoryModel: NSObject, WCSessionDelegate, ObservableObject {
 
   }
   
-  
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-    
+    if !session.isReachable {
+      print("please connect and run your iOS app")
+    } else if !session.isWatchAppInstalled {
+      print("please install watch App")
+    }
   }
   
   func sessionDidBecomeInactive(_ session: WCSession) {
@@ -50,6 +53,7 @@ class HeartHistoryModel: NSObject, WCSessionDelegate, ObservableObject {
   }
   
   func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+    
     DispatchQueue.main.async {
       self.curr = message["HeartRateBPM"] as? String ?? "Unknown"
       self.startDate = message["HeartRateStartDate"] as? String ?? "Unknown"

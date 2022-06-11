@@ -18,6 +18,14 @@
 		AE33ADDF284D9E00007F9FA8 /* FirebaseManager+KesslerQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADDE284D9E00007F9FA8 /* FirebaseManager+KesslerQuiz.swift */; };
 		AE33ADE2284DA0E8007F9FA8 /* KesslerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADE1284DA0E8007F9FA8 /* KesslerViewModel.swift */; };
 		AE33ADE4284DB735007F9FA8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADE3284DB735007F9FA8 /* View.swift */; };
+		AE33ADF0284E12DC007F9FA8 /* ButtonAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADEF284E12DC007F9FA8 /* ButtonAnswerView.swift */; };
+		AE33ADF3284E155F007F9FA8 /* KesslerDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADF2284E155F007F9FA8 /* KesslerDataListView.swift */; };
+		AE33ADF5284E159C007F9FA8 /* KesslerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADF4284E159C007F9FA8 /* KesslerResult.swift */; };
+		AE33ADF7284E163B007F9FA8 /* KesslerResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADF6284E163B007F9FA8 /* KesslerResultEntity.swift */; };
+		AE33ADF9284E17C4007F9FA8 /* KesslerResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADF8284E17C4007F9FA8 /* KesslerResultMapper.swift */; };
+		AE33ADFB284E18B9007F9FA8 /* FirebaseManager+KesslerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADFA284E18B9007F9FA8 /* FirebaseManager+KesslerResult.swift */; };
+		AE33ADFD284E444D007F9FA8 /* KesslerResultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADFC284E444D007F9FA8 /* KesslerResultItemView.swift */; };
+		AE33ADFF284E452B007F9FA8 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADFE284E452B007F9FA8 /* Date.swift */; };
 		AEB47796283B3851005567CA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AEB47795283B3851005567CA /* SDWebImageSwiftUI */; };
 		AEB4779B283B3A16005567CA /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = AEB4779A283B3A16005567CA /* FirebaseAppDistribution-Beta */; };
 		AEB4779D283B3A16005567CA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AEB4779C283B3A16005567CA /* FirebaseAuth */; };
@@ -130,6 +138,14 @@
 		AE33ADDE284D9E00007F9FA8 /* FirebaseManager+KesslerQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseManager+KesslerQuiz.swift"; sourceTree = "<group>"; };
 		AE33ADE1284DA0E8007F9FA8 /* KesslerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerViewModel.swift; sourceTree = "<group>"; };
 		AE33ADE3284DB735007F9FA8 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		AE33ADEF284E12DC007F9FA8 /* ButtonAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnswerView.swift; sourceTree = "<group>"; };
+		AE33ADF2284E155F007F9FA8 /* KesslerDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerDataListView.swift; sourceTree = "<group>"; };
+		AE33ADF4284E159C007F9FA8 /* KesslerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerResult.swift; sourceTree = "<group>"; };
+		AE33ADF6284E163B007F9FA8 /* KesslerResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerResultEntity.swift; sourceTree = "<group>"; };
+		AE33ADF8284E17C4007F9FA8 /* KesslerResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerResultMapper.swift; sourceTree = "<group>"; };
+		AE33ADFA284E18B9007F9FA8 /* FirebaseManager+KesslerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseManager+KesslerResult.swift"; sourceTree = "<group>"; };
+		AE33ADFC284E444D007F9FA8 /* KesslerResultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerResultItemView.swift; sourceTree = "<group>"; };
+		AE33ADFE284E452B007F9FA8 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AEB477AA283B3B2A005567CA /* FirebaseManager+Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseManager+Membership.swift"; sourceTree = "<group>"; };
 		AEB477AC283B3BB1005567CA /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		AEB477AE283B3C25005567CA /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
@@ -268,6 +284,7 @@
 		AE33ADCB284D8DBA007F9FA8 /* Kessler */ = {
 			isa = PBXGroup;
 			children = (
+				AE33ADEE284E1247007F9FA8 /* Components */,
 				AE33ADE0284DA0D5007F9FA8 /* ViewModel */,
 				AE33ADCD284D8DDE007F9FA8 /* Navigator */,
 				AE33ADCC284D8DD8007F9FA8 /* Views */,
@@ -281,6 +298,7 @@
 				AE33ADCE284D8E01007F9FA8 /* KesslerTabItem.swift */,
 				AE33ADD4284D912C007F9FA8 /* KesslerQuizView.swift */,
 				AE33ADD6284D9848007F9FA8 /* KesslerFinalView.swift */,
+				AE33ADF2284E155F007F9FA8 /* KesslerDataListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +317,29 @@
 				AE33ADE1284DA0E8007F9FA8 /* KesslerViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AE33ADEE284E1247007F9FA8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AE33ADEF284E12DC007F9FA8 /* ButtonAnswerView.swift */,
+				AE33ADFC284E444D007F9FA8 /* KesslerResultItemView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AE33AE00284EE4F0007F9FA8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AE33AE01284EE4FB007F9FA8 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 		AEB477B2283B55E2005567CA /* Home */ = {
@@ -389,6 +430,8 @@
 		AEB477D4283C901D005567CA /* HeartRate */ = {
 			isa = PBXGroup;
 			children = (
+				AE33AE01284EE4FB007F9FA8 /* Navigator */,
+				AE33AE00284EE4F0007F9FA8 /* ViewModel */,
 				AEB477D9283C9173005567CA /* Views */,
 			);
 			path = HeartRate;
@@ -558,6 +601,7 @@
 			children = (
 				AED86DFB283B2D4000C62B98 /* UserMapper.swift */,
 				AE33ADDC284D9D2D007F9FA8 /* KesslerQuizMapper.swift */,
+				AE33ADF8284E17C4007F9FA8 /* KesslerResultMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -567,6 +611,7 @@
 			children = (
 				AED86DF5283B2A4300C62B98 /* User.swift */,
 				AE33ADD8284D9C0A007F9FA8 /* KesslerQuiz.swift */,
+				AE33ADF4284E159C007F9FA8 /* KesslerResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -585,6 +630,7 @@
 			children = (
 				AED86DF7283B2AE600C62B98 /* UserEntity.swift */,
 				AE33ADDA284D9CA8007F9FA8 /* KesslerQuizEntity.swift */,
+				AE33ADF6284E163B007F9FA8 /* KesslerResultEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -615,6 +661,7 @@
 				AED86E05283B2F3100C62B98 /* FirebaseManager.swift */,
 				AEB477AA283B3B2A005567CA /* FirebaseManager+Membership.swift */,
 				AE33ADDE284D9E00007F9FA8 /* FirebaseManager+KesslerQuiz.swift */,
+				AE33ADFA284E18B9007F9FA8 /* FirebaseManager+KesslerResult.swift */,
 			);
 			path = FirestoreDataSource;
 			sourceTree = "<group>";
@@ -660,6 +707,7 @@
 				AED86DFF283B2DAE00C62B98 /* String.swift */,
 				AEB477AE283B3C25005567CA /* Query.swift */,
 				AE33ADE3284DB735007F9FA8 /* View.swift */,
+				AE33ADFE284E452B007F9FA8 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -825,6 +873,7 @@
 				AEB477C3283B71F1005567CA /* ViewStateModifier.swift in Sources */,
 				AEB477AF283B3C25005567CA /* Query.swift in Sources */,
 				AEB477D1283C7A86005567CA /* ProfileAssembler.swift in Sources */,
+				AE33ADFD284E444D007F9FA8 /* KesslerResultItemView.swift in Sources */,
 				AEB477BC283B6E95005567CA /* ProgressHUDModifier.swift in Sources */,
 				AED86DF8283B2AE600C62B98 /* UserEntity.swift in Sources */,
 				AED86DED283B282900C62B98 /* MembershipViewModel.swift in Sources */,
@@ -840,18 +889,24 @@
 				AED86DB2283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld in Sources */,
 				AED86E00283B2DAE00C62B98 /* String.swift in Sources */,
 				AEB477B9283B574A005567CA /* HomeAssembler.swift in Sources */,
+				AE33ADFF284E452B007F9FA8 /* Date.swift in Sources */,
 				AE33ADD3284D8E7D007F9FA8 /* KesslerAssembler.swift in Sources */,
 				AE33ADD9284D9C0A007F9FA8 /* KesslerQuiz.swift in Sources */,
 				AEB477CD283C77A8005567CA /* ProfileView.swift in Sources */,
+				AE33ADFB284E18B9007F9FA8 /* FirebaseManager+KesslerResult.swift in Sources */,
 				AE33ADD7284D9848007F9FA8 /* KesslerFinalView.swift in Sources */,
+				AE33ADF9284E17C4007F9FA8 /* KesslerResultMapper.swift in Sources */,
 				AED86DFA283B2BB000C62B98 /* BodyCodable.swift in Sources */,
+				AE33ADF0284E12DC007F9FA8 /* ButtonAnswerView.swift in Sources */,
 				AED86DEF283B283800C62B98 /* MembershipNavigator.swift in Sources */,
 				AEB477AD283B3BB1005567CA /* FirebaseReference.swift in Sources */,
 				AEB477BF283B6ECD005567CA /* BlurView.swift in Sources */,
 				AEB477AB283B3B2A005567CA /* FirebaseManager+Membership.swift in Sources */,
 				AED86DFC283B2D4000C62B98 /* UserMapper.swift in Sources */,
+				AE33ADF3284E155F007F9FA8 /* KesslerDataListView.swift in Sources */,
 				AEB477D3283C8C52005567CA /* Constant.swift in Sources */,
 				AED86E04283B2E8C00C62B98 /* FirebaseError.swift in Sources */,
+				AE33ADF5284E159C007F9FA8 /* KesslerResult.swift in Sources */,
 				AED86DF2283B285600C62B98 /* AppAssembler.swift in Sources */,
 				AE33ADE4284DB735007F9FA8 /* View.swift in Sources */,
 				AE33ADD1284D8E20007F9FA8 /* KesslerNavigator.swift in Sources */,
@@ -863,6 +918,7 @@
 				AEB477C7283BE254005567CA /* SignUpView.swift in Sources */,
 				AED86DF4283B286800C62B98 /* MembershipAssembler.swift in Sources */,
 				AEB477CF283C7A09005567CA /* ProfileNavigator.swift in Sources */,
+				AE33ADF7284E163B007F9FA8 /* KesslerResultEntity.swift in Sources */,
 				AEB477B7283B561C005567CA /* HomeNavigator.swift in Sources */,
 				AED86E06283B2F3100C62B98 /* FirebaseManager.swift in Sources */,
 				AE33ADDD284D9D2D007F9FA8 /* KesslerQuizMapper.swift in Sources */,

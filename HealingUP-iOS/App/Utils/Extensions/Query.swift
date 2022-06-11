@@ -8,6 +8,10 @@
 import Foundation
 import Firebase
 
+enum FirebaseRecordDate: String {
+  case kesslerResult = "createAt"
+}
+
 extension Query {
   func whereRoleIsUser(isUser: Bool) -> Query {
     if isUser {
@@ -16,5 +20,9 @@ extension Query {
     } else {
       return self
     }
+  }
+  
+  func orderByDate(recordDate: FirebaseRecordDate, descending: Bool = false) -> Query {
+    return self.order(by: recordDate.rawValue, descending: descending)
   }
 }
