@@ -19,6 +19,8 @@ struct UserEntity: Codable, BodyCodable {
     case role = "role"
     case name = "name"
     case email = "email"
+    case age = "age"
+    case minimumHrv = "minimum_hrv"
   }
   
   
@@ -26,12 +28,16 @@ struct UserEntity: Codable, BodyCodable {
   var role: UserRoleEntity?
   var name: String?
   var email: String?
+  var age: Int?
+  var minimumHrv: Double?
   
-  init(userId: String?, role: UserRoleEntity?, name: String?, email: String?) {
+  init(userId: String?, role: UserRoleEntity?, name: String?, email: String?, age: Int?, minimumHrv: Double?) {
     self.userId = userId
     self.role = role
     self.name = name
     self.email = email
+    self.age = age
+    self.minimumHrv = minimumHrv
   }
   
 }
