@@ -10,7 +10,8 @@ import Foundation
 protocol Assembler: MembershipAssembler,
                     HomeAssembler,
                     ProfileAssembler,
-                    KesslerAssembler{}
+                    KesslerAssembler,
+                    HeartAssembler{}
 
 class AppAssembler: Assembler {
   static let shared = AppAssembler()

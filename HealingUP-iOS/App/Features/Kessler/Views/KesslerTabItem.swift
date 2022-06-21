@@ -14,10 +14,8 @@ struct KesslerTabItem: View {
   @State private var fetchError: Error?
   @State private var isShowAlert = false
   @State var kesslerData = [KesslerQuiz]()
-  @State var isFirstTime = false
   
   var body: some View {
-    if isFirstTime {
       VStack {
         VStack {
           Spacer()
@@ -44,7 +42,7 @@ struct KesslerTabItem: View {
           .padding()
           
           if !kesslerData.isEmpty {
-            NavigationLink(destination: navigator.navigateToKesslerQuizView(kesslerQuizs: kesslerData, isFirstTime: $isFirstTime), isActive: $isStartQuiz) {
+            NavigationLink(destination: navigator.navigateToKesslerQuizView(kesslerQuizs: kesslerData, isBackToRoot: $isStartQuiz), isActive: $isStartQuiz) {
               EmptyView()
             }
           }
@@ -70,10 +68,7 @@ struct KesslerTabItem: View {
       }
       .padding()
       .progressHUD(isShowing: $kesslerViewModel.kesslerQuizState.isLoading)
-    } else {
-      navigator.navigateToKesslerDataListView(isFirsTime: $isFirstTime)
     }
-  }
 }
 
 struct KesslerTabItem_Previews: PreviewProvider {
