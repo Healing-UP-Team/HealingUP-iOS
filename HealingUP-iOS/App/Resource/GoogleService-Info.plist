@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>191503475912-aovbj2bvrj1k9j9agmorui7c4llm35nr.apps.googleusercontent.com</string>
+	<string>191503475912-cqlhkseokddkmn8j5kjda6082k2m2016.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.191503475912-aovbj2bvrj1k9j9agmorui7c4llm35nr</string>
+	<string>com.googleusercontent.apps.191503475912-cqlhkseokddkmn8j5kjda6082k2m2016</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCQ-evwjJXhl1GENCNtR2i_Qorfy5XsKwM</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.rangga.HealingUP-iOS</string>
+	<string>com.healingup.ios</string>
 	<key>PROJECT_ID</key>
 	<string>healingup-32a9a</string>
 	<key>STORAGE_BUCKET</key>
 	<string>healingup-32a9a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:191503475912:ios:d48c50b0893e3488eab1fd</string>
 </dict>
