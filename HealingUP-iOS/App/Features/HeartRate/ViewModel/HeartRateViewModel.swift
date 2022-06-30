@@ -34,21 +34,28 @@ class HeartRateViewModel: NSObject, WCSessionDelegate, ObservableObject {
   
   override init() {
     super.init()
-    setupRealTimeHeartRate()
     autorizeHealtKit()
-  }
-  
-  private func setupRealTimeHeartRate() {
-    defaultSession.delegate = self
-    defaultSession.activate()
+    if WCSession.isSupported() {
+      defaultSession.delegate = self
+      defaultSession.activate()
+    }
   }
   
   //MARK: Real Time HeartRate
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    let age = SessionManager.getUserAge()
+    let hrv = SessionManager.getHrvNormal()
+    
     if !session.isReachable {
       print("please connect and run your iOS app")
     } else if !session.isWatchAppInstalled {
       print("please install watch App")
+    } else if session.isReachable {
+      if DefaultFirebaseManager.shared.firebaseAuth.currentUser != nil {
+        sendMessageToWatch(LoginMessage: "true", age: "\(age)", hrv: "\(hrv)")
+      } else {
+        sendMessageToWatch(LoginMessage: "false", age: "\(age)", hrv: "\(hrv)")
+      }
     }
   }
   
@@ -68,6 +75,33 @@ class HeartRateViewModel: NSObject, WCSessionDelegate, ObservableObject {
     }
   }
   
+  func sessionReachabilityDidChange(_ session: WCSession) {
+    let age = SessionManager.getUserAge()
+    let hrv = SessionManager.getHrvNormal()
+    
+    if session.isReachable {
+      if DefaultFirebaseManager.shared.firebaseAuth.currentUser != nil {
+        sendMessageToWatch(LoginMessage: "true", age: "\(age)", hrv: "\(hrv)")
+      } else {
+        sendMessageToWatch(LoginMessage: "false", age: "\(age)", hrv: "\(hrv)")
+      }
+    }
+  }
+  
+  func sendMessageToWatch(LoginMessage: String, age: String, hrv: String) {
+    DispatchQueue.main.async {
+      let message = [
+        "Login": LoginMessage,
+        "Age": age,
+        "Hrv": hrv
+      ]
+      self.defaultSession.sendMessage(message, replyHandler: nil, errorHandler: {
+        (error) in
+        print("Error in send message: \(error)")
+      })
+    }
+  }
+  
   //MARK: HRV
   func autorizeHealtKit() {
     let heartRate = HKObjectType.quantityType(forIdentifier: .heartRate)!
@@ -79,7 +113,6 @@ class HeartRateViewModel: NSObject, WCSessionDelegate, ObservableObject {
         self.getHeartRateVariability(type: .today)
         self.getHeartRateVariability(type: .week)
         self.getHeartRateVariability(type: .month)
-        
       }
     }
   }
@@ -272,5 +305,4 @@ class HeartRateViewModel: NSObject, WCSessionDelegate, ObservableObject {
         baseline: .minimumWithMaximum(of: 0),
         topLine: .maximum(of: 150)))
   }
-  
 }

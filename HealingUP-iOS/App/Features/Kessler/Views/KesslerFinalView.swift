@@ -36,16 +36,11 @@ struct KesslerFinalView: View {
         .font(.caption2)
       
       Spacer()
-        
-//        Text(recomendation())
-//          .frame(width: UIScreen.main.bounds.width/1.3, alignment: .leading)
-//        switch stressLevelCheck() {
-//        case .well
-//
-//        default:
-//          recomendation()
-//        }
-      recomendationView()
+      if stressLevelCheck() != .well {
+        recomendationView()
+      } else {
+        Text("You're fine, keep it up!")
+      }
       
       Spacer()
       Button {
@@ -105,7 +100,7 @@ struct KesslerFinalView: View {
       return StressLevel.well
     }
     
-    if score >= 10 && score <= 19 {
+    if score <= 19 {
       return StressLevel.well
     } else if score >= 20 && score <= 24 {
       return StressLevel.mild
