@@ -13,6 +13,7 @@ struct HeartRateTabItem: View {
   let navigator: HeartRateNavigator
   @ObservedObject var heart = HeartRateViewModel()
   @ObservedObject var viewModel: MembershipViewModel
+  @ObservedObject var session = SessionManager.shared
   @State private var value = 0
   @State private var selectedDateIndex = 0
   @State private var minimumHrv: Double = 0
@@ -125,6 +126,8 @@ struct HeartRateTabItem: View {
       onSuccess: { data in
         minimumHrv = data.minimumHrv
         age = data.age
+        SessionManager.setUserAge(age: data.age)
+        SessionManager.setHrvNormal(hrv: data.minimumHrv)
       })
     .onAppear {
       viewModel.fetchUser()

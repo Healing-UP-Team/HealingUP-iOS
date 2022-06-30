@@ -11,6 +11,7 @@ import Firebase
 @main
 struct HealingUP_iOSApp: App {
   let persistenceController = PersistenceController.shared
+  
   private var isSignedIn: Bool = false
   private let navigator: HomeNavigator = AppAssembler.shared.resolve()
   
@@ -21,6 +22,7 @@ struct HealingUP_iOSApp: App {
 //    } catch {
 //      print("error")
 //    }
+    
     isSignedIn = DefaultFirebaseManager.shared.firebaseAuth.currentUser != nil
   }
   

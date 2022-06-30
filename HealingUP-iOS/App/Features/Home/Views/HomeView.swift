@@ -25,7 +25,7 @@ struct HomeView: View {
           }
       }
       .tabItem {
-        Label("HRV", systemImage: "person")
+        Label("HRV", systemImage: "bolt.heart.fill")
       }.tag(1)
       NavigationView {
         KesslerTabItem(navigator: AppAssembler.shared.resolve(), kesslerViewModel: AppAssembler.shared.resolve())
@@ -39,7 +39,7 @@ struct HomeView: View {
           }
       }
       .tabItem {
-        Label("Kessler", systemImage: "person")
+        Label("Kessler", systemImage: "heart.text.square")
       }.tag(2)
       NavigationView {
         KesslerDataTabItem(kesslerViewModel: AppAssembler.shared.resolve())

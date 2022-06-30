@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
   @ObservedObject var viewModel: MembershipViewModel
+  @ObservedObject var heartViewModel = HeartRateViewModel()
   let navigator: HomeNavigator
   
   @State var isSignUp = false
