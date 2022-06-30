@@ -13,7 +13,9 @@ struct KesslerQuizView: View {
   @State var i: Int = 0
   @State var score = 0
   @State private var isDone = false
-  var isFirstTime: Binding<Bool>?
+  @State var uiTabarController: UITabBarController?
+  
+  var isBackToRoot: Binding<Bool>?
   
     var body: some View {
       VStack {
@@ -33,8 +35,12 @@ struct KesslerQuizView: View {
         }
       }
       .padding()
+      .introspectTabBarController { (UITabBarController) in
+        UITabBarController.tabBar.isHidden = true
+        uiTabarController = UITabBarController
+      }
       .fullScreenCover(isPresented: $isDone, onDismiss: {
-        isFirstTime?.wrappedValue = false
+        isBackToRoot?.wrappedValue = false
       }) { navigator.navigateToKesslerFinalView(score: self.score) }
     }
   

@@ -19,4 +19,6 @@ struct User: Equatable {
   var role: UserRole = .user
   var name: String = ""
   var email: String = ""
+  var age: Int = 0
+  var minimumHrv: Double = 0
 }

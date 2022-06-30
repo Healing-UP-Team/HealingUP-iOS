@@ -14,6 +14,7 @@ struct KesslerFinalView: View {
   @State private var storeError: Error?
   @ObservedObject var kesslerViewModel: KesslerViewModel
   @Environment(\.presentationMode) var presentationMode
+  @State var recomendation: [StressHandling] = []
   
   var body: some View {
     VStack {
@@ -35,13 +36,10 @@ struct KesslerFinalView: View {
         .font(.caption2)
       
       Spacer()
-    
-      VStack(alignment: .leading) {
-        Text("Here recomendation for you")
-          .font(.system(size: 20, weight: .semibold))
-        Text(recomendation())
-          .frame(width: UIScreen.main.bounds.width/1.3, alignment: .leading)
-        
+      if stressLevelCheck() != .well {
+        recomendationView()
+      } else {
+        Text("You're fine, keep it up!")
       }
       
       Spacer()
@@ -70,6 +68,23 @@ struct KesslerFinalView: View {
         let kResult = KesslerResult(userId: userId, stressLevel: stressLevelCheck(), createAt: Date())
         kesslerViewModel.addKesslerResult(kResult: kResult)
       }
+      switch stressLevelCheck() {
+      case .mild:
+        self.recomendation = [
+          .init(title: "Deep Breathing", caption: "Lorem", img: "nose", type: .breathing),
+          .init(title: "Journaling", caption: "Lorem", img: "note.text", type: .journaling)
+        ]
+      case .moderate:
+        self.recomendation = [
+          .init(title: "Counseling", caption: "Lorem", img: "person.2", type: .counseling)
+        ]
+      case .disorder:
+        self.recomendation = [
+          .init(title: "Counseling", caption: "Lorem", img: "person.2", type: .counseling)
+        ]
+      default:
+        break
+      }
     }
     .onViewStatable(
       kesslerViewModel.$addKesslerState,
@@ -85,7 +100,7 @@ struct KesslerFinalView: View {
       return StressLevel.well
     }
     
-    if score >= 10 && score <= 19 {
+    if score <= 19 {
       return StressLevel.well
     } else if score >= 20 && score <= 24 {
       return StressLevel.mild
@@ -96,17 +111,18 @@ struct KesslerFinalView: View {
     }
   }
   
-  func recomendation() -> String {
-    switch stressLevelCheck() {
-    case .well:
-      return "You can do deep breathing"
-    case .mild:
-      return "You can do deep breathing"
-    case .moderate:
-      return "You need consult with psikolog"
-    case .disorder:
-      return "You need consult with psikolog"
-    }
+  @ViewBuilder
+  func recomendationView() -> some View {
+    VStack(alignment: .leading) {
+      Text("Recomendation")
+        .font(.system(size: 20, weight: .semibold))
+        .padding(.bottom)
+      
+      ForEach(recomendation, id: \.self) { item in
+        RecomendationCardView(stressHandling: item)
+      }
+      
+    }.padding()
   }
 }
 
@@ -115,3 +131,5 @@ struct KesslerFinalView_Previews: PreviewProvider {
     KesslerFinalView(score: 10, kesslerViewModel: AppAssembler.shared.resolve())
   }
 }
+
+

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WatchConnectivity
 
 class MembershipViewModel: ObservableObject {
   

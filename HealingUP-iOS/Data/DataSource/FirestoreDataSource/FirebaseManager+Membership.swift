@@ -114,6 +114,4 @@ extension DefaultFirebaseManager {
         }
       }
   }
-  
-  
 }

@@ -6,14 +6,28 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct HealingUP_iOSApp: App {
-    var body: some Scene {
-        WindowGroup {
-            NavigationView {
-                ContentView()
-            }
+  @State var loggedIn = false
+  @ObservedObject var heartViewModel = HeartRateViewModel()
+  @ObservedObject var session = SessionManager.shared
+  
+  init() {
+    
+  }
+  
+  var body: some Scene {
+    WindowGroup {
+      if session.islogin {
+        NavigationView {
+          ContentView()
         }
+      } else {
+        NotLoginStateView()
+      }
     }
+  }
+  
 }
