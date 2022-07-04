@@ -26,7 +26,7 @@ struct KesslerQuizView: View {
             .multilineTextAlignment(.center)
           Spacer()
           VStack {
-            ForEach(kesslerQuiz[self.i].answer.indices) { index in
+            ForEach(kesslerQuiz[self.i].answer.indices, id: \.self) { index in
               ButtonAnswerView(text: kesslerQuiz[self.i].answer[index], action: {
                 buttonAction(n: index)
               })

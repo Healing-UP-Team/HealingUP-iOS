@@ -26,7 +26,7 @@ struct KesslerNavigator {
     return KesslerFinalView(score: score, kesslerViewModel: assembler.resolve())
   }
   
-  func navigateToKesslerDataTabItem() -> KesslerDataTabItem {
-    return KesslerDataTabItem(kesslerViewModel: assembler.resolve())
+  func navigateToKesslerHistory() -> KesslerHistory {
+    return KesslerHistory(kesslerViewModel: assembler.resolve())
   }
 }

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='HealingUP-iOSUITests.xctest' tests='8' failures='0'>
+  <testsuite name='HealingUP_iOSTests.HealingUP_iOSTests' tests='2' failures='0'>
+    <testcase classname='HealingUP_iOSTests.HealingUP_iOSTests' name='testExample' time='0.003'/>
+    <testcase classname='HealingUP_iOSTests.HealingUP_iOSTests' name='testPerformanceExample' time='0.303'/>
+  </testsuite>
+  <testsuite name='HealingUP_iOSUITests.HealingUP_iOSUITests' tests='2' failures='0'>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITests' name='testExample' time='2.315'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITests' name='testLaunchPerformance' time='78.700'/>
+  </testsuite>
+  <testsuite name='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' tests='4' failures='0'>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='3.927'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='5.290'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='4.110'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='5.272'/>
+  </testsuite>
+</testsuites>

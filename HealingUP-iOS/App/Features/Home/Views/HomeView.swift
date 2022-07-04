@@ -42,20 +42,6 @@ struct HomeView: View {
         Label("Kessler", systemImage: "heart.text.square")
       }.tag(2)
       NavigationView {
-        KesslerDataTabItem(kesslerViewModel: AppAssembler.shared.resolve())
-          .navigationTitle(navigationSetTitle(item: selection))
-          .introspectTabBarController { (UITabBarController) in
-            UITabBarController.tabBar.isHidden = false
-            uiTabarController = UITabBarController
-          }
-          .onAppear {
-            uiTabarController?.tabBar.isHidden = false
-          }
-      }
-      .tabItem {
-        Label("History", systemImage: "clock.arrow.circlepath")
-      }.tag(3)
-      NavigationView {
         ProfileView(viewModel: AppAssembler.shared.resolve(), navigator: AppAssembler.shared.resolve())
           .navigationTitle(navigationSetTitle(item: selection))
           .introspectTabBarController { (UITabBarController) in
@@ -78,8 +64,6 @@ struct HomeView: View {
       return "Heart Rate Variability"
     case 2:
       return "Kessler"
-    case 3:
-      return "History"
     default:
       return "Profile"
     }

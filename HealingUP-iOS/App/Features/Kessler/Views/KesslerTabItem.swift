@@ -68,6 +68,13 @@ struct KesslerTabItem: View {
       }
       .padding()
       .progressHUD(isShowing: $kesslerViewModel.kesslerQuizState.isLoading)
+      .toolbar {
+        ToolbarItem(placement: .navigationBarTrailing) {
+          NavigationLink(destination: navigator.navigateToKesslerHistory) {
+            Image(systemName: "clock.arrow.circlepath")
+          }
+        }
+      }
     }
 }
 
