@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct KesslerHistoryView: View {
   @ObservedObject var kesslerViewModel: KesslerViewModel
@@ -13,6 +14,7 @@ struct KesslerHistoryView: View {
   @State private var fetchError: Error?
   @State var kResults = [KesslerResult]()
   @State var isFirstTime = false
+  @State var uiTabarController: UITabBarController?
   
   var body: some View {
     if isFirstTime {
@@ -54,6 +56,10 @@ struct KesslerHistoryView: View {
           fetchError = error
           isShowAlert = true
         })
+      .introspectTabBarController { (UITabBarController) in
+        UITabBarController.tabBar.isHidden = true
+        uiTabarController = UITabBarController
+      }
       .progressHUD(isShowing: $kesslerViewModel.fetchKesslerResultState.isLoading)
     }
   }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Mental CC.png",
+      "filename" : "Asset 21.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Mental CC-1.png",
+      "filename" : "Asset 21@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Mental CC-2.png",
+      "filename" : "Asset 21@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
