@@ -1,5 +1,5 @@
 //
-//  KesslerDataListView.swift
+//  KesslerHistoryView.swift
 //  HealingUP-iOS
 //
 //  Created by Dicky Buwono on 06/06/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct KesslerHistory: View {
+struct KesslerHistoryView: View {
   @ObservedObject var kesslerViewModel: KesslerViewModel
   @State private var isShowAlert = false
   @State private var fetchError: Error?
@@ -21,7 +21,7 @@ struct KesslerHistory: View {
           .font(.system(size: 18, weight: .semibold))
       }
     } else {
-      ScrollView {
+      ScrollView(showsIndicators: false) {
         if !kResults.isEmpty {
           ForEach(kResults, id: \.id) { result in
             VStack {
@@ -59,8 +59,8 @@ struct KesslerHistory: View {
   }
 }
 
-struct KesslerDataListView_Previews: PreviewProvider {
+struct KesslerHistoryView_Previews: PreviewProvider {
   static var previews: some View {
-    KesslerHistory(kesslerViewModel: AppAssembler.shared.resolve())
+    KesslerHistoryView(kesslerViewModel: AppAssembler.shared.resolve())
   }
 }

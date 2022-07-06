@@ -11,6 +11,11 @@ struct HomeView: View {
   @State var selection = 1
   @State var uiTabarController: UITabBarController?
   
+  init() {
+    setDefaultTabBarView()
+    setDefaultNavigationBar()
+  }
+  
   var body: some View {
     TabView(selection: $selection) {
       NavigationView {
@@ -25,7 +30,7 @@ struct HomeView: View {
           }
       }
       .tabItem {
-        Label("HRV", systemImage: "bolt.heart.fill")
+        Label("Heart", systemImage: "bolt.heart.fill")
       }.tag(1)
       NavigationView {
         KesslerTabItem(navigator: AppAssembler.shared.resolve(), kesslerViewModel: AppAssembler.shared.resolve())
@@ -61,7 +66,7 @@ struct HomeView: View {
   private func navigationSetTitle(item: Int) -> String {
     switch item {
     case 1:
-      return "Heart Rate Variability"
+      return "Heart"
     case 2:
       return "Kessler"
     default:

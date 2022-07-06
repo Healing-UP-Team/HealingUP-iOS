@@ -13,6 +13,8 @@ class KesslerViewModel: ObservableObject {
   @Published var fetchKesslerResultState: ViewState<[KesslerResult]> = .initiate
   @Published var addKesslerState: ViewState<Bool> = .initiate
   
+  @Published var score = 0
+  
   
   private let firebaseManager: FirebaseManager
   

@@ -11,6 +11,17 @@ enum StressHandlingType {
   case breathing
   case journaling
   case counseling
+  
+  var backgroundColor: Color {
+    switch self {
+    case .breathing:
+      return Color(uiColor: .softBlue)
+    case .journaling:
+      return Color(uiColor: .softYellow)
+    case .counseling:
+      return Color(uiColor: .softPinkSecond)
+    }
+  }
 }
 
 struct StressHandling: Hashable {
@@ -27,20 +38,24 @@ struct RecomendationCardView: View {
         Image(systemName: stressHandling.img ?? "nose")
           .font(.system(size: 60))
           .frame(width: 90, height: 90, alignment: .center)
-          .foregroundColor(.blue)
+          .foregroundColor(Color(uiColor: .accentPurple))
         VStack(alignment: .leading, spacing: 10) {
           Text(stressHandling.title ?? "Deep Breathing")
             .font(.system(size: 18, weight: .semibold))
-            .foregroundColor(Color.blue)
-          Text(stressHandling.caption ?? "Lorem Ipsum")
-            .font(.system(size: 15, weight: .regular))
-            .foregroundColor(.gray)
+            .foregroundColor(Color(uiColor: .accentPurple))
+          Text(stressHandling.caption ?? "Express your feelings in writing")
+            .font(.system(size: 10, weight: .regular))
+            .lineLimit(nil)
+            .foregroundColor(Color(uiColor: .accentPurple))
         }
         Spacer()
         Image(systemName: "chevron.right")
+          .foregroundColor(Color(uiColor: .accentPurple))
       }
       .padding()
-      .background(Color.white)
+      .background(
+        stressHandling.type?.backgroundColor
+      )
       .cornerRadius(10)
       .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 0)
     }
