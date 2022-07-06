@@ -28,6 +28,8 @@
 		AE33ADFD284E444D007F9FA8 /* KesslerResultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADFC284E444D007F9FA8 /* KesslerResultItemView.swift */; };
 		AE33ADFF284E452B007F9FA8 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADFE284E452B007F9FA8 /* Date.swift */; };
 		AE659FB1286C7AA200133F36 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE659FB0286C7AA200133F36 /* SessionManager.swift */; };
+		AE686A6C2875F0FA00B675BC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE686A6B2875F0FA00B675BC /* Color.swift */; };
+		AE686A6E2875F15200B675BC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE686A6D2875F15200B675BC /* UIColor.swift */; };
 		AE725A1B286194C00082061F /* HeartRateNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE725A1A286194C00082061F /* HeartRateNavigator.swift */; };
 		AE725A1D286194D70082061F /* HeartAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE725A1C286194D70082061F /* HeartAssembler.swift */; };
 		AE725A2028619B920082061F /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = AE725A1F28619B920082061F /* Introspect */; };
@@ -75,7 +77,7 @@
 		AEB477F2283CA5A1005567CA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477F1283CA5A1005567CA /* ComplicationController.swift */; };
 		AEB477F4283CA5A2005567CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB477F3283CA5A2005567CA /* Assets.xcassets */; };
 		AEB477F7283CA5A2005567CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB477F6283CA5A2005567CA /* Preview Assets.xcassets */; };
-		AEB477FB283CA5A2005567CA /* HealingUp-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AEB477E0283CA59F005567CA /* HealingUp-Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AEB477FB283CA5A2005567CA /* Healing UP.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AEB477E0283CA59F005567CA /* Healing UP.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AEB47805283CABF9005567CA /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB47804283CABF9005567CA /* HeartRateViewModel.swift */; };
 		AEB47808283CADF4005567CA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB47807283CADF4005567CA /* HealthKit.framework */; };
 		AED86DA6283B181900C62B98 /* HealingUP_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DA5283B181900C62B98 /* HealingUP_iOSApp.swift */; };
@@ -150,7 +152,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				AEB477FB283CA5A2005567CA /* HealingUp-Watch.app in Embed Watch Content */,
+				AEB477FB283CA5A2005567CA /* Healing UP.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +181,8 @@
 		AE33ADFC284E444D007F9FA8 /* KesslerResultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerResultItemView.swift; sourceTree = "<group>"; };
 		AE33ADFE284E452B007F9FA8 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AE659FB0286C7AA200133F36 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		AE686A6B2875F0FA00B675BC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		AE686A6D2875F15200B675BC /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AE725A1A286194C00082061F /* HeartRateNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateNavigator.swift; sourceTree = "<group>"; };
 		AE725A1C286194D70082061F /* HeartAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAssembler.swift; sourceTree = "<group>"; };
 		AE725A212861A57E0082061F /* HeartRateVariability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateVariability.swift; sourceTree = "<group>"; };
@@ -213,7 +217,7 @@
 		AEB477D7283C90D8005567CA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		AEB477DA283C91A0005567CA /* HeartRateTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateTabItem.swift; sourceTree = "<group>"; };
 		AEB477DC283C981F005567CA /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateViewModel.swift; sourceTree = "<group>"; };
-		AEB477E0283CA59F005567CA /* HealingUp-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealingUp-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB477E0283CA59F005567CA /* Healing UP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Healing UP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB477E2283CA5A0005567CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB477E8283CA5A0005567CA /* HealingUp-Watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HealingUp-Watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB477ED283CA5A1005567CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -225,7 +229,7 @@
 		AEB47804283CABF9005567CA /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateViewModel.swift; sourceTree = "<group>"; };
 		AEB47806283CADF4005567CA /* HealingUp-Watch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HealingUp-Watch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		AEB47807283CADF4005567CA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
-		AED86DA2283B181900C62B98 /* HealingUP-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealingUP-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED86DA2283B181900C62B98 /* Healing UP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Healing UP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED86DA5283B181900C62B98 /* HealingUP_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealingUP_iOSApp.swift; sourceTree = "<group>"; };
 		AED86DA7283B181900C62B98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AED86DA9283B181A00C62B98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -421,6 +425,15 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
+		AE686A6A2875F0E500B675BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE686A6B2875F0FA00B675BC /* Color.swift */,
+				AE686A6D2875F15200B675BC /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AE795CDE2875785E00D08F00 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +486,7 @@
 		AEB23C0228699B2300738864 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AE686A6A2875F0E500B675BC /* Extensions */,
 				AEB23C0328699B3000738864 /* SessionManager.swift */,
 			);
 			path = Utils;
@@ -626,8 +640,8 @@
 		AED86DA3283B181900C62B98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AED86DA2283B181900C62B98 /* HealingUP-iOS.app */,
-				AEB477E0283CA59F005567CA /* HealingUp-Watch.app */,
+				AED86DA2283B181900C62B98 /* Healing UP.app */,
+				AEB477E0283CA59F005567CA /* Healing UP.app */,
 				AEB477E8283CA5A0005567CA /* HealingUp-Watch WatchKit Extension.appex */,
 				AE93AB6028730A8D006C1B9D /* HealingUP-iOSTests.xctest */,
 				AE93AB6D28730C32006C1B9D /* HealingUP-iOSUITests.xctest */,
@@ -935,7 +949,7 @@
 			);
 			name = "HealingUp-Watch";
 			productName = "HealingUp-Watch";
-			productReference = AEB477E0283CA59F005567CA /* HealingUp-Watch.app */;
+			productReference = AEB477E0283CA59F005567CA /* Healing UP.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		AEB477E7283CA5A0005567CA /* HealingUp-Watch WatchKit Extension */ = {
@@ -985,7 +999,7 @@
 				AEB23C122869A58100738864 /* FirebaseStorageCombine-Community */,
 			);
 			productName = "HealingUP-iOS";
-			productReference = AED86DA2283B181900C62B98 /* HealingUP-iOS.app */;
+			productReference = AED86DA2283B181900C62B98 /* Healing UP.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1118,6 +1132,8 @@
 				AEB23BB3286978CD00738864 /* CircularProgressView.swift in Sources */,
 				AEB477F2283CA5A1005567CA /* ComplicationController.swift in Sources */,
 				AEB23C0428699B3000738864 /* SessionManager.swift in Sources */,
+				AE686A6C2875F0FA00B675BC /* Color.swift in Sources */,
+				AE686A6E2875F15200B675BC /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1303,7 +1319,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch WatchKit Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "Healing UP";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need records your heart rate";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Healing UP need share your heart rate";
@@ -1341,7 +1357,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch WatchKit Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "Healing UP";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need records your heart rate";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Healing UP need share your heart rate";
@@ -1377,12 +1393,11 @@
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.healingup.ios;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Healing UP";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1403,12 +1418,11 @@
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "HealingUp-Watch";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.healingup.ios;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Healing UP";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1552,15 +1566,17 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Healing UP";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1585,15 +1601,17 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Healing UP";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
