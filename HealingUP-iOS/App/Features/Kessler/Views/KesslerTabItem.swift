@@ -21,6 +21,8 @@ struct KesslerTabItem: View {
         Image(uiImage: .kesslerIntro)
           .resizable()
           .scaledToFit()
+          .frame(height: 250)
+          .padding()
         VStack(alignment: .leading) {
           Text("Hi, how are you?")
             .font(.system(size: 30, weight: .bold))

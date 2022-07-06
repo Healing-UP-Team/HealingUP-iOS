@@ -24,7 +24,6 @@ struct HeartRateTabItem: View {
   var body: some View {
     ScrollView(showsIndicators: false) {
       VStack(alignment: .center) {
-        
         Picker("What is your favorite color?", selection: $selectedDateIndex) {
           Text("Today").tag(0)
           Text("Week").tag(1)
@@ -37,13 +36,14 @@ struct HeartRateTabItem: View {
           if !heart.todayHRV.isEmpty {
             valueCard(progress: Double(heart.calculateAverage(datas: heart.todayHRV)), minimumHrv: self.minimumHrv)
               .padding(.top)
+            Divider()
             recomendationCard(value: Double(heart.calculateAverage(datas: heart.todayHRV)))
-            
+            Divider()
             VStack(alignment: .leading) {
-              Text("Chart")
+              Text("Data")
                 .fontWeight(.bold)
                 .font(.system(size: 18))
-                .foregroundColor(.gray)
+                .foregroundColor(Color(uiColor: .accentPurple))
               
               if let data = heart.dataToday {
                 LineChart(chartData: data)
@@ -52,12 +52,8 @@ struct HeartRateTabItem: View {
                   .frame(height: UIScreen.main.bounds.height/3)
                   .padding()
               }
-              
             }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(10)
-            .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 0)
+            .padding(.vertical)
           } else {
             emptyDataView()
           }
@@ -66,12 +62,14 @@ struct HeartRateTabItem: View {
           if !heart.weekHRV.isEmpty {
             valueCard(progress: Double(heart.calculateAverage(datas: heart.weekHRV)), minimumHrv: self.minimumHrv)
               .padding(.top)
+            Divider()
             recomendationCard(value: Double(heart.calculateAverage(datas: heart.weekHRV)))
+            Divider()
             VStack(alignment: .leading) {
-              Text("Chart")
+              Text("Data")
                 .fontWeight(.bold)
                 .font(.system(size: 18))
-                .foregroundColor(.gray)
+                .foregroundColor(Color(uiColor: .accentPurple))
               
               if let data = heart.dataWeek {
                 LineChart(chartData: data)
@@ -81,10 +79,7 @@ struct HeartRateTabItem: View {
                   .padding(.horizontal)
               }
             }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(10)
-            .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 0)
+            .padding(.vertical)
           } else {
             emptyDataView()
           }
@@ -93,12 +88,14 @@ struct HeartRateTabItem: View {
           if !heart.monthHRV.isEmpty {
             valueCard(progress: Double(heart.calculateAverage(datas: heart.monthHRV)), minimumHrv: self.minimumHrv)
               .padding(.top)
+            Divider()
             recomendationCard(value: Double(heart.calculateAverage(datas: heart.monthHRV)))
+            Divider()
             VStack(alignment: .leading) {
-              Text("Chart")
+              Text("Data")
                 .fontWeight(.bold)
                 .font(.system(size: 18))
-                .foregroundColor(.gray)
+                .foregroundColor(Color(uiColor: .accentPurple))
               
               if let data = heart.dataMonth {
                 LineChart(chartData: data)
@@ -108,14 +105,12 @@ struct HeartRateTabItem: View {
                   .padding()
               }
             }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(10)
-            .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 0)
+            .padding(.vertical)
           } else {
             emptyDataView()
           }
         }
+        Divider()
         infoCard()
           .padding(.top)
       }.padding()
@@ -130,6 +125,9 @@ struct HeartRateTabItem: View {
       })
     .onAppear {
       viewModel.fetchUser()
+      UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.softBlue
+      UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.accentPurple], for: .selected)
+      UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
     }
     .progressHUD(isShowing: $viewModel.userState.isLoading)
   }
@@ -140,7 +138,7 @@ struct HeartRateTabItem: View {
       Text("No Data")
         .fontWeight(.bold)
         .font(.system(size: 20))
-        .foregroundColor(.gray)
+        .foregroundColor(Color(uiColor: .accentPurple))
         .padding(.bottom, 2)
       
       Text("Please use your apple watch, data will appear when apple watch measure and save your data")
@@ -149,7 +147,8 @@ struct HeartRateTabItem: View {
         .foregroundColor(.gray)
         .multilineTextAlignment(.center)
       
-    }.padding()
+    }
+    .padding(.vertical)
   }
   
   @ViewBuilder
@@ -157,27 +156,35 @@ struct HeartRateTabItem: View {
     VStack(alignment: .leading, spacing: 10) {
       HStack {
         Image(systemName: "info.circle")
-          .font(.system(size: 17, weight: .medium))
-          .foregroundColor(.blue)
+          .font(.system(size: 18, weight: .bold))
+          .foregroundColor(Color(uiColor: .accentPurple))
         Text("About Heart Rate Variability")
-          .font(.system(size: 17, weight: .medium))
-          .foregroundColor(.blue)
+          .font(.system(size: 18, weight: .bold))
+          .foregroundColor(Color(uiColor: .accentPurple))
       }
       
       Text("Heart Rate Variability (HRV) is a measure of the variation in the time interval between heart beats. Apple Watch calculates HRV by using the standard  deviation of beat-to-beat measurements which are captured by the heart rate sensor. HRV is validated for users over the age of 18. Third party apps and devices can also add HRV to Health.")
-        .font(.caption2)
+        .font(.system(size: 13))
         .multilineTextAlignment(.leading)
+        .foregroundColor(.gray)
     }
+    .padding(.vertical)
   }
   
   @ViewBuilder
   private func valueCard(progress: Double, minimumHrv: Double) -> some View {
-    VStack(alignment: .leading) {
+    VStack(alignment: .center) {
       Text("Average")
+        .fontWeight(.medium)
+        .font(.system(size: 15))
+        .foregroundColor(.gray)
+      
+      Text("Heart Rate Variability")
         .fontWeight(.bold)
         .font(.system(size: 18))
-        .foregroundColor(.gray)
-      HStack(alignment: .center, spacing: 20) {
+        .foregroundColor(Color(uiColor: .accentPurple))
+      HStack {
+        Spacer()
         VStack(alignment: .leading) {
           ZStack {
             CircularProgressView(progress: progress/150, minimumValue: minimumHrv)
@@ -186,59 +193,83 @@ struct HeartRateTabItem: View {
               .foregroundColor(.gray)
               .bold()
           }
-          .frame(width: 100, height: 100)
+          .frame(width: 120, height: 120)
           .padding()
         }
         Spacer()
         VStack(alignment: .leading, spacing: 5) {
-          Text("Status")
-            .fontWeight(.bold)
-            .font(.system(size: 17))
-            .foregroundColor(.gray)
-          
-          Text("Age")
-            .fontWeight(.bold)
-            .font(.system(size: 17))
-            .foregroundColor(.gray)
-        }
-        
-        VStack(alignment: .leading, spacing: 5) {
-          Text((progress/150 * 100) < minimumHrv ? "Bad" : "Good")
-            .fontWeight(.bold)
-            .font(.system(size: 17))
-            .foregroundColor((progress/150 * 100) < minimumHrv ? .pink : .blue)
-          
-          Text("\(age)")
-            .fontWeight(.bold)
-            .font(.system(size: 17))
-            .foregroundColor(.black)
+          HStack {
+            Image(systemName: "chevron.forward.circle")
+              .foregroundColor(Color(uiColor: .accentPurple))
+            
+            VStack(alignment: .leading) {
+              Text((progress/150 * 100) < minimumHrv ? "Bad" : "Good")
+                .fontWeight(.bold)
+                .font(.system(size: 20))
+                .foregroundColor((progress/150 * 100) < minimumHrv ? .pink : .blue)
+              
+              Text("Status")
+                .fontWeight(.medium)
+                .font(.system(size: 10))
+                .foregroundColor(.gray)
+            }
+          }
+          HStack {
+            Image(systemName: "chevron.forward.circle")
+              .foregroundColor(Color(uiColor: .accentPurple))
+            
+            VStack(alignment: .leading) {
+              Text("\(Int(minimumHrv)) ms")
+                .fontWeight(.bold)
+                .font(.system(size: 17))
+                .foregroundColor(.black)
+                .padding(.top, 5)
+              
+              Text("Minimum HRV")
+                .fontWeight(.medium)
+                .font(.system(size: 10))
+                .foregroundColor(.gray)
+            }
+          }
+          HStack {
+            Image(systemName: "chevron.forward.circle")
+              .foregroundColor(Color(uiColor: .accentPurple))
+            
+            VStack(alignment: .leading) {
+              Text("\(age)")
+                .fontWeight(.bold)
+                .font(.system(size: 17))
+                .foregroundColor(.black)
+                .padding(.top, 5)
+              
+              Text("Age")
+                .fontWeight(.medium)
+                .font(.system(size: 10))
+                .foregroundColor(.gray)
+            }
+          }
         }
         Spacer()
       }
     }
-    .padding()
-    .background(Color.white)
-    .cornerRadius(10)
-    .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 0)
+    .padding(.vertical)
   }
   
   @ViewBuilder
   private func recomendationCard(value: Double) -> some View {
     VStack(alignment: .leading) {
-      Text("Recomendation")
-        .fontWeight(.bold)
-        .font(.system(size: 18))
-        .foregroundColor(.gray)
-      
       HStack {
-        Spacer()
-        Text((value/150 * 100) < minimumHrv ? "Your HRV is lower than the normal range, your HRV can be affected by stress, you can check your stress level by answering these questions." : "You are doing well, keep it up and HRV levels")
-          .fontWeight(.regular)
-          .font(.system(size: 16))
-          .foregroundColor((value/150 * 100) < minimumHrv ? .pink : .blue)
-          .padding(.top, 5)
+        Text("Recomendation")
+          .font(.system(size: 18, weight: .bold))
+          .foregroundColor(Color(uiColor: .accentPurple))
         Spacer()
       }
+      Text((value/150 * 100) < minimumHrv ? "Your HRV is lower than the normal range, your HRV can be affected by stress, you can check your stress level by answering these questions." : "You are doing well, keep it up and HRV levels")
+        .fontWeight(.regular)
+        .font(.system(size: 16))
+        .foregroundColor((value/150 * 100) < minimumHrv ? .pink : .black)
+        .padding(.top, 5)
+      
       NavigationLink(destination: navigator.navigateToKesslerTabItem(), isActive: $isKessler) {
         EmptyView()
       }
@@ -249,19 +280,18 @@ struct HeartRateTabItem: View {
             self.tabSelection = 2
           }label: {
             Text("Get Started")
-              .fontWeight(.medium)
+              .fontWeight(.bold)
               .padding(10)
-              .background(Color.blue)
+              .background(Color(uiColor: .accentPurple))
               .foregroundColor(.white)
               .cornerRadius(5)
           }
-        }.padding(.top, 10)
+        }
+        .padding(.top, 10)
+        .padding(.horizontal)
       }
     }
-    .padding()
-    .background(Color.white)
-    .cornerRadius(10)
-    .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 0)
+    .padding(.vertical)
   }
 }
 
