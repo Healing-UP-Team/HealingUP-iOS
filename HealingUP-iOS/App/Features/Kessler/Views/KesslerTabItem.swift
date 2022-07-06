@@ -16,66 +16,64 @@ struct KesslerTabItem: View {
   @State var kesslerData = [KesslerQuiz]()
   
   var body: some View {
-      VStack {
-        VStack {
-          Spacer()
+    VStack {
+      ScrollView(showsIndicators: false) {
+        Image(uiImage: .kesslerIntro)
+          .resizable()
+          .scaledToFit()
+        VStack(alignment: .leading) {
           Text("Hi, how are you?")
-            .font(.system(size: 20, weight: .bold))
-            .padding(.bottom, 5)
-          Text("This feature wil help you to know your stress level")
+            .font(.system(size: 30, weight: .bold))
+            .foregroundColor(Color.accentColor)
+            .padding(.top, 20)
+            .padding(.bottom, 15)
             .padding(.horizontal)
-            .multilineTextAlignment(.center)
-          
-          Spacer()
-          
-          Button {
-            kesslerViewModel.fetchKesslerQuiz()
-          }label: {
-            Text("Start now!")
-              .font(.system(size: 18, weight: .medium))
-              .frame(width: UIScreen.main.bounds.width/1.3, height: 20, alignment: .center)
-              .padding()
-              .foregroundColor(.white)
-              .background(Color.blue)
-              .cornerRadius(5)
-          }
-          .padding()
-          
-          if !kesslerData.isEmpty {
-            NavigationLink(destination: navigator.navigateToKesslerQuizView(kesslerQuizs: kesslerData, isBackToRoot: $isStartQuiz), isActive: $isStartQuiz) {
-              EmptyView()
-            }
-          }
-        }
-        .onViewStatable(
-          kesslerViewModel.$kesslerQuizState,
-          onSuccess: { success in
-            kesslerData = success
-            isStartQuiz = true
-          },
-          onError: { error in
-            fetchError = error
-            isShowAlert = true
-          })
-        
-        .alert(isPresented: $isShowAlert) {
-          Alert(
-            title: Text("Gagal"),
-            message: Text("\(fetchError?.localizedDescription ?? "Field tidak boleh kosong")"),
-            dismissButton: .default(Text("OK"))
-          )
+          Text("By answering these question, we can help you figure out your stress level and recommend things you can do to manage your stress")
+            .foregroundColor(Color.accentColor)
+            .padding(.horizontal)
+            .multilineTextAlignment(.leading)
         }
       }
-      .padding()
-      .progressHUD(isShowing: $kesslerViewModel.kesslerQuizState.isLoading)
-      .toolbar {
-        ToolbarItem(placement: .navigationBarTrailing) {
-          NavigationLink(destination: navigator.navigateToKesslerHistory) {
-            Image(systemName: "clock.arrow.circlepath")
-          }
+      Spacer()
+      ButtonDefaultView(title: "Start now", action: {
+        kesslerViewModel.fetchKesslerQuiz()
+      })
+      .padding(.vertical)
+      
+      if !kesslerData.isEmpty {
+        NavigationLink(destination: navigator.navigateToKesslerQuizView(kesslerQuizs: kesslerData, isBackToRoot: $isStartQuiz), isActive: $isStartQuiz) {
+          EmptyView()
         }
       }
     }
+    .padding(.horizontal)
+    .onViewStatable(
+      kesslerViewModel.$kesslerQuizState,
+      onSuccess: { success in
+        kesslerData = success
+        isStartQuiz = true
+      },
+      onError: { error in
+        fetchError = error
+        isShowAlert = true
+      })
+    .alert(isPresented: $isShowAlert) {
+      Alert(
+        title: Text("Gagal"),
+        message: Text("\(fetchError?.localizedDescription ?? "Field tidak boleh kosong")"),
+        dismissButton: .default(Text("OK"))
+      )
+    }
+    .progressHUD(isShowing: $kesslerViewModel.kesslerQuizState.isLoading)
+    .toolbar {
+      ToolbarItem(placement: .navigationBarTrailing) {
+        NavigationLink(destination: navigator.navigateToKesslerHistory) {
+          Image(systemName: "clock.arrow.circlepath")
+            .foregroundColor(Color.accentColor)
+        }
+      }
+    }
+  }
 }
 
 struct KesslerTabItem_Previews: PreviewProvider {

@@ -13,20 +13,23 @@ struct KesslerResultItemView: View {
     var body: some View {
       HStack {
         VStack(alignment: .leading) {
-          Text(kesslerResult.createAt.toStringWith(format: "EE, dd-MM-yyyy") ?? "")
-            .foregroundColor(.white)
-            .font(.system(size: 18, weight: .medium))
-            .padding(.bottom, 5)
-          
+          HStack(alignment: .center) {
+            Image(systemName: "calendar")
+              .foregroundColor(Color(uiColor: .accentPurple))
+            Text(kesslerResult.createAt.toStringWith(format: "EE, dd MMM yyyy") ?? "")
+              .foregroundColor(Color(uiColor: .accentPurple))
+              .font(.system(size: 10, weight: .medium))
+          }
+          .padding(.bottom, 5)
           Text(kesslerResult.stressLevel.rawValue)
-            .foregroundColor(.white)
-            .font(.system(size: 25, weight: .bold))
+            .foregroundColor(Color(uiColor: .accentPurple))
+            .font(.system(size: 18, weight: .bold))
         }
         Spacer()
       }
       .frame(width: UIScreen.main.bounds.width/1.2, alignment: .center)
       .padding()
-      .background(Color.cyan)
+      .background(kesslerResult.stressLevel.backgroundColor)
       .cornerRadius(10)
     }
 }

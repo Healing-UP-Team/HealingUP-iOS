@@ -120,7 +120,6 @@ struct HeartRateTabItem: View {
           .padding(.top)
       }.padding()
     }
-    .background(Color(red: 0.898, green: 0.898, blue: 0.898))
     .onViewStatable(
       viewModel.$userState,
       onSuccess: { data in

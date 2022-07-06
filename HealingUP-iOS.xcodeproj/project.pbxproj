@@ -20,7 +20,7 @@
 		AE33ADE2284DA0E8007F9FA8 /* KesslerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADE1284DA0E8007F9FA8 /* KesslerViewModel.swift */; };
 		AE33ADE4284DB735007F9FA8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADE3284DB735007F9FA8 /* View.swift */; };
 		AE33ADF0284E12DC007F9FA8 /* ButtonAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADEF284E12DC007F9FA8 /* ButtonAnswerView.swift */; };
-		AE33ADF3284E155F007F9FA8 /* KesslerHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADF2284E155F007F9FA8 /* KesslerHistory.swift */; };
+		AE33ADF3284E155F007F9FA8 /* KesslerHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADF2284E155F007F9FA8 /* KesslerHistoryView.swift */; };
 		AE33ADF5284E159C007F9FA8 /* KesslerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADF4284E159C007F9FA8 /* KesslerResult.swift */; };
 		AE33ADF7284E163B007F9FA8 /* KesslerResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADF6284E163B007F9FA8 /* KesslerResultEntity.swift */; };
 		AE33ADF9284E17C4007F9FA8 /* KesslerResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADF8284E17C4007F9FA8 /* KesslerResultMapper.swift */; };
@@ -33,6 +33,9 @@
 		AE725A2028619B920082061F /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = AE725A1F28619B920082061F /* Introspect */; };
 		AE725A222861A57E0082061F /* HeartRateVariability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE725A212861A57E0082061F /* HeartRateVariability.swift */; };
 		AE725A242861AB5D0082061F /* RecomendationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE725A232861AB5D0082061F /* RecomendationCardView.swift */; };
+		AE795CDB28753BE500D08F00 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE795CDA28753BE500D08F00 /* UIColor.swift */; };
+		AE795CDD28754D1300D08F00 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE795CDC28754D1300D08F00 /* UIImage.swift */; };
+		AE795CE1287578DA00D08F00 /* ButtonDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE795CE0287578DA00D08F00 /* ButtonDefaultView.swift */; };
 		AE93AB6328730A8D006C1B9D /* HealingUP_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB6228730A8D006C1B9D /* HealingUP_iOSTests.swift */; };
 		AE93AB7028730C32006C1B9D /* HealingUP_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB6F28730C32006C1B9D /* HealingUP_iOSUITests.swift */; };
 		AE93AB7228730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB7128730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift */; };
@@ -168,7 +171,7 @@
 		AE33ADE1284DA0E8007F9FA8 /* KesslerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerViewModel.swift; sourceTree = "<group>"; };
 		AE33ADE3284DB735007F9FA8 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		AE33ADEF284E12DC007F9FA8 /* ButtonAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnswerView.swift; sourceTree = "<group>"; };
-		AE33ADF2284E155F007F9FA8 /* KesslerHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerHistory.swift; sourceTree = "<group>"; };
+		AE33ADF2284E155F007F9FA8 /* KesslerHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerHistoryView.swift; sourceTree = "<group>"; };
 		AE33ADF4284E159C007F9FA8 /* KesslerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerResult.swift; sourceTree = "<group>"; };
 		AE33ADF6284E163B007F9FA8 /* KesslerResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerResultEntity.swift; sourceTree = "<group>"; };
 		AE33ADF8284E17C4007F9FA8 /* KesslerResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerResultMapper.swift; sourceTree = "<group>"; };
@@ -180,6 +183,9 @@
 		AE725A1C286194D70082061F /* HeartAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAssembler.swift; sourceTree = "<group>"; };
 		AE725A212861A57E0082061F /* HeartRateVariability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateVariability.swift; sourceTree = "<group>"; };
 		AE725A232861AB5D0082061F /* RecomendationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationCardView.swift; sourceTree = "<group>"; };
+		AE795CDA28753BE500D08F00 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AE795CDC28754D1300D08F00 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		AE795CE0287578DA00D08F00 /* ButtonDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultView.swift; sourceTree = "<group>"; };
 		AE93AB6028730A8D006C1B9D /* HealingUP-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealingUP-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE93AB6228730A8D006C1B9D /* HealingUP_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealingUP_iOSTests.swift; sourceTree = "<group>"; };
 		AE93AB6D28730C32006C1B9D /* HealingUP-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealingUP-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +371,7 @@
 		AE33ADCC284D8DD8007F9FA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AE33ADF2284E155F007F9FA8 /* KesslerHistoryView.swift */,
 				AE33ADCE284D8E01007F9FA8 /* KesslerTabItem.swift */,
 				AE33ADD4284D912C007F9FA8 /* KesslerQuizView.swift */,
 				AE33ADD6284D9848007F9FA8 /* KesslerFinalView.swift */,
@@ -414,20 +421,20 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
-		AE725A252861B54F0082061F /* History */ = {
+		AE795CDE2875785E00D08F00 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
-				AE725A262861B5570082061F /* Views */,
+				AE795CDF2875786700D08F00 /* Button */,
 			);
-			path = History;
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
-		AE725A262861B5570082061F /* Views */ = {
+		AE795CDF2875786700D08F00 /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				AE33ADF2284E155F007F9FA8 /* KesslerHistory.swift */,
+				AE795CE0287578DA00D08F00 /* ButtonDefaultView.swift */,
 			);
-			path = Views;
+			path = Button;
 			sourceTree = "<group>";
 		};
 		AE93AB6128730A8D006C1B9D /* HealingUP-iOSTests */ = {
@@ -651,6 +658,7 @@
 		AED86DD5283B1A3D00C62B98 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				AE795CDE2875785E00D08F00 /* ReusableViews */,
 				AED86DDB283B1AA200C62B98 /* Utils */,
 				AED86DDA283B1A9C00C62B98 /* Resource */,
 				AED86DD9283B1A9700C62B98 /* Main */,
@@ -686,7 +694,6 @@
 		AED86DD8283B1A9200C62B98 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				AE725A252861B54F0082061F /* History */,
 				AE33ADCB284D8DBA007F9FA8 /* Kessler */,
 				AEB477D4283C901D005567CA /* HeartRate */,
 				AEB477C8283C7758005567CA /* Profile */,
@@ -838,6 +845,8 @@
 				AEB477AE283B3C25005567CA /* Query.swift */,
 				AE33ADE3284DB735007F9FA8 /* View.swift */,
 				AE33ADFE284E452B007F9FA8 /* Date.swift */,
+				AE795CDA28753BE500D08F00 /* UIColor.swift */,
+				AE795CDC28754D1300D08F00 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1126,6 +1135,7 @@
 				AED86DF8283B2AE600C62B98 /* UserEntity.swift in Sources */,
 				AED86DED283B282900C62B98 /* MembershipViewModel.swift in Sources */,
 				AEB477C1283B70C4005567CA /* ActivityIndicator.swift in Sources */,
+				AE795CDD28754D1300D08F00 /* UIImage.swift in Sources */,
 				AE725A1D286194D70082061F /* HeartAssembler.swift in Sources */,
 				AE33ADDF284D9E00007F9FA8 /* FirebaseManager+KesslerQuiz.swift in Sources */,
 				AEB477DB283C91A0005567CA /* HeartRateTabItem.swift in Sources */,
@@ -1145,6 +1155,7 @@
 				AEB477CD283C77A8005567CA /* ProfileView.swift in Sources */,
 				AE33ADFB284E18B9007F9FA8 /* FirebaseManager+KesslerResult.swift in Sources */,
 				AE33ADD7284D9848007F9FA8 /* KesslerFinalView.swift in Sources */,
+				AE795CE1287578DA00D08F00 /* ButtonDefaultView.swift in Sources */,
 				AE33ADF9284E17C4007F9FA8 /* KesslerResultMapper.swift in Sources */,
 				AE725A242861AB5D0082061F /* RecomendationCardView.swift in Sources */,
 				AED86DFA283B2BB000C62B98 /* BodyCodable.swift in Sources */,
@@ -1154,7 +1165,7 @@
 				AEB477BF283B6ECD005567CA /* BlurView.swift in Sources */,
 				AEB477AB283B3B2A005567CA /* FirebaseManager+Membership.swift in Sources */,
 				AED86DFC283B2D4000C62B98 /* UserMapper.swift in Sources */,
-				AE33ADF3284E155F007F9FA8 /* KesslerHistory.swift in Sources */,
+				AE33ADF3284E155F007F9FA8 /* KesslerHistoryView.swift in Sources */,
 				AEB477D3283C8C52005567CA /* Constant.swift in Sources */,
 				AE725A222861A57E0082061F /* HeartRateVariability.swift in Sources */,
 				AED86E04283B2E8C00C62B98 /* FirebaseError.swift in Sources */,
@@ -1165,6 +1176,7 @@
 				AED86DA8283B181900C62B98 /* ContentView.swift in Sources */,
 				AE0058CA2860757000684F81 /* CircularProgressView.swift in Sources */,
 				AEB477B1283B556D005567CA /* HomeView.swift in Sources */,
+				AE795CDB28753BE500D08F00 /* UIColor.swift in Sources */,
 				AED86DA6283B181900C62B98 /* HealingUP_iOSApp.swift in Sources */,
 				AED86DEB283B281000C62B98 /* SignInView.swift in Sources */,
 				AED86DF6283B2A4300C62B98 /* User.swift in Sources */,
