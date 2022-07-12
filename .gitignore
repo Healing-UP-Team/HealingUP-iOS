@@ -221,3 +221,8 @@ Framework
 .Cartfile
 .Cartfile.resolved
 Pods/*
+
+#for local change
+.pbxproj
+.resolved
+.xcscheme
