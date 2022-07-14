@@ -12,7 +12,6 @@ protocol OnboardingAssembler {
 }
 
 extension OnboardingAssembler where Self: Assembler {
-
   func resolve() -> OnboardingNavigator {
     return OnboardingNavigator(assembler: self)
   }
