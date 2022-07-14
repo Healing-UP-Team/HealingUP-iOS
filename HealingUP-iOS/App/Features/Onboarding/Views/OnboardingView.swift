@@ -21,7 +21,6 @@ struct OnboardingView: View {
       doneFunction()
       return
     }
-
     if self.curSlideIndex < self.data.count - 1 {
       withAnimation {
         self.curSlideIndex += 1
@@ -62,7 +61,6 @@ struct OnboardingView: View {
           }
         }
       }
-
       VStack {
         Spacer()
         HStack {
@@ -76,7 +74,6 @@ struct OnboardingView: View {
       .padding(20)
     }
   }
-
   func arrowView() -> some View {
     Group {
       if self.curSlideIndex == self.data.count - 1 {
@@ -97,7 +94,6 @@ struct OnboardingView: View {
       }
     }
   }
-
   func progressView() -> some View {
     HStack {
       ForEach(0..<data.count, id: \.self) { i in
