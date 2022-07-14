@@ -9,17 +9,29 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-
+  
   let isSignedIn: Bool
   let navigator: HomeNavigator
-
+  @State private var onboardingDone = false
+  var data = Onboarding.data
+  
   var body: some View {
     ZStack {
-      if isSignedIn {
-        navigator.navigateToHome()
+      if SessionManager.isFirstInstall() {
+        navigator.navigateToOnboarding(data: data, doneFuntion: {
+          SessionManager.setNotFirstInstall()
+          onboardingDone = true
+        })
       } else {
-        navigator.navigateToSignIn()
+        if isSignedIn {
+          navigator.navigateToHome()
+        } else {
+          navigator.navigateToSignIn()
+        }
       }
+    }
+    .fullScreenCover(isPresented: $onboardingDone) {
+      navigator.navigateToHome()
     }
   }
 }

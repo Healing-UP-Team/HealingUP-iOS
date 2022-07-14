@@ -10,6 +10,7 @@ import SwiftUI
 enum KeyValue: String {
   case age
   case hrvNormal
+  case firstInstall
 }
 
 class SessionManager: ObservableObject {
@@ -30,6 +31,18 @@ class SessionManager: ObservableObject {
   
   static func setHrvNormal(hrv: Double) {
     UserDefaults.standard.set(hrv, forKey: KeyValue.hrvNormal.rawValue)
+  }
+  
+  static func isFirstInstall() -> Bool {
+    return !UserDefaults.standard.bool(forKey: KeyValue.firstInstall.rawValue)
+  }
+  
+  static func setNotFirstInstall() {
+    UserDefaults.standard.set(true, forKey: KeyValue.firstInstall.rawValue)
+  }
+  
+  static func isLoggedIn() -> Bool {
+    return DefaultFirebaseManager.shared.firebaseAuth.currentUser != nil
   }
 }
 
