@@ -27,7 +27,7 @@ struct ProfileView: View {
   let profileMenuSectionOne: [ProfileMenu] = [
     .init(menu: .personalInfo, image: "person.crop.circle")
   ]
-  
+
   let profileMenuSectionTwo: [ProfileMenu] = [
     .init(menu: .aboutUs, image: "person.2"),
     .init(menu: .terms, image: "doc.text")
@@ -41,12 +41,11 @@ struct ProfileView: View {
           .scaledToFit()
           .frame(height: UIScreen.main.bounds.height/4)
           .padding()
-        
+
         Text(profile?.name ?? "Your Name")
           .font(.system(size: 20, weight: .semibold))
           .padding(.bottom)
 
-        
         ForEach(profileMenuSectionOne, id: \.self) { item in
           NavigationLink(
             destination:
@@ -62,7 +61,7 @@ struct ProfileView: View {
                 }
               }
           ) {
-            HStack() {
+            HStack {
               Image(systemName: item.image)
                 .foregroundColor(Color.gray)
                 .font(.system(size: 20))
@@ -77,10 +76,10 @@ struct ProfileView: View {
             .padding(.top)
           }
         }
-        
+
         Divider()
           .padding()
-        
+
         ForEach(profileMenuSectionTwo, id: \.self) { item in
           NavigationLink(
             destination:
@@ -93,7 +92,7 @@ struct ProfileView: View {
                 }
               }
           ) {
-            HStack() {
+            HStack {
               Image(systemName: item.image)
                 .foregroundColor(Color.gray)
                 .font(.system(size: 20))
