@@ -15,7 +15,7 @@ struct KesslerHistoryView: View {
   @State var kResults = [KesslerResult]()
   @State var isFirstTime = false
   @State var uiTabarController: UITabBarController?
-  
+
   var body: some View {
     if isFirstTime {
       VStack {

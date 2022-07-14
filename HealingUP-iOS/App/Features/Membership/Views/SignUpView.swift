@@ -10,16 +10,16 @@ import SwiftUI
 struct SignUpView: View {
   @ObservedObject var viewModel: MembershipViewModel
   let navigator: HomeNavigator
-  
+
   @State var email = ""
   @State var password = ""
   @Binding var isSignIn: Bool
   @State private var signUpError: Error?
   @State private var isShowAlert = false
   @State private var isSignedIn = false
-  
+
   @State private var age = 0
-  
+
   var body: some View {
     VStack {
       Spacer()
@@ -33,7 +33,7 @@ struct SignUpView: View {
           .font(.system(size: 17, weight: .semibold))
         Divider()
           .background(Color.black)
-        
+
         Text("Your age")
           .font(.system(size: 17, weight: .semibold))
           .padding(.top)
@@ -44,7 +44,7 @@ struct SignUpView: View {
           }
         }
         .pickerStyle(.wheel)
-        
+
       }.padding()
       Spacer()
       Button {
@@ -52,7 +52,7 @@ struct SignUpView: View {
       } label: {
         Text("Daftar")
       }
-      
+
       Button {
         isSignIn.toggle()
       } label: {
@@ -67,7 +67,7 @@ struct SignUpView: View {
         dismissButton: .default(Text("OK"))
       )
     }
-    
+
     .onViewStatable(
       viewModel.$registerState,
       onSuccess: { _ in
@@ -99,7 +99,7 @@ struct SignUpView: View {
     .progressHUD(isShowing: $viewModel.registerState.isLoading)
     .progressHUD(isShowing: $viewModel.createUserState.isLoading)
   }
-  
+
   private func setupHrvNormal(age: Int) -> Double {
     if age <= 25 {
       return 55

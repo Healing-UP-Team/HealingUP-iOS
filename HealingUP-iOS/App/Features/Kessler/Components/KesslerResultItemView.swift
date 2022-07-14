@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KesslerResultItemView: View {
   let kesslerResult: KesslerResult
-  
+
     var body: some View {
       HStack {
         VStack(alignment: .leading) {

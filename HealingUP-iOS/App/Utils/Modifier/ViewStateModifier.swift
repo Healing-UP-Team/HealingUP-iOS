@@ -10,10 +10,10 @@ import SwiftUI
 struct ViewStateModifier<Data>: ViewModifier {
 
   var data: Published<ViewState<Data>>.Publisher
-  var onSuccess: ((Data) -> Void)? = nil
-  var onLoading: (() -> Void)? = nil
-  var onEmpty: (() -> Void)? = nil
-  var onError: ((Error) -> Void)? = nil
+  var onSuccess: ((Data) -> Void)?
+  var onLoading: (() -> Void)?
+  var onEmpty: (() -> Void)?
+  var onError: ((Error) -> Void)?
 
   func body(content: Content) -> some View {
     content

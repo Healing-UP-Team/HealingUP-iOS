@@ -22,8 +22,7 @@ struct ButtonAnswerView: View {
           .background(Color(uiColor: .softBlue))
           .cornerRadius(12)
       }
-      
-      
+
     }
 }
 

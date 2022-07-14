@@ -13,11 +13,11 @@ protocol HeartAssembler {
 }
 
 extension HeartAssembler where Self: Assembler {
-  
+
   func resolve() -> HeartRateViewModel {
     return HeartRateViewModel()
   }
-  
+
   func resolve() -> HeartRateNavigator {
     return HeartRateNavigator(assembler: self)
   }

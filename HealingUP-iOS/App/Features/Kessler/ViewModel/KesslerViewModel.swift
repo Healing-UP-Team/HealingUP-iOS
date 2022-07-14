@@ -8,23 +8,22 @@
 import Foundation
 
 class KesslerViewModel: ObservableObject {
-  
+
   @Published var kesslerQuizState: ViewState<[KesslerQuiz]> = .initiate
   @Published var fetchKesslerResultState: ViewState<[KesslerResult]> = .initiate
   @Published var addKesslerState: ViewState<Bool> = .initiate
-  
+
   @Published var score = 0
-  
-  
+
   private let firebaseManager: FirebaseManager
-  
+
   init(firebaseManager: FirebaseManager) {
     self.firebaseManager = firebaseManager
   }
-    
+
   func fetchKesslerQuiz() {
     kesslerQuizState = .loading
-    firebaseManager.fetchQuiz() { result in
+    firebaseManager.fetchQuiz { result in
       switch result {
       case .success(let data):
         self.kesslerQuizState = .success(data: data.map { $0.map() })
@@ -35,7 +34,7 @@ class KesslerViewModel: ObservableObject {
       }
     }
   }
-  
+
   func addKesslerResult(kResult: KesslerResult) {
     addKesslerState = .loading
     firebaseManager.addKesslerResult(kResult: kResult.map()) { result in
@@ -49,10 +48,10 @@ class KesslerViewModel: ObservableObject {
       }
     }
   }
-  
+
   func fetchKesslerResult() {
     fetchKesslerResultState = .loading
-    firebaseManager.fetchKesslerResult() { result in
+    firebaseManager.fetchKesslerResult { result in
       switch result {
       case .success(let data):
         if data.isEmpty {
@@ -68,5 +67,5 @@ class KesslerViewModel: ObservableObject {
       }
     }
   }
-  
+
 }

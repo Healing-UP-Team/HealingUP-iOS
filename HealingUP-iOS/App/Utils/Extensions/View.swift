@@ -35,32 +35,32 @@ extension View {
     let appearance = UITabBarAppearance()
     appearance.configureWithTransparentBackground()
     appearance.backgroundColor = UIColor.systemGray6
-            
+
     appearance.backgroundImage = UIImage()
     appearance.shadowImage = image
 
     UITabBar.appearance().standardAppearance = appearance
   }
-  
+
   func setDefaultNavigationBar() {
     let navigationAppearance = UINavigationBarAppearance()
-    
+
     navigationAppearance.configureWithOpaqueBackground()
     navigationAppearance.titleTextAttributes = [.foregroundColor: UIColor.accentPurple]
     navigationAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.accentPurple]
     navigationAppearance.backgroundColor = .white
     navigationAppearance.shadowColor = .clear
     navigationAppearance.shadowImage = UIImage()
-    
+
     let apperanceScroll = UINavigationBarAppearance()
-    
+
     apperanceScroll.configureWithOpaqueBackground()
     apperanceScroll.titleTextAttributes = [.foregroundColor: UIColor.accentPurple]
     apperanceScroll.largeTitleTextAttributes = [.foregroundColor: UIColor.accentPurple]
-  
+
     UINavigationBar.appearance().standardAppearance = apperanceScroll
     UINavigationBar.appearance().compactAppearance = apperanceScroll
     UINavigationBar.appearance().scrollEdgeAppearance = navigationAppearance
-    
+
   }
 }

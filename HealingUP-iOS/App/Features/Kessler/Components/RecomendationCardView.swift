@@ -11,7 +11,7 @@ enum StressHandlingType {
   case breathing
   case journaling
   case counseling
-  
+
   var backgroundColor: Color {
     switch self {
     case .breathing:

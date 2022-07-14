@@ -14,13 +14,13 @@ struct KesslerQuizView: View {
   @State private var isDone = false
   @State var uiTabarController: UITabBarController?
   @StateObject var kesslerViewModel = KesslerViewModel(firebaseManager: AppAssembler.shared.resolve())
-  
+
   var isBackToRoot: Binding<Bool>?
-  
+
   var body: some View {
     VStack {
       VStack(alignment: .leading, spacing: 0) {
-        HStack (alignment: .bottom, spacing: 5) {
+        HStack(alignment: .bottom, spacing: 5) {
           Text("Question")
             .font(.system(size: 20, weight: .semibold))
             .foregroundColor(Color.accentColor)
@@ -65,7 +65,7 @@ struct KesslerQuizView: View {
       self.kesslerViewModel.score = 0
     }
   }
-  
+
   private func buttonAction(n: Int) {
     if n == 0 {
       self.kesslerViewModel.score += 1
@@ -78,14 +78,14 @@ struct KesslerQuizView: View {
     } else {
       self.kesslerViewModel.score += 5
     }
-    
+
     if self.i < kesslerQuiz.count-1 {
       self.i = self.i + 1
     } else {
       isDone = true
     }
   }
-  
+
 }
 
 struct KesslerQuiz_Previews: PreviewProvider {

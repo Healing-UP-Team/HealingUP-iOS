@@ -10,12 +10,12 @@ import SwiftUI
 struct HomeView: View {
   @State var selection = 1
   @State var uiTabarController: UITabBarController?
-  
+
   init() {
     setDefaultTabBarView()
     setDefaultNavigationBar()
   }
-  
+
   var body: some View {
     TabView(selection: $selection) {
       NavigationView {
@@ -62,7 +62,7 @@ struct HomeView: View {
       }.tag(4)
     }
   }
-  
+
   private func navigationSetTitle(item: Int) -> String {
     switch item {
     case 1:
@@ -73,7 +73,7 @@ struct HomeView: View {
       return "Profile"
     }
   }
-  
+
 }
 
 struct HomeView_Previews: PreviewProvider {

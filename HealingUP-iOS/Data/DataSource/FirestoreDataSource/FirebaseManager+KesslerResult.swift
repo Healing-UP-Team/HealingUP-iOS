@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseFirestoreSwift
 
 extension DefaultFirebaseManager {
-  
+
   func addKesslerResult(kResult: KesslerResultEntity, completion: @escaping CompletionResult<Bool>) {
     guard let kResultId = kResult.id else { return }
     firestoreCollection(.kesslerResult)
@@ -24,7 +24,7 @@ extension DefaultFirebaseManager {
         }
       }
   }
-  
+
   func fetchKesslerResult(completion: @escaping CompletionResult<[KesslerResultEntity]>) {
     guard let userId = firebaseAuth.currentUser?.uid else { return }
     firestoreCollection(.kesslerResult)
@@ -55,6 +55,3 @@ extension DefaultFirebaseManager {
   }
 }
 
-
- 
- 

@@ -14,7 +14,7 @@ struct KesslerTabItem: View {
   @State private var fetchError: Error?
   @State private var isShowAlert = false
   @State var kesslerData = [KesslerQuiz]()
-  
+
   var body: some View {
     VStack {
       ScrollView(showsIndicators: false) {
@@ -41,7 +41,7 @@ struct KesslerTabItem: View {
         kesslerViewModel.fetchKesslerQuiz()
       })
       .padding(.vertical)
-      
+
       if !kesslerData.isEmpty {
         NavigationLink(destination: navigator.navigateToKesslerQuizView(kesslerQuizs: kesslerData, isBackToRoot: $isStartQuiz), isActive: $isStartQuiz) {
           EmptyView()

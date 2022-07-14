@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct ProfileView: View {
-  
+
   @ObservedObject var viewModel: MembershipViewModel
   let navigator: ProfileNavigator
   @State var name = ""
   @State var isSignOut = false
   @State var profile: User?
-  
+
   var body: some View {
     VStack {
       VStack {
         Text("Hi!")
         Text(name)
-        
+
         Button {
           viewModel.signOutUser()
         } label: {
@@ -32,7 +32,7 @@ struct ProfileView: View {
         onSuccess: { data in
           name = data.email
           profile = data
-          
+
         })
       .onViewStatable(
         viewModel.$signOutState,
