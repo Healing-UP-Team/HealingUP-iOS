@@ -8,11 +8,10 @@
 import SwiftUI
 
 extension UIImage {
-  
-  //Kessler
+
+  // Kessler
   static let kesslerIntro = UIImage(named: "img-kessler-intro")!
-  
-  
+
 }
 
 extension UIImage {
@@ -20,7 +19,7 @@ extension UIImage {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.colors = colors
-        
+
         UIGraphicsBeginImageContext(gradientLayer.bounds.size)
         gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()

@@ -12,7 +12,7 @@ protocol Assembler: MembershipAssembler,
                     ProfileAssembler,
                     KesslerAssembler,
                     HeartAssembler,
-                    OnboardingAssembler{}
+                    OnboardingAssembler {}
 
 class AppAssembler: Assembler {
   static let shared = AppAssembler()

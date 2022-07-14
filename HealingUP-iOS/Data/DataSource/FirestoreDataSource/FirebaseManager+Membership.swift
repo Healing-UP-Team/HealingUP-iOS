@@ -12,9 +12,9 @@ import FirebaseFirestoreSwift
 import FirebaseFirestore
 
 extension DefaultFirebaseManager {
-  
+
   func registerUser(email: String, password: String, completion: @escaping CompletionResult<Bool>) {
-    firebaseAuth.createUser(withEmail: email, password: password) { result, error in
+    firebaseAuth.createUser(withEmail: email, password: password) { _, error in
       if let error = error {
         completion(.failure(.invalidRequest(error: error)))
       } else {
@@ -22,9 +22,9 @@ extension DefaultFirebaseManager {
       }
     }
   }
-  
+
   func signInUser(email: String, password: String, completion: @escaping CompletionResult<Bool>) {
-    firebaseAuth.signIn(withEmail: email, password: password) { result, error in
+    firebaseAuth.signIn(withEmail: email, password: password) { _, error in
       if let error = error {
         completion(.failure(.invalidRequest(error: error)))
       } else {
@@ -32,7 +32,7 @@ extension DefaultFirebaseManager {
       }
     }
   }
-  
+
   func signOutUser(completion: @escaping CompletionResult<Bool>) {
     do {
       try firebaseAuth.signOut()
@@ -42,7 +42,7 @@ extension DefaultFirebaseManager {
       completion(.success(false))
     }
   }
-  
+
   func createUser(user: UserEntity, completion: @escaping CompletionResult<Bool>) {
     guard let email = user.email else { return }
     firestoreCollection(.membership)
@@ -55,7 +55,7 @@ extension DefaultFirebaseManager {
         }
       }
   }
-  
+
   func updateUser(user: UserEntity, completion: @escaping CompletionResult<Bool>) {
     guard let email = user.email else { return }
     firestoreCollection(.membership)
@@ -68,7 +68,7 @@ extension DefaultFirebaseManager {
         }
       }
   }
-  
+
   func fetchUser(completion: @escaping CompletionResult<UserEntity>) {
     guard let email = firebaseAuth.currentUser?.email else { return }
     firestoreCollection(.membership)
@@ -89,7 +89,7 @@ extension DefaultFirebaseManager {
         }
       }
   }
-  
+
   func fetchUsers(isUser: Bool = false, completion: @escaping CompletionResult<[UserEntity]>) {
     firestoreCollection(.membership)
       .whereRoleIsUser(isUser: isUser)

@@ -14,7 +14,7 @@ enum UserRole: String {
 
 struct User: Equatable {
   static let empty: User = User()
-  
+
   var userId: String = ""
   var role: UserRole = .user
   var name: String = ""

@@ -10,7 +10,7 @@ import SwiftUI
 struct HeartRateVariabilityView: View {
   @ObservedObject var heart = HeartRateViewModel()
   @State var minimumHrv = SessionManager.getHrvNormal()
-  
+
     var body: some View {
       GeometryReader { proxy in
         TabView {
@@ -20,7 +20,7 @@ struct HeartRateVariabilityView: View {
         }.tabViewStyle(.page)
       }
     }
-  
+
   @ViewBuilder
   func configureTodayView(proxy: GeometryProxy, progress: Double) -> some View {
     VStack {
@@ -34,18 +34,18 @@ struct HeartRateVariabilityView: View {
           .font(.system(size: 13, weight: .medium))
       }
       .padding()
-      
+
       Text("Today")
         .frame(width: proxy.size.width)
         .font(.system(size: 13, weight: .medium))
-      
+
       Spacer()
       Text((progress/150 * 100) < minimumHrv ? "Bad" : "Good")
         .font(.system(size: 13, weight: .medium))
         .foregroundColor((progress/150 * 100) < minimumHrv ? .pink : .blue)
     }.padding(5)
   }
-  
+
   @ViewBuilder
   func configureWeekView(proxy: GeometryProxy, progress: Double) -> some View {
     VStack {
@@ -59,18 +59,18 @@ struct HeartRateVariabilityView: View {
           .font(.system(size: 13, weight: .medium))
       }
       .padding()
-      
+
       Text("Week")
         .frame(width: proxy.size.width)
         .font(.system(size: 13, weight: .medium))
-      
+
       Spacer()
       Text((progress/150 * 100) < minimumHrv ? "Bad" : "Good")
         .font(.system(size: 13, weight: .medium))
         .foregroundColor((progress/150 * 100) < minimumHrv ? .pink : .blue)
     }.padding(5)
   }
-  
+
   @ViewBuilder
   func configureMonthView(proxy: GeometryProxy, progress: Double) -> some View {
     VStack {
@@ -84,11 +84,11 @@ struct HeartRateVariabilityView: View {
           .font(.system(size: 13, weight: .medium))
       }
       .padding()
-      
+
       Text("Month")
         .frame(width: proxy.size.width)
         .font(.system(size: 13, weight: .medium))
-      
+
       Spacer()
       Text((progress/150 * 100) < minimumHrv ? "Bad" : "Good")
         .font(.system(size: 13, weight: .medium))

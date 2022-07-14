@@ -13,7 +13,7 @@ enum UserRoleEntity: String, Codable {
 }
 
 struct UserEntity: Codable, BodyCodable {
-  
+
   enum CodingKeys: String, CodingKey {
     case userId = "user_id"
     case role = "role"
@@ -22,15 +22,14 @@ struct UserEntity: Codable, BodyCodable {
     case age = "age"
     case minimumHrv = "minimum_hrv"
   }
-  
-  
+
   var userId: String?
   var role: UserRoleEntity?
   var name: String?
   var email: String?
   var age: Int?
   var minimumHrv: Double?
-  
+
   init(userId: String?, role: UserRoleEntity?, name: String?, email: String?, age: Int?, minimumHrv: Double?) {
     self.userId = userId
     self.role = role
@@ -39,5 +38,5 @@ struct UserEntity: Codable, BodyCodable {
     self.age = age
     self.minimumHrv = minimumHrv
   }
-  
+
 }

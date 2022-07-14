@@ -11,14 +11,14 @@ struct SignInView: View {
   @ObservedObject var viewModel: MembershipViewModel
   @ObservedObject var heartViewModel = HeartRateViewModel()
   let navigator: HomeNavigator
-  
+
   @State var isSignUp = false
   @State var email = ""
   @State var password = ""
   @State private var signInError: Error?
   @State private var isShowAlert = false
   @State private var isSignedIn = false
-  
+
     var body: some View {
       if isSignUp {
         navigator.navigateToSignUp(isSignIn: $isSignUp)
@@ -29,7 +29,7 @@ struct SignInView: View {
               .font(.system(size: 200))
             Text("HealingUP")
               .font(.system(size: 50, weight: .bold))
-            
+
             VStack(alignment: .leading) {
               TextField("Email", text: $email)
                 .font(.system(size: 17, weight: .semibold))
@@ -41,7 +41,7 @@ struct SignInView: View {
               Divider()
                 .background(Color.black)
             }.padding()
-            
+
             Button {
               viewModel.signInUser(email: email, password: password)
             } label: {

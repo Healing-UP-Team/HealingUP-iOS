@@ -20,7 +20,7 @@ enum StressLevel: String, Codable, Equatable {
   case mild = "Likely to have a mild disorder"
   case moderate = "Likely to have a moderate disorder"
   case disorder = "Likely to have a severe disorder"
-  
+
   var backgroundColor: Color {
     switch self {
     case .well:

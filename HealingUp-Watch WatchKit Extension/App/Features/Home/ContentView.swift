@@ -26,7 +26,7 @@ struct ContentView: View {
     .init(imageName: "bolt.heart", title: "Heart", menuType: .heart),
     .init(imageName: "person.fill", title: "Profile", menuType: .profile)
   ]
-  
+
   var body: some View {
     ScrollView {
       ForEach(menu, id: \.self) { item in
@@ -40,27 +40,27 @@ struct ContentView: View {
       }
     }.navigationTitle("Healing UP")
   }
-  
+
   @ViewBuilder
   private func buttonView(_ menu: HomeMenu) -> some View {
     HStack(spacing: 0) {
       Image(systemName: menu.imageName)
         .font(.system(size: 25))
         .foregroundColor(Color.white)
-      
+
       Text(menu.title)
         .foregroundColor(Color.white)
         .font(.system(size: 17, weight: .medium))
         .padding()
-      
+
       Spacer()
       Image(systemName: "chevron.forward")
         .font(.system(size: 10, weight: .medium))
         .foregroundColor(Color.white)
-      
+
     }
   }
-  
+
   private func navigationHandler(_ menu: MenuWatch) -> AnyView {
     switch menu {
     case .heart:

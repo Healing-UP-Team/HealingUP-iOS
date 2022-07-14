@@ -10,12 +10,12 @@ import SwiftUI
 
 struct OnboardingNavigator {
   private let assembler: Assembler
-  
+
   init(assembler: Assembler) {
     self.assembler = assembler
   }
-  
-  func navigateToOnboarding(data: [Onboarding], doneFunction: @escaping () -> ()) -> OnboardingView {
+
+  func navigateToOnboarding(data: [Onboarding], doneFunction: @escaping () -> Void) -> OnboardingView {
     return OnboardingView(data: data, doneFunction: doneFunction)
   }
 }

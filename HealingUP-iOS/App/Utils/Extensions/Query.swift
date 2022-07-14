@@ -21,7 +21,7 @@ extension Query {
       return self
     }
   }
-  
+
   func orderByDate(recordDate: FirebaseRecordDate, descending: Bool = false) -> Query {
     return self.order(by: recordDate.rawValue, descending: descending)
   }

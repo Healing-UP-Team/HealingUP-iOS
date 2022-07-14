@@ -9,12 +9,12 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-  
+
   let isSignedIn: Bool
   let navigator: HomeNavigator
   @State private var onboardingDone = false
   var data = Onboarding.data
-  
+
   var body: some View {
     ZStack {
       if SessionManager.isFirstInstall() {

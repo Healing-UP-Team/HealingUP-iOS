@@ -12,7 +12,7 @@ protocol ProfileAssembler {
 }
 
 extension ProfileAssembler where Self: Assembler {
-  
+
   func resolve() -> ProfileNavigator {
     return ProfileNavigator(assembler: self)
   }

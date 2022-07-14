@@ -14,15 +14,15 @@ protocol MembershipAssembler {
 }
 
 extension MembershipAssembler where Self: Assembler {
-  
+
   func resolve() -> MembershipNavigator {
     return MembershipNavigator(assembler: self)
   }
-  
+
   func resolve() -> MembershipViewModel {
     return MembershipViewModel(firebaseManager: resolve())
   }
-  
+
   func resolve() -> FirebaseManager {
     return DefaultFirebaseManager()
   }

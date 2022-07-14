@@ -8,41 +8,41 @@
 import SwiftUI
 
 struct OnboardingView: View {
-  
+
   @State var slideGesture: CGSize = CGSize.zero
   @State var curSlideIndex = 0
-  
+
   let data: [Onboarding]
-  var doneFunction: () -> ()
+  var doneFunction: () -> Void
   var distance: CGFloat = UIScreen.main.bounds.size.width
-  
+
   func nextButton() {
     if self.curSlideIndex == self.data.count - 1 {
       doneFunction()
       return
     }
-    
+
     if self.curSlideIndex < self.data.count - 1 {
       withAnimation {
         self.curSlideIndex += 1
       }
     }
   }
-  
+
   var body: some View {
     ZStack {
       Color(.systemBackground).edgesIgnoringSafeArea(.all)
-      
+
       ZStack(alignment: .center) {
         withAnimation(.spring()) {
           ForEach(0..<data.count, id: \.self) { i in
             OnboardingStepView(data: self.data[i])
               .offset(x: CGFloat(i) * self.distance)
               .offset(x: self.slideGesture.width - CGFloat(self.curSlideIndex) * self.distance)
-              .gesture(DragGesture().onChanged{ value in
+              .gesture(DragGesture().onChanged { value in
                 self.slideGesture = value.translation
               }
-                .onEnded{ value in
+                .onEnded { _ in
                   if self.slideGesture.width < -50 {
                     if self.curSlideIndex < self.data.count - 1 {
                       withAnimation {
@@ -62,7 +62,7 @@ struct OnboardingView: View {
           }
         }
       }
-      
+
       VStack {
         Spacer()
         HStack {
@@ -76,7 +76,7 @@ struct OnboardingView: View {
       .padding(20)
     }
   }
-  
+
   func arrowView() -> some View {
     Group {
       if self.curSlideIndex == self.data.count - 1 {
@@ -97,7 +97,7 @@ struct OnboardingView: View {
       }
     }
   }
-  
+
   func progressView() -> some View {
     HStack {
       ForEach(0..<data.count, id: \.self) { i in

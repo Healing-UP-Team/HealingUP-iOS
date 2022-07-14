@@ -11,7 +11,7 @@ struct CircularProgressView: View {
     let progress: Double
     let minimumValue: Double
     let strokeWidth: Double
-    
+
     var body: some View {
         ZStack {
             Circle()

@@ -15,7 +15,7 @@ struct KesslerFinalView: View {
   @ObservedObject var kesslerViewModel: KesslerViewModel
   @Environment(\.presentationMode) var presentationMode
   @State var recomendation: [StressHandling] = []
-  
+
   var body: some View {
     VStack {
       Spacer()
@@ -35,7 +35,7 @@ struct KesslerFinalView: View {
         .padding(.horizontal)
         .foregroundColor(.gray)
         .font(.caption2)
-      
+
       Spacer()
       if stressLevelCheck() != .well {
         recomendationView()
@@ -44,9 +44,9 @@ struct KesslerFinalView: View {
           .font(.system(size: 25, weight: .bold))
           .foregroundColor(Color(uiColor: .accentPurple))
       }
-      
+
       Spacer()
-     
+
       ButtonDefaultView(title: "Back to Home", action: {
         presentationMode.wrappedValue.dismiss()
       })
@@ -90,7 +90,7 @@ struct KesslerFinalView: View {
       })
     .progressHUD(isShowing: $kesslerViewModel.addKesslerState.isLoading)
   }
-  
+
   private func stressLevelCheck() -> StressLevel {
     if score <= 19 {
       return StressLevel.well
@@ -102,7 +102,7 @@ struct KesslerFinalView: View {
       return StressLevel.disorder
     }
   }
-  
+
   @ViewBuilder
   func recomendationView() -> some View {
     VStack(alignment: .leading) {
@@ -110,11 +110,11 @@ struct KesslerFinalView: View {
         .font(.system(size: 20, weight: .semibold))
         .foregroundColor(Color(uiColor: .accentPurple))
         .padding(.bottom)
-      
+
       ForEach(recomendation, id: \.self) { item in
         RecomendationCardView(stressHandling: item)
       }
-      
+
     }.padding()
   }
 }
@@ -124,5 +124,3 @@ struct KesslerFinalView_Previews: PreviewProvider {
     KesslerFinalView(score: 20, kesslerViewModel: AppAssembler.shared.resolve())
   }
 }
-
-

@@ -10,7 +10,7 @@ import SwiftUI
 struct CircularProgressView: View {
     let progress: Double
     let minimumValue: Double
-    
+
     var body: some View {
         ZStack {
             Circle()

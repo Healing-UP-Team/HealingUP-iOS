@@ -11,10 +11,10 @@ import Firebase
 @main
 struct HealingUP_iOSApp: App {
   let persistenceController = PersistenceController.shared
-  
+
   private var isSignedIn: Bool = false
   private let navigator: HomeNavigator = AppAssembler.shared.resolve()
-  
+
   init() {
     FirebaseApp.configure()
 //    do {
@@ -22,10 +22,10 @@ struct HealingUP_iOSApp: App {
 //    } catch {
 //      print("error")
 //    }
-    
+
     isSignedIn = DefaultFirebaseManager.shared.firebaseAuth.currentUser != nil
   }
-  
+
   var body: some Scene {
     WindowGroup {
       ContentView(isSignedIn: isSignedIn, navigator: navigator)

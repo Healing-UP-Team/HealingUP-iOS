@@ -9,7 +9,7 @@ import Foundation
 import WatchConnectivity
 
 class MembershipViewModel: ObservableObject {
-  
+
   @Published var userState: ViewState<User> = .initiate
   @Published var allUserState: ViewState<[User]> = .initiate
   @Published var createUserState: ViewState<Bool> = .initiate
@@ -17,10 +17,9 @@ class MembershipViewModel: ObservableObject {
   @Published var registerState: ViewState<Bool> = .initiate
   @Published var signInState: ViewState<Bool> = .initiate
   @Published var signOutState: ViewState<Bool> = .initiate
-  
-  
+
   private let firebaseManager: FirebaseManager
-  
+
   init(firebaseManager: FirebaseManager) {
     self.firebaseManager = firebaseManager
   }
@@ -120,5 +119,5 @@ class MembershipViewModel: ObservableObject {
       }
     }
   }
-  
+
 }

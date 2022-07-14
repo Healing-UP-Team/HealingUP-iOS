@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NotLoginStateView: View {
   @ObservedObject var heart = HeartRateViewModel()
-  
+
     var body: some View {
       Text("Please login on your iPhone")
     }
