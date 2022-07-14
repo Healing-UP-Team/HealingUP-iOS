@@ -28,4 +28,9 @@ struct HomeNavigator {
     let navigator: MembershipNavigator = assembler.resolve()
     return navigator.navigateToSignUp(isSignIn: isSignIn)
   }
+  
+  func navigateToOnboarding(data: [Onboarding], doneFuntion: @escaping () -> ()) -> OnboardingView {
+    let navigator: OnboardingNavigator = assembler.resolve()
+    return navigator.navigateToOnboarding(data: data, doneFunction: doneFuntion)
+  }
 }
