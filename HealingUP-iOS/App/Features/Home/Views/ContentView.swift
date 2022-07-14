@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-  
+
   let isSignedIn: Bool
   let navigator: HomeNavigator
   @State private var onboardingDone = false
