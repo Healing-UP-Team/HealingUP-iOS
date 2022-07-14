@@ -27,7 +27,6 @@ struct ProfileView: View {
   let profileMenuSectionOne: [ProfileMenu] = [
     .init(menu: .personalInfo, image: "person.crop.circle")
   ]
-
   let profileMenuSectionTwo: [ProfileMenu] = [
     .init(menu: .aboutUs, image: "person.2"),
     .init(menu: .terms, image: "doc.text")
