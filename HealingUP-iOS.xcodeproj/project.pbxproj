@@ -579,7 +579,6 @@
 			isa = PBXGroup;
 			children = (
 				AEB477CB283C7772005567CA /* Navigator */,
-				AEB477CA283C776C005567CA /* ViewModel */,
 				AEB477C9283C7763005567CA /* Views */,
 			);
 			path = Profile;
@@ -591,13 +590,6 @@
 				AEB477CC283C77A8005567CA /* ProfileView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		AEB477CA283C776C005567CA /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AEB477CB283C7772005567CA /* Navigator */ = {
