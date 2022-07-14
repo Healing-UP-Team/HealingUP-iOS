@@ -13,7 +13,6 @@ struct ContentView: View {
   let navigator: HomeNavigator
   @State private var onboardingDone = false
   var data = Onboarding.data
-
   var body: some View {
     ZStack {
       if SessionManager.isFirstInstall() {
