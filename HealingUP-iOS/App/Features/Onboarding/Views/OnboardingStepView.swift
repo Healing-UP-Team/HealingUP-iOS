@@ -17,6 +17,7 @@ struct OnboardingStepView: View {
         .padding(.bottom, 50)
       Text(data.heading)
         .font(.system(size: 25, design: .rounded))
+        .foregroundColor(Color(uiColor: .accentPurple))
         .fontWeight(.bold)
         .padding(.bottom, 20)
       Text(data.text)

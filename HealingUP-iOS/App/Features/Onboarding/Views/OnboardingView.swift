@@ -78,17 +78,17 @@ struct OnboardingView: View {
     Group {
       if self.curSlideIndex == self.data.count - 1 {
         HStack {
-          Text("Done")
+          Text("Mulai")
             .font(.system(size: 27, weight: .medium, design: .rounded))
             .foregroundColor(Color(.systemBackground))
         }
         .frame(width: 120, height: 50)
-        .background(Color(.label))
+        .background(Color(uiColor: .accentPurple))
         .cornerRadius(25)
       } else {
         Image(systemName: "arrow.right.circle.fill")
           .resizable()
-          .foregroundColor(Color(.label))
+          .foregroundColor(Color(uiColor: .accentPurple))
           .scaledToFit()
           .frame(width: 50)
       }
@@ -100,7 +100,7 @@ struct OnboardingView: View {
         Circle()
           .scaledToFit()
           .frame(width: 10)
-          .foregroundColor(self.curSlideIndex >= i ? Color(.systemIndigo) : Color(.systemGray))
+          .foregroundColor(self.curSlideIndex >= i ? Color(uiColor: .accentPurple) : Color(.systemGray))
       }
     }
   }
