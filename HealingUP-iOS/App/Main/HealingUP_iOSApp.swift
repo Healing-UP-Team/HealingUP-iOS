@@ -7,9 +7,11 @@
 
 import SwiftUI
 import Firebase
+import FirebaseMessaging
 
 @main
 struct HealingUP_iOSApp: App {
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   let persistenceController = PersistenceController.shared
 
   private var isSignedIn: Bool = false
@@ -17,12 +19,6 @@ struct HealingUP_iOSApp: App {
 
   init() {
     FirebaseApp.configure()
-//    do {
-//      try FirebaseAuth.Auth.auth().signOut()
-//    } catch {
-//      print("error")
-//    }
-
     isSignedIn = DefaultFirebaseManager.shared.firebaseAuth.currentUser != nil
   }
 
@@ -30,6 +26,24 @@ struct HealingUP_iOSApp: App {
     WindowGroup {
       ContentView(isSignedIn: isSignedIn, navigator: navigator)
         .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        .environmentObject(NavigationHelper())
     }
   }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+    MembershipViewModel.shared.setupUserData()
+    NotificationService.register(application: application)
+
+    return true
+  }
+
+  func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+      print("Unable to register for remote notifications: \(error.localizedDescription)")
+    }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+      print("APNs token retrieved: \(deviceToken)")
+    }
 }

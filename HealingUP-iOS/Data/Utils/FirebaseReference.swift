@@ -12,6 +12,7 @@ enum FirestoreCollection: String {
   case membership
   case kesslerQuiz
   case kesslerResult
+  case schedule
 }
 
 func firestoreCollection(_ collectionRefrence: FirestoreCollection) -> CollectionReference {

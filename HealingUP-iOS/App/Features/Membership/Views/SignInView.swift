@@ -18,6 +18,7 @@ struct SignInView: View {
   @State private var signInError: Error?
   @State private var isShowAlert = false
   @State private var isSignedIn = false
+  @State var user: User?
 
     var body: some View {
       if isSignUp {
@@ -66,19 +67,40 @@ struct SignInView: View {
           }
           .onViewStatable(
             viewModel.$signInState,
-            onSuccess: { success in
-              isSignedIn = success
+            onSuccess: { _ in
               isShowAlert = false
+              viewModel.fetchUser()
             },
             onError: { error in
               signInError = error
               isShowAlert = true
             })
+          .onViewStatable(
+            viewModel.$userState,
+            onSuccess: { data in
+              user = data
+              var currentUser = data
+              NotificationService.shared.getToken { token in
+                currentUser.fcmToken = token
+                viewModel.updateUser(user: currentUser)
+              }
+              if data.role == .psikolog {
+                SessionManager.setUserCounsellor()
+              }
+              isSignedIn = true
+              isShowAlert = false
+            }
+          )
           .fullScreenCover(isPresented: $isSignedIn) {
-            navigator.navigateToHome()
+            if user?.role == .psikolog {
+              navigator.navigateToHomeCounsellor()
+            } else {
+              navigator.navigateToHome()
+            }
           }
         }
         .progressHUD(isShowing: $viewModel.signInState.isLoading)
+        .progressHUD(isShowing: $viewModel.userState.isLoading)
       }
     }
 }

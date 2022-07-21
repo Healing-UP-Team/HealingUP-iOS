@@ -9,9 +9,13 @@ import SwiftUI
 
 extension UIImage {
 
-  // Kessler
+  // MARK: Kessler
   static let kesslerIntro = UIImage(named: "img-kessler-intro")!
   static let appIcon = UIImage(named: "healingUpIcon")!
+
+  // MARK: Schedule
+  static let icSuccess = UIImage(named: "ic-success")!
+  static let icXmark = UIImage(named: "ic-xmark")!
 
 }
 

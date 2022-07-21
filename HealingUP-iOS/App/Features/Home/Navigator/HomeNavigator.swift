@@ -19,6 +19,10 @@ struct HomeNavigator {
     return HomeView()
   }
 
+  func navigateToHomeCounsellor() -> CounsellorHomeView {
+    return CounsellorHomeView()
+  }
+
   func navigateToSignIn() -> SignInView {
     let navigator: MembershipNavigator = assembler.resolve()
     return navigator.navigateToSignIn()

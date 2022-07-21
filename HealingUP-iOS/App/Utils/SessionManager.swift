@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Firebase
 
 enum KeyValue: String {
   case age
   case hrvNormal
   case firstInstall
+  case userType
 }
 
 class SessionManager: ObservableObject {
@@ -43,5 +46,18 @@ class SessionManager: ObservableObject {
 
   static func isLoggedIn() -> Bool {
     return DefaultFirebaseManager.shared.firebaseAuth.currentUser != nil
+  }
+
+  static func getUserId() -> String {
+    guard let userId = Auth.auth().currentUser?.uid else { return "" }
+    return userId
+  }
+
+  static func setUserCounsellor() {
+    UserDefaults.standard.set(true, forKey: KeyValue.userType.rawValue)
+  }
+
+  static func isCounsellor() -> Bool {
+    return UserDefaults.standard.bool(forKey: KeyValue.userType.rawValue)
   }
 }

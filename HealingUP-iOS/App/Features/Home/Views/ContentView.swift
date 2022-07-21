@@ -9,11 +9,11 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-
   let isSignedIn: Bool
   let navigator: HomeNavigator
   @State private var onboardingDone = false
   var data = Onboarding.data
+
   var body: some View {
     ZStack {
       if SessionManager.isFirstInstall() {
@@ -23,7 +23,11 @@ struct ContentView: View {
         })
       } else {
         if isSignedIn {
-          navigator.navigateToHome()
+          if SessionManager.isCounsellor() {
+            navigator.navigateToHomeCounsellor()
+          } else {
+            navigator.navigateToHome()
+          }
         } else {
           navigator.navigateToSignIn()
         }

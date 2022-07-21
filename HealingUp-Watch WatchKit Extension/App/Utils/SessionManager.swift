@@ -62,12 +62,12 @@ class SessionManager: ObservableObject {
 }
 
 extension UserDefaults {
-    @objc var login: Bool {
-        get {
-          return bool(forKey: KeyValue.loggedIn.rawValue)
-        }
-        set {
-            set(newValue, forKey: KeyValue.loggedIn.rawValue)
-        }
+  @objc var login: Bool {
+    get {
+      return bool(forKey: KeyValue.loggedIn.rawValue)
     }
+    set {
+      set(newValue, forKey: KeyValue.loggedIn.rawValue)
+    }
+  }
 }

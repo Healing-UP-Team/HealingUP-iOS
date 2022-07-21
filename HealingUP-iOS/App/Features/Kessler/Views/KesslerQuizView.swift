@@ -12,7 +12,6 @@ struct KesslerQuizView: View {
   @State var kesslerQuiz: [KesslerQuiz]
   @State var i: Int = 0
   @State private var isDone = false
-  @State var uiTabarController: UITabBarController?
   @StateObject var kesslerViewModel = KesslerViewModel(firebaseManager: AppAssembler.shared.resolve())
 
   var isBackToRoot: Binding<Bool>?
@@ -52,10 +51,6 @@ struct KesslerQuizView: View {
     .padding()
     .navigationBarTitle("")
     .navigationBarTitleDisplayMode(.inline)
-    .introspectTabBarController { (UITabBarController) in
-      UITabBarController.tabBar.isHidden = true
-      uiTabarController = UITabBarController
-    }
     .fullScreenCover(isPresented: $isDone, onDismiss: {
       isBackToRoot?.wrappedValue = false
     }) {

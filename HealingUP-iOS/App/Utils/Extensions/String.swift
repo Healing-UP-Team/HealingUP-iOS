@@ -15,11 +15,8 @@ extension Optional where Wrapped == String {
 
 extension String {
   func toDate(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ss'Z'") -> Date {
-    let dateFormatter = DateFormatter()
-    dateFormatter.calendar = Calendar(identifier: .gregorian)
-    dateFormatter.dateFormat = format
-    dateFormatter.locale = Locale.init(identifier: "id_ID")
-    let date = dateFormatter.date(from: self) ?? Date()
+    let timeInterval = Double(self) ?? 0.0
+    let date = Date(timeIntervalSince1970: timeInterval)
     return date
   }
 }

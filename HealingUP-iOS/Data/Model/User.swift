@@ -21,4 +21,5 @@ struct User: Equatable {
   var email: String = ""
   var age: Int = 0
   var minimumHrv: Double = 0
+  var fcmToken: String = ""
 }

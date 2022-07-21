@@ -90,6 +90,26 @@ extension DefaultFirebaseManager {
       }
   }
 
+  func fetchUser(email: String, completion: @escaping CompletionResult<UserEntity>) {
+    firestoreCollection(.membership)
+      .document(email)
+      .addSnapshotListener { querySnapshot, error in
+        if let error = error {
+          completion(.failure(.invalidRequest(error: error)))
+        } else {
+          let result = Result { try querySnapshot?.data(as: UserEntity.self) }
+          switch result {
+          case .success(let data):
+            if let data = data {
+              completion(.success(data))
+            }
+          case .failure:
+            completion(.failure(.unknownError))
+          }
+        }
+      }
+  }
+
   func fetchUsers(isUser: Bool = false, completion: @escaping CompletionResult<[UserEntity]>) {
     firestoreCollection(.membership)
       .whereRoleIsUser(isUser: isUser)
@@ -111,6 +131,31 @@ extension DefaultFirebaseManager {
               completion(.failure(.unknownError))
             }
           }
+        }
+      }
+  }
+
+  func fetchUserById(id: String, completion: @escaping CompletionResult<UserEntity>) {
+    firestoreCollection(.membership)
+      .whereField("user_id", isEqualTo: id)
+      .getDocuments { querySnapshot, error in
+        if let error = error {
+          completion(.failure(.invalidRequest(error: error)))
+        } else if let querySnapshot = querySnapshot, !querySnapshot.isEmpty {
+          for document in querySnapshot.documents {
+            do {
+              if document.exists {
+                let result = try document.data(as: UserEntity.self)
+                completion(.success(result))
+              } else {
+                completion(.failure(.unknownError))
+              }
+            } catch {
+              completion(.failure(.unknownError))
+            }
+          }
+        } else if let querySnapshot = querySnapshot, querySnapshot.isEmpty {
+          completion(.failure(.unknownError))
         }
       }
   }

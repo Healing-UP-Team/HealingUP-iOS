@@ -21,6 +21,7 @@ struct UserEntity: Codable, BodyCodable {
     case email = "email"
     case age = "age"
     case minimumHrv = "minimum_hrv"
+    case fcmToken = "fcm_token"
   }
 
   var userId: String?
@@ -29,14 +30,16 @@ struct UserEntity: Codable, BodyCodable {
   var email: String?
   var age: Int?
   var minimumHrv: Double?
+  var fcmToken: String?
 
-  init(userId: String?, role: UserRoleEntity?, name: String?, email: String?, age: Int?, minimumHrv: Double?) {
+  init(userId: String?, role: UserRoleEntity?, name: String?, email: String?, age: Int?, minimumHrv: Double?, fcmToken: String?) {
     self.userId = userId
     self.role = role
     self.name = name
     self.email = email
     self.age = age
     self.minimumHrv = minimumHrv
+    self.fcmToken = fcmToken
   }
 
 }

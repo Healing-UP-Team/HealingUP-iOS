@@ -71,13 +71,16 @@ struct SignUpView: View {
     .onViewStatable(
       viewModel.$registerState,
       onSuccess: { _ in
-        let newUser: User = .init(
-          userId: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.uid ?? "", role: .user,
-          name: "",
-          email: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.email ?? "",
-          age: age,
-          minimumHrv: setupHrvNormal(age: age))
-        viewModel.createUser(user: newUser)
+        NotificationService.shared.getToken { token in
+          let newUser: User = .init(
+            userId: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.uid ?? "", role: .user,
+            name: "",
+            email: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.email ?? "",
+            age: age,
+            minimumHrv: setupHrvNormal(age: age),
+            fcmToken: token)
+          viewModel.createUser(user: newUser)
+        }
       },
       onError: { error in
         signUpError = error

@@ -12,16 +12,32 @@ class MembershipViewModel: ObservableObject {
 
   @Published var userState: ViewState<User> = .initiate
   @Published var allUserState: ViewState<[User]> = .initiate
+  @Published var userByEmailState: ViewState<User> = .initiate
   @Published var createUserState: ViewState<Bool> = .initiate
   @Published var updateUserState: ViewState<Bool> = .initiate
   @Published var registerState: ViewState<Bool> = .initiate
   @Published var signInState: ViewState<Bool> = .initiate
   @Published var signOutState: ViewState<Bool> = .initiate
+  @Published var userByIdState: ViewState<User> = .initiate
+
+  @Published var userData: User?
 
   private let firebaseManager: FirebaseManager
+  static let shared = MembershipViewModel(firebaseManager: AppAssembler.shared.resolve())
 
   init(firebaseManager: FirebaseManager) {
     self.firebaseManager = firebaseManager
+  }
+
+  func setupUserData() {
+    firebaseManager.fetchUser { result in
+      switch result {
+      case .success(let data):
+        self.userData = data.map()
+      default:
+        print("Failed fetch User")
+      }
+    }
   }
 
   func fetchUser() {
@@ -38,8 +54,22 @@ class MembershipViewModel: ObservableObject {
     }
   }
 
+  func fetchUser(email: String) {
+    userByEmailState = .loading
+    firebaseManager.fetchUser(email: email) { result in
+      switch result {
+      case .success(let data):
+        self.userByEmailState = .success(data: data.map())
+      case .failure(let firebaseError):
+        if case .invalidRequest(let error) = firebaseError {
+          self.userByEmailState = .error(error: error)
+        }
+      }
+    }
+  }
+
   func fetchUsers(isUser: Bool = false) {
-    allUserState = .success(data: [])
+    allUserState = .loading
     firebaseManager.fetchUsers(isUser: isUser) { result in
       switch result {
       case .success(let data):
@@ -47,6 +77,20 @@ class MembershipViewModel: ObservableObject {
       case .failure(let firebaseError):
         if case .invalidRequest(let error) = firebaseError {
           self.allUserState = .error(error: error)
+        }
+      }
+    }
+  }
+
+  func fetchUserById(id: String) {
+    userByIdState = .loading
+    firebaseManager.fetchUserById(id: id) { result in
+      switch result {
+      case .success(let data):
+        self.userByIdState = .success(data: data.map())
+      case .failure(let firebaseError):
+        if case .invalidRequest(let error) = firebaseError {
+          self.userByIdState = .error(error: error)
         }
       }
     }

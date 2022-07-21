@@ -55,6 +55,9 @@ extension UIColor {
   static let softBlue = UIColor(red: 232, green: 240, blue: 251, alpha: 1)
   static let softPinkFirst = UIColor(red: 245, green: 191, blue: 194, alpha: 1)
 
+  // MARK: Scheduling
+  static let softGray = UIColor(hex: "#D2D2CF")!
+
 }
 
 extension UIColor {

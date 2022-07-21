@@ -47,6 +47,25 @@
 		AE93AB6328730A8D006C1B9D /* HealingUP_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB6228730A8D006C1B9D /* HealingUP_iOSTests.swift */; };
 		AE93AB7028730C32006C1B9D /* HealingUP_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB6F28730C32006C1B9D /* HealingUP_iOSUITests.swift */; };
 		AE93AB7228730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB7128730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift */; };
+		AEB0795A288699A70016256C /* ScheduleTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB07959288699A70016256C /* ScheduleTabItem.swift */; };
+		AEB0795C2886A06D0016256C /* CounsellorChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0795B2886A06D0016256C /* CounsellorChoiceView.swift */; };
+		AEB0795E2886A9940016256C /* ChooseTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0795D2886A9940016256C /* ChooseTimeView.swift */; };
+		AEB079602886AE5A0016256C /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0795F2886AE5A0016256C /* ScheduleViewModel.swift */; };
+		AEB079622886AE6B0016256C /* ScheduleNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB079612886AE6B0016256C /* ScheduleNavigator.swift */; };
+		AEB079652886CC090016256C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB079642886CC090016256C /* TextView.swift */; };
+		AEB079682887E18F0016256C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB079672887E18F0016256C /* Schedule.swift */; };
+		AEB0796A2887E2CA0016256C /* ScheduleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB079692887E2CA0016256C /* ScheduleEntity.swift */; };
+		AEB0796C2887E3830016256C /* ScheduleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0796B2887E3830016256C /* ScheduleMapper.swift */; };
+		AEB0796E2887E4BF0016256C /* FirebaseManager+Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0796D2887E4BF0016256C /* FirebaseManager+Schedule.swift */; };
+		AEB079702887EB4D0016256C /* ScheduleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0796F2887EB4D0016256C /* ScheduleAssembler.swift */; };
+		AEB079722887F2550016256C /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB079712887F2550016256C /* ResultView.swift */; };
+		AEB079752887F8190016256C /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB079742887F8190016256C /* NavigationHelper.swift */; };
+		AEB07977288834B50016256C /* CounsellorHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB07976288834B50016256C /* CounsellorHomeView.swift */; };
+		AEB0797C2888364A0016256C /* CounsellorScheduleTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0797B288836490016256C /* CounsellorScheduleTabItem.swift */; };
+		AEB0797E288840840016256C /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0797D288840840016256C /* NotificationService.swift */; };
+		AEB07980288840AA0016256C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = AEB0797F288840AA0016256C /* FirebaseMessaging */; };
+		AEB07982288841F30016256C /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = AEB07981288841F30016256C /* FirebaseDynamicLinks */; };
+		AEB07984288842000016256C /* DynamicLinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB07983288842000016256C /* DynamicLinkService.swift */; };
 		AEB23BB3286978CD00738864 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB23BB2286978CD00738864 /* CircularProgressView.swift */; };
 		AEB23C0428699B3000738864 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB23C0328699B3000738864 /* SessionManager.swift */; };
 		AEB23C072869A58100738864 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AEB23C062869A58100738864 /* FirebaseAuth */; };
@@ -107,6 +126,7 @@
 		AED86E06283B2F3100C62B98 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86E05283B2F3100C62B98 /* FirebaseManager.swift */; };
 		AEE0D8B0285F8C6B006FD4F3 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = AEE0D8AF285F8C6B006FD4F3 /* SwiftUICharts */; };
 		AEF34A1128684D6700FC4235 /* HeartRateVariabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF34A1028684D6700FC4235 /* HeartRateVariabilityView.swift */; };
+		AEF6F7202888EDF000910B79 /* CounsellorConfirmScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F71F2888EDF000910B79 /* CounsellorConfirmScheduleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +228,23 @@
 		AE93AB6D28730C32006C1B9D /* HealingUP-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealingUP-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE93AB6F28730C32006C1B9D /* HealingUP_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealingUP_iOSUITests.swift; sourceTree = "<group>"; };
 		AE93AB7128730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealingUP_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AEB07959288699A70016256C /* ScheduleTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTabItem.swift; sourceTree = "<group>"; };
+		AEB0795B2886A06D0016256C /* CounsellorChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorChoiceView.swift; sourceTree = "<group>"; };
+		AEB0795D2886A9940016256C /* ChooseTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeView.swift; sourceTree = "<group>"; };
+		AEB0795F2886AE5A0016256C /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		AEB079612886AE6B0016256C /* ScheduleNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNavigator.swift; sourceTree = "<group>"; };
+		AEB079642886CC090016256C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		AEB079672887E18F0016256C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		AEB079692887E2CA0016256C /* ScheduleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntity.swift; sourceTree = "<group>"; };
+		AEB0796B2887E3830016256C /* ScheduleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMapper.swift; sourceTree = "<group>"; };
+		AEB0796D2887E4BF0016256C /* FirebaseManager+Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseManager+Schedule.swift"; sourceTree = "<group>"; };
+		AEB0796F2887EB4D0016256C /* ScheduleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAssembler.swift; sourceTree = "<group>"; };
+		AEB079712887F2550016256C /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		AEB079742887F8190016256C /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		AEB07976288834B50016256C /* CounsellorHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorHomeView.swift; sourceTree = "<group>"; };
+		AEB0797B288836490016256C /* CounsellorScheduleTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorScheduleTabItem.swift; sourceTree = "<group>"; };
+		AEB0797D288840840016256C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		AEB07983288842000016256C /* DynamicLinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLinkService.swift; sourceTree = "<group>"; };
 		AEB23BB2286978CD00738864 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		AEB23C0328699B3000738864 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		AEB23C182869CAE500738864 /* NotLoginStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoginStateView.swift; sourceTree = "<group>"; };
@@ -263,6 +300,7 @@
 		AED86E03283B2E8C00C62B98 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		AED86E05283B2F3100C62B98 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		AEF34A1028684D6700FC4235 /* HeartRateVariabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateVariabilityView.swift; sourceTree = "<group>"; };
+		AEF6F71F2888EDF000910B79 /* CounsellorConfirmScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorConfirmScheduleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +330,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB07980288840AA0016256C /* FirebaseMessaging in Frameworks */,
 				AEB23C132869A58100738864 /* FirebaseStorageCombine-Community in Frameworks */,
 				AEB23C0B2869A58100738864 /* FirebaseDatabaseSwift in Frameworks */,
 				AEB23C092869A58100738864 /* FirebaseDatabase in Frameworks */,
@@ -303,6 +342,7 @@
 				AEB47796283B3851005567CA /* SDWebImageSwiftUI in Frameworks */,
 				AEE0D8B0285F8C6B006FD4F3 /* SwiftUICharts in Frameworks */,
 				AEB23C0F2869A58100738864 /* FirebaseFirestoreSwift in Frameworks */,
+				AEB07982288841F30016256C /* FirebaseDynamicLinks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +516,8 @@
 		AE795CDE2875785E00D08F00 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				AEB079662886CC3C0016256C /* Modal */,
+				AEB079632886CBF40016256C /* TextView */,
 				AE795CDF2875786700D08F00 /* Button */,
 			);
 			path = ReusableViews;
@@ -504,6 +546,76 @@
 				AE93AB7128730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift */,
 			);
 			path = "HealingUP-iOSUITests";
+			sourceTree = "<group>";
+		};
+		AEB07955288697270016256C /* Scheduling */ = {
+			isa = PBXGroup;
+			children = (
+				AEB07958288697920016256C /* ViewModel */,
+				AEB079572886978B0016256C /* Navigator */,
+				AEB079562886975B0016256C /* Views */,
+			);
+			path = Scheduling;
+			sourceTree = "<group>";
+		};
+		AEB079562886975B0016256C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AEB07979288836050016256C /* Counsellor */,
+				AEB07959288699A70016256C /* ScheduleTabItem.swift */,
+				AEB0795B2886A06D0016256C /* CounsellorChoiceView.swift */,
+				AEB0795D2886A9940016256C /* ChooseTimeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AEB079572886978B0016256C /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				AEB079612886AE6B0016256C /* ScheduleNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		AEB07958288697920016256C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AEB0795F2886AE5A0016256C /* ScheduleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AEB079632886CBF40016256C /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				AEB079642886CC090016256C /* TextView.swift */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		AEB079662886CC3C0016256C /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				AEB079712887F2550016256C /* ResultView.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		AEB079732887F80A0016256C /* NavigationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				AEB079742887F8190016256C /* NavigationHelper.swift */,
+			);
+			path = NavigationHelper;
+			sourceTree = "<group>";
+		};
+		AEB07979288836050016256C /* Counsellor */ = {
+			isa = PBXGroup;
+			children = (
+				AEB0797B288836490016256C /* CounsellorScheduleTabItem.swift */,
+				AEF6F71F2888EDF000910B79 /* CounsellorConfirmScheduleView.swift */,
+			);
+			path = Counsellor;
 			sourceTree = "<group>";
 		};
 		AEB23BB0286978B000738864 /* ReusableViews */ = {
@@ -553,6 +665,7 @@
 			children = (
 				AED86DA7283B181900C62B98 /* ContentView.swift */,
 				AEB477B0283B556D005567CA /* HomeView.swift */,
+				AEB07976288834B50016256C /* CounsellorHomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -734,6 +847,7 @@
 				AE33ADD2284D8E7D007F9FA8 /* KesslerAssembler.swift */,
 				AE725A1C286194D70082061F /* HeartAssembler.swift */,
 				AE603466288040A700AE4116 /* OnboardingAssembler.swift */,
+				AEB0796F2887EB4D0016256C /* ScheduleAssembler.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -741,6 +855,7 @@
 		AED86DD8283B1A9200C62B98 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				AEB07955288697270016256C /* Scheduling */,
 				AE60345728802E0100AE4116 /* Onboarding */,
 				AE33ADCB284D8DBA007F9FA8 /* Kessler */,
 				AEB477D4283C901D005567CA /* HeartRate */,
@@ -772,11 +887,14 @@
 		AED86DDB283B1AA200C62B98 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AEB079732887F80A0016256C /* NavigationHelper */,
 				AEB477BD283B6EC0005567CA /* CustomViews */,
 				AEB477BA283B6E7C005567CA /* Modifier */,
 				AED86DFE283B2DA000C62B98 /* Extensions */,
 				AED86E01283B2E5500C62B98 /* ViewState.swift */,
 				AE659FB0286C7AA200133F36 /* SessionManager.swift */,
+				AEB0797D288840840016256C /* NotificationService.swift */,
+				AEB07983288842000016256C /* DynamicLinkService.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -787,6 +905,7 @@
 				AED86DFB283B2D4000C62B98 /* UserMapper.swift */,
 				AE33ADDC284D9D2D007F9FA8 /* KesslerQuizMapper.swift */,
 				AE33ADF8284E17C4007F9FA8 /* KesslerResultMapper.swift */,
+				AEB0796B2887E3830016256C /* ScheduleMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -799,6 +918,7 @@
 				AE33ADF4284E159C007F9FA8 /* KesslerResult.swift */,
 				AE725A212861A57E0082061F /* HeartRateVariability.swift */,
 				AE60345F288037C000AE4116 /* Onboarding.swift */,
+				AEB079672887E18F0016256C /* Schedule.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -818,6 +938,7 @@
 				AED86DF7283B2AE600C62B98 /* UserEntity.swift */,
 				AE33ADDA284D9CA8007F9FA8 /* KesslerQuizEntity.swift */,
 				AE33ADF6284E163B007F9FA8 /* KesslerResultEntity.swift */,
+				AEB079692887E2CA0016256C /* ScheduleEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -849,6 +970,7 @@
 				AEB477AA283B3B2A005567CA /* FirebaseManager+Membership.swift */,
 				AE33ADDE284D9E00007F9FA8 /* FirebaseManager+KesslerQuiz.swift */,
 				AE33ADFA284E18B9007F9FA8 /* FirebaseManager+KesslerResult.swift */,
+				AEB0796D2887E4BF0016256C /* FirebaseManager+Schedule.swift */,
 			);
 			path = FirestoreDataSource;
 			sourceTree = "<group>";
@@ -1033,6 +1155,8 @@
 				AEB23C0E2869A58100738864 /* FirebaseFirestoreSwift */,
 				AEB23C102869A58100738864 /* FirebaseStorage */,
 				AEB23C122869A58100738864 /* FirebaseStorageCombine-Community */,
+				AEB0797F288840AA0016256C /* FirebaseMessaging */,
+				AEB07981288841F30016256C /* FirebaseDynamicLinks */,
 			);
 			productName = "HealingUP-iOS";
 			productReference = AED86DA2283B181900C62B98 /* Healing UP.app */;
@@ -1180,9 +1304,11 @@
 			files = (
 				AE33ADDB284D9CA8007F9FA8 /* KesslerQuizEntity.swift in Sources */,
 				AEB477C3283B71F1005567CA /* ViewStateModifier.swift in Sources */,
+				AEB0795E2886A9940016256C /* ChooseTimeView.swift in Sources */,
 				AEB477AF283B3C25005567CA /* Query.swift in Sources */,
 				AEB477D1283C7A86005567CA /* ProfileAssembler.swift in Sources */,
 				AE33ADFD284E444D007F9FA8 /* KesslerResultItemView.swift in Sources */,
+				AEB079602886AE5A0016256C /* ScheduleViewModel.swift in Sources */,
 				AEB477BC283B6E95005567CA /* ProgressHUDModifier.swift in Sources */,
 				AE659FB1286C7AA200133F36 /* SessionManager.swift in Sources */,
 				AED86DF8283B2AE600C62B98 /* UserEntity.swift in Sources */,
@@ -1198,11 +1324,15 @@
 				AE725A1B286194C00082061F /* HeartRateNavigator.swift in Sources */,
 				AE33ADCF284D8E01007F9FA8 /* KesslerTabItem.swift in Sources */,
 				AE603467288040A700AE4116 /* OnboardingAssembler.swift in Sources */,
+				AEF6F7202888EDF000910B79 /* CounsellorConfirmScheduleView.swift in Sources */,
 				AE33ADD5284D912C007F9FA8 /* KesslerQuizView.swift in Sources */,
+				AEB079652886CC090016256C /* TextView.swift in Sources */,
 				AEB477DD283C981F005567CA /* HeartRateViewModel.swift in Sources */,
 				AE33ADE2284DA0E8007F9FA8 /* KesslerViewModel.swift in Sources */,
 				AED86DAF283B181A00C62B98 /* Persistence.swift in Sources */,
 				AED86DB2283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld in Sources */,
+				AEB079722887F2550016256C /* ResultView.swift in Sources */,
+				AEB0797E288840840016256C /* NotificationService.swift in Sources */,
 				AED86E00283B2DAE00C62B98 /* String.swift in Sources */,
 				AEB477B9283B574A005567CA /* HomeAssembler.swift in Sources */,
 				AE33ADFF284E452B007F9FA8 /* Date.swift in Sources */,
@@ -1213,34 +1343,46 @@
 				AE33ADD7284D9848007F9FA8 /* KesslerFinalView.swift in Sources */,
 				AE795CE1287578DA00D08F00 /* ButtonDefaultView.swift in Sources */,
 				AE33ADF9284E17C4007F9FA8 /* KesslerResultMapper.swift in Sources */,
+				AEB0795A288699A70016256C /* ScheduleTabItem.swift in Sources */,
 				AE725A242861AB5D0082061F /* RecomendationCardView.swift in Sources */,
 				AED86DFA283B2BB000C62B98 /* BodyCodable.swift in Sources */,
 				AE33ADF0284E12DC007F9FA8 /* ButtonAnswerView.swift in Sources */,
 				AED86DEF283B283800C62B98 /* MembershipNavigator.swift in Sources */,
 				AEB477AD283B3BB1005567CA /* FirebaseReference.swift in Sources */,
 				AEB477BF283B6ECD005567CA /* BlurView.swift in Sources */,
+				AEB0796C2887E3830016256C /* ScheduleMapper.swift in Sources */,
 				AEB477AB283B3B2A005567CA /* FirebaseManager+Membership.swift in Sources */,
 				AED86DFC283B2D4000C62B98 /* UserMapper.swift in Sources */,
+				AEB079752887F8190016256C /* NavigationHelper.swift in Sources */,
 				AE33ADF3284E155F007F9FA8 /* KesslerHistoryView.swift in Sources */,
 				AEB477D3283C8C52005567CA /* Constant.swift in Sources */,
 				AE725A222861A57E0082061F /* HeartRateVariability.swift in Sources */,
 				AED86E04283B2E8C00C62B98 /* FirebaseError.swift in Sources */,
 				AE33ADF5284E159C007F9FA8 /* KesslerResult.swift in Sources */,
 				AED86DF2283B285600C62B98 /* AppAssembler.swift in Sources */,
+				AEB0796A2887E2CA0016256C /* ScheduleEntity.swift in Sources */,
 				AE603460288037C000AE4116 /* Onboarding.swift in Sources */,
+				AEB079682887E18F0016256C /* Schedule.swift in Sources */,
+				AEB0795C2886A06D0016256C /* CounsellorChoiceView.swift in Sources */,
 				AE33ADE4284DB735007F9FA8 /* View.swift in Sources */,
+				AEB0797C2888364A0016256C /* CounsellorScheduleTabItem.swift in Sources */,
 				AE33ADD1284D8E20007F9FA8 /* KesslerNavigator.swift in Sources */,
 				AE60345E2880368E00AE4116 /* OnboardingView.swift in Sources */,
 				AED86DA8283B181900C62B98 /* ContentView.swift in Sources */,
 				AE0058CA2860757000684F81 /* CircularProgressView.swift in Sources */,
+				AEB079702887EB4D0016256C /* ScheduleAssembler.swift in Sources */,
+				AEB0796E2887E4BF0016256C /* FirebaseManager+Schedule.swift in Sources */,
 				AEB477B1283B556D005567CA /* HomeView.swift in Sources */,
 				AE795CDB28753BE500D08F00 /* UIColor.swift in Sources */,
+				AEB07977288834B50016256C /* CounsellorHomeView.swift in Sources */,
 				AED86DA6283B181900C62B98 /* HealingUP_iOSApp.swift in Sources */,
 				AED86DEB283B281000C62B98 /* SignInView.swift in Sources */,
 				AED86DF6283B2A4300C62B98 /* User.swift in Sources */,
 				AEB477C7283BE254005567CA /* SignUpView.swift in Sources */,
 				AED86DF4283B286800C62B98 /* MembershipAssembler.swift in Sources */,
 				AEB477CF283C7A09005567CA /* ProfileNavigator.swift in Sources */,
+				AEB079622886AE6B0016256C /* ScheduleNavigator.swift in Sources */,
+				AEB07984288842000016256C /* DynamicLinkService.swift in Sources */,
 				AE33ADF7284E163B007F9FA8 /* KesslerResultEntity.swift in Sources */,
 				AEB477B7283B561C005567CA /* HomeNavigator.swift in Sources */,
 				AED86E06283B2F3100C62B98 /* FirebaseManager.swift in Sources */,
@@ -1763,6 +1905,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AE725A1E28619B910082061F /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
 			productName = Introspect;
+		};
+		AEB0797F288840AA0016256C /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB23C052869A58100738864 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		AEB07981288841F30016256C /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB23C052869A58100738864 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
 		};
 		AEB23C062869A58100738864 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

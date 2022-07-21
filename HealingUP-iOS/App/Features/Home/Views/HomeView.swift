@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
   @State var selection = 1
-  @State var uiTabarController: UITabBarController?
+  let assembler = AppAssembler.shared
 
   init() {
     setDefaultTabBarView()
@@ -19,47 +19,33 @@ struct HomeView: View {
   var body: some View {
     TabView(selection: $selection) {
       NavigationView {
-        HeartRateTabItem(navigator: AppAssembler.shared.resolve(), viewModel: AppAssembler.shared.resolve(), tabSelection: $selection)
+        HeartRateTabItem(navigator: assembler.resolve(), viewModel: assembler.resolve(), tabSelection: $selection)
           .navigationTitle(navigationSetTitle(item: selection))
-          .introspectTabBarController { (UITabBarController) in
-            UITabBarController.tabBar.isHidden = false
-            uiTabarController = UITabBarController
-          }
-          .onAppear {
-            uiTabarController?.tabBar.isHidden = false
-          }
       }
       .tabItem {
         Label("Heart", systemImage: "bolt.heart.fill")
       }.tag(1)
       NavigationView {
-        KesslerTabItem(navigator: AppAssembler.shared.resolve(), kesslerViewModel: AppAssembler.shared.resolve())
+        KesslerTabItem(navigator: assembler.resolve(), kesslerViewModel: assembler.resolve())
           .navigationTitle(navigationSetTitle(item: selection))
-          .introspectTabBarController { (UITabBarController) in
-            UITabBarController.tabBar.isHidden = false
-            uiTabarController = UITabBarController
-          }
-          .onAppear {
-            uiTabarController?.tabBar.isHidden = false
-          }
       }
       .tabItem {
         Label("Kessler", systemImage: "heart.text.square")
       }.tag(2)
       NavigationView {
-        ProfileView(viewModel: AppAssembler.shared.resolve(), navigator: AppAssembler.shared.resolve())
+        ScheduleTabItem(navigator: assembler.resolve(), viewModel: assembler.resolve())
           .navigationTitle(navigationSetTitle(item: selection))
-          .introspectTabBarController { (UITabBarController) in
-            UITabBarController.tabBar.isHidden = false
-            uiTabarController = UITabBarController
-          }
-          .onAppear {
-            uiTabarController?.tabBar.isHidden = false
-          }
+      }
+      .tabItem {
+        Label("Schedule", systemImage: "timer")
+      }.tag(4)
+      NavigationView {
+        ProfileView(viewModel: assembler.resolve(), navigator: assembler.resolve())
+          .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
         Label("Profile", systemImage: "person")
-      }.tag(4)
+      }.tag(5)
     }
   }
 
@@ -69,6 +55,8 @@ struct HomeView: View {
       return "Heart"
     case 2:
       return "Kessler"
+    case 4:
+      return "Schedule"
     default:
       return "Profile"
     }

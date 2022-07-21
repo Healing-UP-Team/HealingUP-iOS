@@ -10,6 +10,7 @@ import Firebase
 
 enum FirebaseRecordDate: String {
   case kesslerResult = "createAt"
+  case schedule = "schedule"
 }
 
 extension Query {
@@ -19,6 +20,7 @@ extension Query {
         .whereField("role", isEqualTo: UserRoleEntity.user.rawValue)
     } else {
       return self
+        .whereField("role", isEqualTo: UserRoleEntity.psikolog.rawValue)
     }
   }
 
