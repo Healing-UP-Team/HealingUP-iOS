@@ -11,11 +11,12 @@ protocol Assembler: MembershipAssembler,
                     HomeAssembler,
                     ProfileAssembler,
                     KesslerAssembler,
-                    HeartAssembler,
                     OnboardingAssembler,
                     ScheduleAssembler,
-                    WebViewAssembler {}
+                    WebViewAssembler,
+                    JournalingAssembler,
+                    HeartAssembler{}
 
 class AppAssembler: Assembler {
-  static let shared = AppAssembler()
+    static let shared = AppAssembler()
 }
