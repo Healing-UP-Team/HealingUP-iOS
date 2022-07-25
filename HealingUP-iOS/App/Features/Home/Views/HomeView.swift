@@ -30,8 +30,22 @@ struct HomeView: View {
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Kessler", systemImage: "heart.text.square")
+        Label("Kessler", systemImage: "doc.text.magnifyingglass")
       }.tag(2)
+        NavigationView {
+          JournalingTabItem(navigator: AppAssembler.shared.resolve(), journalingViewModel: AppAssembler.shared.resolve())
+            .navigationTitle(navigationSetTitle(item: selection))
+            .introspectTabBarController { (UITabBarController) in
+              UITabBarController.tabBar.isHidden = false
+              uiTabarController = UITabBarController
+            }
+            .onAppear {
+              uiTabarController?.tabBar.isHidden = false
+            }
+        }
+        .tabItem {
+          Label("Journaling", systemImage: "pencil.and.outline")
+        }.tag(3)
       NavigationView {
         ScheduleTabItem(navigator: assembler.resolve(), viewModel: assembler.resolve())
           .navigationTitle(navigationSetTitle(item: selection))
@@ -57,6 +71,8 @@ struct HomeView: View {
       return "Kessler"
     case 4:
       return "Schedule"
+    case 3:
+        return "Journaling"
     default:
       return "Profile"
     }
