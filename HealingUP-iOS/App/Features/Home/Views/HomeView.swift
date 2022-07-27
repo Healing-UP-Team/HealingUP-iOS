@@ -33,15 +33,8 @@ struct HomeView: View {
         Label("Kessler", systemImage: "doc.text.magnifyingglass")
       }.tag(2)
         NavigationView {
-          JournalingTabItem(navigator: AppAssembler.shared.resolve(), journalingViewModel: AppAssembler.shared.resolve())
+          JournalingTabItem()
             .navigationTitle(navigationSetTitle(item: selection))
-            .introspectTabBarController { (UITabBarController) in
-              UITabBarController.tabBar.isHidden = false
-              uiTabarController = UITabBarController
-            }
-            .onAppear {
-              uiTabarController?.tabBar.isHidden = false
-            }
         }
         .tabItem {
           Label("Journaling", systemImage: "pencil.and.outline")
