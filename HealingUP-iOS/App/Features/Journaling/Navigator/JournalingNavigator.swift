@@ -18,4 +18,3 @@ struct JournalingNavigator {
         return JournalingTabItem()
     }
 }
-

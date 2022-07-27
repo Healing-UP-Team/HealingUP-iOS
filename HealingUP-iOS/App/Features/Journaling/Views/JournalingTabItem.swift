@@ -12,7 +12,6 @@ struct JournalingTabItem: View {
   @State private var searchText = ""
   @State private var showForm = false
 
-
   var body: some View {
     List {
       ForEach(searchResult) { journal in

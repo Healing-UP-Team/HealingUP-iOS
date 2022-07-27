@@ -14,7 +14,6 @@ class JournalViewModel: ObservableObject {
   @Published var modified = false
   @Published var emotion = ["😔", "🙂", "😊", "😁", "😆"]
 
-
   private var db = Firestore.firestore()
   private let path = "journals"
 
@@ -24,7 +23,7 @@ class JournalViewModel: ObservableObject {
     self.journal = journal
     self.$journal
       .dropFirst()
-      .sink { [weak self] journal in
+      .sink { [weak self] _ in
         self?.modified = true
       }
       .store(in: &cancellables)
@@ -36,7 +35,7 @@ class JournalViewModel: ObservableObject {
         if let userId = Auth.auth().currentUser?.uid {
           newJournal.userId = userId
         }
-        let _ = try db.collection(path).addDocument(from: newJournal)
+        _ = try db.collection(path).addDocument(from: newJournal)
       } catch {
         print(error.localizedDescription)
       }
@@ -70,12 +69,12 @@ class JournalViewModel: ObservableObject {
     }
   }
 
-  //MARK: - Model Management
+  // MARK: - Model Management
   func save() {
       updateOrAddJournal()
   }
 
-  //MARK: - UI Handler
+  // MARK: - UI Handler
   func handleDoneTapped() {
       self.save()
   }
