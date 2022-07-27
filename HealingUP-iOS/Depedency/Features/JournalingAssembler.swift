@@ -9,7 +9,7 @@ import Foundation
 
 protocol JournalingAssembler {
   func resolve() -> JournalingNavigator
-  func resolve() -> JournalingViewModel
+  func resolve() -> JournalsViewModel
   func resolve() -> JournalingTabItem
 }
 
@@ -20,10 +20,10 @@ extension JournalingAssembler where Self: Assembler {
   }
 
   func resolve() -> JournalingTabItem {
-      return JournalingTabItem(navigator: resolve(), journalingViewModel: resolve())
+      return JournalingTabItem()
   }
 
-  func resolve() -> JournalingViewModel {
-    return JournalingViewModel(firebaseManager: resolve())
+  func resolve() -> JournalsViewModel {
+    return JournalsViewModel()
   }
 }
