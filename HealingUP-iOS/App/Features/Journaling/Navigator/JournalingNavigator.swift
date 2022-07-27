@@ -15,7 +15,7 @@ struct JournalingNavigator {
     }
 
     func navigateToJournalingTabItem() -> JournalingTabItem {
-        return JournalingTabItem(navigator: assembler.resolve(), journalingViewModel: assembler.resolve())
+        return JournalingTabItem()
     }
 }
 
