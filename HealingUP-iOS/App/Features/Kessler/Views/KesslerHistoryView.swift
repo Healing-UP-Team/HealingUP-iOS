@@ -17,7 +17,7 @@ struct KesslerHistoryView: View {
   var body: some View {
     if isFirstTime {
       VStack {
-        Text("No Data")
+        Text("Tidak ada Data")
           .font(.system(size: 18, weight: .semibold))
       }
     } else {

@@ -24,20 +24,20 @@ struct KesslerTabItem: View {
           .frame(height: 250)
           .padding()
         VStack(alignment: .leading) {
-          Text("Hi, how are you?")
+          Text("Hi, apa kabar?")
             .font(.system(size: 30, weight: .bold))
             .foregroundColor(Color.accentColor)
             .padding(.top, 20)
             .padding(.bottom, 15)
             .padding(.horizontal)
-          Text("By answering these question, we can help you figure out your stress level and recommend things you can do to manage your stress")
+          Text("Dengan menjawab pertanyaan ini, HealingUp dapat membantu kamu mengetahui tingkat stres yang kamu alami dan merekomendasikan hal-hal yang dapat kamu lakukan untuk mengelola stres Anda")
             .foregroundColor(Color.accentColor)
             .padding(.horizontal)
             .multilineTextAlignment(.leading)
         }
       }
       Spacer()
-      ButtonDefaultView(title: "Start now", action: {
+      ButtonDefaultView(title: "Mulai", action: {
         kesslerViewModel.fetchKesslerQuiz()
       })
       .padding(.vertical)

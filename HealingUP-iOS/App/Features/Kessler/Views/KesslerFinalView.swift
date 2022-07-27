@@ -19,7 +19,7 @@ struct KesslerFinalView: View {
   var body: some View {
     VStack {
       Spacer()
-      Text("Your stress level")
+      Text("Stress Level Kamu")
         .font(.system(size: 20, weight: .semibold))
         .padding(.horizontal)
         .padding(.bottom, 1)
@@ -30,7 +30,7 @@ struct KesslerFinalView: View {
         .font(.system(size: 25, weight: .bold))
         .multilineTextAlignment(.center)
         .padding(.bottom, 1)
-      Text("You can check your level stress on next month")
+      Text("Kamu dapat memeriksa tingkat stres kamu kembali pada bulan depan")
         .multilineTextAlignment(.center)
         .padding(.horizontal)
         .foregroundColor(.gray)
@@ -40,14 +40,14 @@ struct KesslerFinalView: View {
       if stressLevelCheck() != .well {
         recomendationView()
       } else {
-        Text("You're fine, keep it up!")
+        Text("Kamu baik-baik saja, pertahankan!")
           .font(.system(size: 25, weight: .bold))
           .foregroundColor(Color(uiColor: .accentPurple))
       }
 
       Spacer()
 
-      ButtonDefaultView(title: "Back to Home", action: {
+      ButtonDefaultView(title: "Kembali ke Beranda", action: {
         presentationMode.wrappedValue.dismiss()
       })
     }
@@ -67,16 +67,16 @@ struct KesslerFinalView: View {
       switch stressLevelCheck() {
       case .mild:
         self.recomendation = [
-          .init(title: "Deep Breathing", caption: "Take a deep breath", img: "nose", type: .breathing),
-          .init(title: "Journaling", caption: "Express your feelings in writing", img: "note.text", type: .journaling)
+          .init(title: "Deep Breathing", caption: "Ambil napas dalam-dalam", img: "nose", type: .breathing),
+          .init(title: "Journaling", caption: "Ekspresikan perasaanmu secara tertulis", img: "note.text", type: .journaling)
         ]
       case .moderate:
         self.recomendation = [
-          .init(title: "Counseling", caption: "Schedule a counseling session with a psychologist", img: "person.2", type: .counseling)
+          .init(title: "Counseling", caption: "Jadwalkan sesi konseling dengan psikolog", img: "person.2", type: .counseling)
         ]
       case .disorder:
         self.recomendation = [
-          .init(title: "Counseling", caption: "Schedule a counseling session with a psychologist", img: "person.2", type: .counseling)
+          .init(title: "Counseling", caption: "Jadwalkan sesi konseling dengan psikolog", img: "person.2", type: .counseling)
         ]
       default:
         break
@@ -106,7 +106,7 @@ struct KesslerFinalView: View {
   @ViewBuilder
   func recomendationView() -> some View {
     VStack(alignment: .leading) {
-      Text("Recomendation")
+      Text("Rekomendasi")
         .font(.system(size: 20, weight: .semibold))
         .foregroundColor(Color(uiColor: .accentPurple))
         .padding(.bottom)

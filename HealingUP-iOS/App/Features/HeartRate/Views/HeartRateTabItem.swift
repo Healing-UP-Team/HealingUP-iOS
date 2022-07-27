@@ -135,17 +135,17 @@ struct HeartRateTabItem: View {
   @ViewBuilder
   private func emptyDataView() -> some View {
     VStack {
-      Text("No Data")
+      Text("Tidak ada Data")
         .fontWeight(.bold)
         .font(.system(size: 20))
         .foregroundColor(Color(uiColor: .accentPurple))
         .padding(.bottom, 2)
 
-      Text("Please use your apple watch, data will appear when apple watch measure and save your data")
+      Text("Tolong gunakan apple watch kamu, jika kamu baru saja menggunakan apple watch dan data belum ditampilkan, kamu bisa membuka aplikasi Breathe pada apple watch kamu dan mulai menggunakan fitur breathing. Aplikasi akan membutuhkan waktu beberapa saat untuk menerima data dari apple watch.")
         .fontWeight(.medium)
         .font(.system(size: 15))
         .foregroundColor(.gray)
-        .multilineTextAlignment(.center)
+        .multilineTextAlignment(.leading)
 
     }
     .padding(.vertical)
@@ -158,12 +158,12 @@ struct HeartRateTabItem: View {
         Image(systemName: "info.circle")
           .font(.system(size: 18, weight: .bold))
           .foregroundColor(Color(uiColor: .accentPurple))
-        Text("About Heart Rate Variability")
+        Text("Tentang Heart Rate Variability")
           .font(.system(size: 18, weight: .bold))
           .foregroundColor(Color(uiColor: .accentPurple))
       }
 
-      Text("Heart Rate Variability (HRV) is a measure of the variation in the time interval between heart beats. Apple Watch calculates HRV by using the standard  deviation of beat-to-beat measurements which are captured by the heart rate sensor. HRV is validated for users over the age of 18. Third party apps and devices can also add HRV to Health.")
+      Text("Heart Rate Variability (HRV) adalah ukuran variasi dalam interval waktu antara detak jantung. Apple Watch menghitung HRV dengan menggunakan standar deviasi pengukuran detak ke detak yang ditangkap oleh sensor detak jantung.")
         .font(.system(size: 13))
         .multilineTextAlignment(.leading)
         .foregroundColor(.gray)
@@ -174,7 +174,7 @@ struct HeartRateTabItem: View {
   @ViewBuilder
   private func valueCard(progress: Double, minimumHrv: Double) -> some View {
     VStack(alignment: .center) {
-      Text("Average")
+      Text("Rata-Rata")
         .fontWeight(.medium)
         .font(.system(size: 15))
         .foregroundColor(.gray)
@@ -203,7 +203,7 @@ struct HeartRateTabItem: View {
               .foregroundColor(Color(uiColor: .accentPurple))
 
             VStack(alignment: .leading) {
-              Text((progress/150 * 100) < minimumHrv ? "Bad" : "Good")
+              Text((progress/150 * 100) < minimumHrv ? "Buruk" : "Baik")
                 .fontWeight(.bold)
                 .font(.system(size: 20))
                 .foregroundColor((progress/150 * 100) < minimumHrv ? .pink : .blue)
@@ -225,7 +225,7 @@ struct HeartRateTabItem: View {
                 .foregroundColor(.black)
                 .padding(.top, 5)
 
-              Text("Minimum HRV")
+              Text("HRV Minimal")
                 .fontWeight(.medium)
                 .font(.system(size: 10))
                 .foregroundColor(.gray)
@@ -259,12 +259,12 @@ struct HeartRateTabItem: View {
   private func recomendationCard(value: Double) -> some View {
     VStack(alignment: .leading) {
       HStack {
-        Text("Recomendation")
+        Text("Rekomendasi")
           .font(.system(size: 18, weight: .bold))
           .foregroundColor(Color(uiColor: .accentPurple))
         Spacer()
       }
-      Text((value/150 * 100) < minimumHrv ? "Your HRV is lower than the normal range, your HRV can be affected by stress, you can check your stress level by answering these questions." : "You are doing well, keep it up and HRV levels")
+      Text((value/150 * 100) < minimumHrv ? "HRV kamu lebih rendah dari kisaran normal, HRV kamu dapat dipengaruhi oleh stres, kamu dapat memeriksa tingkat stres kamu dengan menjawab beberapa pertanyaan dan aplikasi akan memberikan rekomendasi." : "kamu baik-baik saja, pertahankan dan tingkatkan HRV kamu")
         .fontWeight(.regular)
         .font(.system(size: 16))
         .foregroundColor((value/150 * 100) < minimumHrv ? .pink : .black)
@@ -279,7 +279,7 @@ struct HeartRateTabItem: View {
           Button {
             self.tabSelection = 2
           }label: {
-            Text("Get Started")
+            Text("Mulai")
               .fontWeight(.bold)
               .padding(10)
               .background(Color(uiColor: .accentPurple))
