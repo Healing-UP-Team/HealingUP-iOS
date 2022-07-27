@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A575E3BC28915C43005D2E6A /* JournalingAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3BB28915C43005D2E6A /* JournalingAssembler.swift */; };
+		A575E3CC28915C66005D2E6A /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3C228915C66005D2E6A /* JournalCell.swift */; };
+		A575E3D028915C67005D2E6A /* JournalingNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3C728915C66005D2E6A /* JournalingNavigator.swift */; };
+		A575E3D328915D09005D2E6A /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3D228915D09005D2E6A /* Journal.swift */; };
+		A575E3D528915DA0005D2E6A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3D428915DA0005D2E6A /* Color.swift */; };
+		A575E3D828915E39005D2E6A /* JournalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3D628915E39005D2E6A /* JournalsViewModel.swift */; };
+		A575E3D928915E39005D2E6A /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3D728915E39005D2E6A /* JournalViewModel.swift */; };
+		A575E3DD28915E46005D2E6A /* JournalingTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3DA28915E46005D2E6A /* JournalingTabItem.swift */; };
+		A575E3DE28915E46005D2E6A /* JournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3DB28915E46005D2E6A /* JournalDetailView.swift */; };
+		A575E3DF28915E46005D2E6A /* JournalEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3DC28915E46005D2E6A /* JournalEditView.swift */; };
 		AE0058CA2860757000684F81 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0058C92860757000684F81 /* CircularProgressView.swift */; };
 		AE33ADCF284D8E01007F9FA8 /* KesslerTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADCE284D8E01007F9FA8 /* KesslerTabItem.swift */; };
 		AE33ADD1284D8E20007F9FA8 /* KesslerNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADD0284D8E20007F9FA8 /* KesslerNavigator.swift */; };
@@ -192,6 +202,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A575E3BB28915C43005D2E6A /* JournalingAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalingAssembler.swift; sourceTree = "<group>"; };
+		A575E3C228915C66005D2E6A /* JournalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
+		A575E3C728915C66005D2E6A /* JournalingNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalingNavigator.swift; sourceTree = "<group>"; };
+		A575E3D228915D09005D2E6A /* Journal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		A575E3D428915DA0005D2E6A /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A575E3D628915E39005D2E6A /* JournalsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalsViewModel.swift; sourceTree = "<group>"; };
+		A575E3D728915E39005D2E6A /* JournalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
+		A575E3DA28915E46005D2E6A /* JournalingTabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalingTabItem.swift; sourceTree = "<group>"; };
+		A575E3DB28915E46005D2E6A /* JournalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalDetailView.swift; sourceTree = "<group>"; };
+		A575E3DC28915E46005D2E6A /* JournalEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEditView.swift; sourceTree = "<group>"; };
 		AE0058C92860757000684F81 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		AE33ADCE284D8E01007F9FA8 /* KesslerTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerTabItem.swift; sourceTree = "<group>"; };
 		AE33ADD0284D8E20007F9FA8 /* KesslerNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerNavigator.swift; sourceTree = "<group>"; };
@@ -361,6 +381,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A575E3BD28915C66005D2E6A /* Journaling */ = {
+			isa = PBXGroup;
+			children = (
+				A575E3BE28915C66005D2E6A /* ViewModel */,
+				A575E3C128915C66005D2E6A /* Component */,
+				A575E3C628915C66005D2E6A /* Navigator */,
+				A575E3C828915C66005D2E6A /* Views */,
+			);
+			path = Journaling;
+			sourceTree = "<group>";
+		};
+		A575E3BE28915C66005D2E6A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A575E3D628915E39005D2E6A /* JournalsViewModel.swift */,
+				A575E3D728915E39005D2E6A /* JournalViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A575E3C128915C66005D2E6A /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				A575E3DB28915E46005D2E6A /* JournalDetailView.swift */,
+				A575E3DC28915E46005D2E6A /* JournalEditView.swift */,
+				A575E3C228915C66005D2E6A /* JournalCell.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		A575E3C628915C66005D2E6A /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				A575E3C728915C66005D2E6A /* JournalingNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		A575E3C828915C66005D2E6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A575E3DA28915E46005D2E6A /* JournalingTabItem.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AE0058C82860755700684F81 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -869,6 +935,7 @@
 		AED86DD7283B1A8800C62B98 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A575E3BB28915C43005D2E6A /* JournalingAssembler.swift */,
 				AED86DF3283B286800C62B98 /* MembershipAssembler.swift */,
 				AEB477B8283B574A005567CA /* HomeAssembler.swift */,
 				AEB477D0283C7A86005567CA /* ProfileAssembler.swift */,
@@ -885,6 +952,7 @@
 			isa = PBXGroup;
 			children = (
 				AEE2CB85288FF7B600BBE2B8 /* WebView */,
+				A575E3BD28915C66005D2E6A /* Journaling */,
 				AEB07955288697270016256C /* Scheduling */,
 				AE60345728802E0100AE4116 /* Onboarding */,
 				AE33ADCB284D8DBA007F9FA8 /* Kessler */,
@@ -943,6 +1011,7 @@
 		AED86DDD283B1AF100C62B98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A575E3D228915D09005D2E6A /* Journal.swift */,
 				AED86DF5283B2A4300C62B98 /* User.swift */,
 				AE33ADD8284D9C0A007F9FA8 /* KesslerQuiz.swift */,
 				AE33ADF4284E159C007F9FA8 /* KesslerResult.swift */,
@@ -1044,6 +1113,7 @@
 		AED86DFE283B2DA000C62B98 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A575E3D428915DA0005D2E6A /* Color.swift */,
 				AED86DFF283B2DAE00C62B98 /* String.swift */,
 				AEB477AE283B3C25005567CA /* Query.swift */,
 				AE33ADE3284DB735007F9FA8 /* View.swift */,
@@ -1372,10 +1442,14 @@
 				AEB477C3283B71F1005567CA /* ViewStateModifier.swift in Sources */,
 				AEB0795E2886A9940016256C /* ChooseTimeView.swift in Sources */,
 				AEB477AF283B3C25005567CA /* Query.swift in Sources */,
+				A575E3D828915E39005D2E6A /* JournalsViewModel.swift in Sources */,
 				AEB477D1283C7A86005567CA /* ProfileAssembler.swift in Sources */,
+				A575E3DE28915E46005D2E6A /* JournalDetailView.swift in Sources */,
+				A575E3D528915DA0005D2E6A /* Color.swift in Sources */,
 				AE33ADFD284E444D007F9FA8 /* KesslerResultItemView.swift in Sources */,
 				AEB079602886AE5A0016256C /* ScheduleViewModel.swift in Sources */,
 				AEE2CB89288FF7D100BBE2B8 /* WebViewModel.swift in Sources */,
+				A575E3D328915D09005D2E6A /* Journal.swift in Sources */,
 				AEB477BC283B6E95005567CA /* ProgressHUDModifier.swift in Sources */,
 				AE659FB1286C7AA200133F36 /* SessionManager.swift in Sources */,
 				AED86DF8283B2AE600C62B98 /* UserEntity.swift in Sources */,
@@ -1384,6 +1458,7 @@
 				AE795CDD28754D1300D08F00 /* UIImage.swift in Sources */,
 				AE725A1D286194D70082061F /* HeartAssembler.swift in Sources */,
 				AE6034632880388100AE4116 /* OnboardingStepView.swift in Sources */,
+				A575E3BC28915C43005D2E6A /* JournalingAssembler.swift in Sources */,
 				AE33ADDF284D9E00007F9FA8 /* FirebaseManager+KesslerQuiz.swift in Sources */,
 				AE60346528803FCD00AE4116 /* OnboardingNavigator.swift in Sources */,
 				AEB477DB283C91A0005567CA /* HeartRateTabItem.swift in Sources */,
@@ -1397,6 +1472,7 @@
 				AEB477DD283C981F005567CA /* HeartRateViewModel.swift in Sources */,
 				AEE2CB7C288FDDBE00BBE2B8 /* SecureInputView.swift in Sources */,
 				AE33ADE2284DA0E8007F9FA8 /* KesslerViewModel.swift in Sources */,
+				A575E3CC28915C66005D2E6A /* JournalCell.swift in Sources */,
 				AED86DAF283B181A00C62B98 /* Persistence.swift in Sources */,
 				AED86DB2283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld in Sources */,
 				AEB079722887F2550016256C /* ResultView.swift in Sources */,
@@ -1406,12 +1482,14 @@
 				AEE2CB8B288FF7E100BBE2B8 /* WebViewCountainer.swift in Sources */,
 				AE33ADFF284E452B007F9FA8 /* Date.swift in Sources */,
 				AE33ADD3284D8E7D007F9FA8 /* KesslerAssembler.swift in Sources */,
+				A575E3D028915C67005D2E6A /* JournalingNavigator.swift in Sources */,
 				AE33ADD9284D9C0A007F9FA8 /* KesslerQuiz.swift in Sources */,
 				AEB477CD283C77A8005567CA /* ProfileView.swift in Sources */,
 				AE33ADFB284E18B9007F9FA8 /* FirebaseManager+KesslerResult.swift in Sources */,
 				AE33ADD7284D9848007F9FA8 /* KesslerFinalView.swift in Sources */,
 				AE795CE1287578DA00D08F00 /* ButtonDefaultView.swift in Sources */,
 				AE33ADF9284E17C4007F9FA8 /* KesslerResultMapper.swift in Sources */,
+				A575E3D928915E39005D2E6A /* JournalViewModel.swift in Sources */,
 				AEB0795A288699A70016256C /* ScheduleTabItem.swift in Sources */,
 				AE725A242861AB5D0082061F /* RecomendationCardView.swift in Sources */,
 				AED86DFA283B2BB000C62B98 /* BodyCodable.swift in Sources */,
@@ -1440,9 +1518,11 @@
 				AE33ADD1284D8E20007F9FA8 /* KesslerNavigator.swift in Sources */,
 				AE60345E2880368E00AE4116 /* OnboardingView.swift in Sources */,
 				AED86DA8283B181900C62B98 /* ContentView.swift in Sources */,
+				A575E3DF28915E46005D2E6A /* JournalEditView.swift in Sources */,
 				AE0058CA2860757000684F81 /* CircularProgressView.swift in Sources */,
 				AEB079702887EB4D0016256C /* ScheduleAssembler.swift in Sources */,
 				AEB0796E2887E4BF0016256C /* FirebaseManager+Schedule.swift in Sources */,
+				A575E3DD28915E46005D2E6A /* JournalingTabItem.swift in Sources */,
 				AEB477B1283B556D005567CA /* HomeView.swift in Sources */,
 				AE795CDB28753BE500D08F00 /* UIColor.swift in Sources */,
 				AEB07977288834B50016256C /* CounsellorHomeView.swift in Sources */,
@@ -1644,9 +1724,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = 4VR7S48W5N;
+				DEVELOPMENT_TEAM = 4SN74J4HZJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1654,6 +1735,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp;
 				PRODUCT_NAME = "Healing UP";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1669,9 +1751,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = 4VR7S48W5N;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1679,6 +1762,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp;
 				PRODUCT_NAME = "Healing UP";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1810,10 +1894,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 4VR7S48W5N;
+				DEVELOPMENT_TEAM = 4SN74J4HZJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUP-iOS/Info.plist";
@@ -1835,6 +1920,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios;
 				PRODUCT_NAME = "Healing UP";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1847,10 +1933,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 4VR7S48W5N;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUP-iOS/Info.plist";
@@ -1872,6 +1959,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios;
 				PRODUCT_NAME = "Healing UP";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
