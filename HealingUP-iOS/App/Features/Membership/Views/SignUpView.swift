@@ -18,6 +18,7 @@ struct SignUpView: View {
   @State private var isShowAlert = false
   @State private var isSignedIn = false
 
+  @State private var name = ""
   @State private var age = 0
   @State private var birthDate = Date()
   @State private var ageComp: DateComponents = DateComponents()
@@ -34,6 +35,19 @@ struct SignUpView: View {
           Text("Buat Akun")
             .font(.system(size: 40, weight: .bold))
             .padding(.bottom, 50)
+          HStack {
+            Image(systemName: "person")
+              .frame(width: 30)
+              .font(.system(size: 20))
+              .foregroundColor(Color.gray)
+            TextField("Nama", text: $name)
+              .font(.system(size: 17, weight: .semibold))
+              .textContentType(.emailAddress)
+          }
+          Divider()
+            .background(Color.black)
+            .padding(.top, 10)
+            .padding(.bottom, 30)
           HStack {
             Image(systemName: "envelope")
               .frame(width: 30)
@@ -63,7 +77,7 @@ struct SignUpView: View {
 
           DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
             HStack {
-              Image(systemName: "person")
+              Image(systemName: "calendar")
                 .frame(width: 30)
                 .font(.system(size: 20))
                 .foregroundColor(Color.gray)
@@ -132,7 +146,7 @@ struct SignUpView: View {
           NotificationService.shared.getToken { token in
             let newUser: User = .init(
               userId: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.uid ?? "", role: .user,
-              name: "",
+              name: name,
               email: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.email ?? "",
               age: age,
               minimumHrv: setupHrvNormal(age: age),
