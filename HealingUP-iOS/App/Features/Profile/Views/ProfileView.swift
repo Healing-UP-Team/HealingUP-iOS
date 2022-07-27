@@ -79,10 +79,10 @@ struct ProfileView: View {
             destination:
               Group {
                 if item.menu == .aboutUs {
-                  Text(item.menu.rawValue)
+                  navigator.navigateToWebView(url: Constant.aboutUsLink, title: "Tentang Kami")
                 }
                 if item.menu == .terms {
-                  navigator.navigateToTerms()
+                  navigator.navigateToWebView(url: Constant.termsLink, title: "Ketentuan Pengguna")
                 }
               }
           ) {

@@ -12,4 +12,5 @@ struct Constant {
   static let isUserExist = "is_user_exist"
 
   static let termsLink = "https://sites.google.com/view/healing-up/terms-and-condition"
+  static let aboutUsLink = "https://sites.google.com/view/healing-up/home"
 }

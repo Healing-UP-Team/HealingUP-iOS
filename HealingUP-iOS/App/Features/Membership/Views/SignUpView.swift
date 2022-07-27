@@ -26,7 +26,7 @@ struct SignUpView: View {
   var body: some View {
     NavigationView {
       VStack {
-        NavigationLink(destination: navigator.navigateToTerms(), isActive: $isShowTerms) {
+        NavigationLink(destination: navigator.navigateToWebView(url: Constant.termsLink, title: "Ketentuan Pengguna"), isActive: $isShowTerms) {
           EmptyView()
         }
         Spacer()

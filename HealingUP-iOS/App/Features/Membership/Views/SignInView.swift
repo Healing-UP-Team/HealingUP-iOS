@@ -27,7 +27,7 @@ struct SignInView: View {
     } else {
       NavigationView {
         VStack {
-          NavigationLink(destination: navigator.navigateToTerms(), isActive: $isShowTerms) {
+          NavigationLink(destination: navigator.navigateToWebView(url: Constant.termsLink, title: "Ketentuan Pengguna"), isActive: $isShowTerms) {
             EmptyView()
           }
           VStack(alignment: .center) {

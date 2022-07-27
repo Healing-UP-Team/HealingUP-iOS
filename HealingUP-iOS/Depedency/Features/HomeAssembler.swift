@@ -12,7 +12,6 @@ protocol HomeAssembler {
 }
 
 extension HomeAssembler where Self: Assembler {
-
   func resolve() -> HomeNavigator {
     return HomeNavigator(assembler: self)
   }

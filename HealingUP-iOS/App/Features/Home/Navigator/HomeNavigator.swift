@@ -38,7 +38,8 @@ struct HomeNavigator {
     return navigator.navigateToOnboarding(data: data, doneFunction: doneFuntion)
   }
 
-  func navigateToTerms() -> TermsView {
-    return TermsView()
+  func navigateToWebView(url: String, title: String? = nil) -> WebView {
+    let navigator: WebViewNavigator = assembler.resolve()
+    return navigator.navigateToWebView(url: url, title: title)
   }
 }
