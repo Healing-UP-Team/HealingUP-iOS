@@ -17,7 +17,8 @@ protocol Assembler: MembershipAssembler,
                     JournalingAssembler,
                     HeartAssembler,
                     OnboardingAssembler,
-                    ScheduleAssembler {}
+                    ScheduleAssembler,
+                    WebViewAssembler {}
 
 class AppAssembler: Assembler {
     static let shared = AppAssembler()
