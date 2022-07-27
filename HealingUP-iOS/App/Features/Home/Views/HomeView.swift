@@ -73,6 +73,8 @@ struct HomeView: View {
       return "Schedule"
     case 3:
         return "Journaling"
+    case 4:
+      return "Schedule"
     default:
       return "Profile"
     }
