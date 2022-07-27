@@ -9,7 +9,6 @@ import SwiftUI
 
 extension Color {
 
-
     static var primaryWhite = Color(uiColor: UIColor.primaryWhite)
     static var accentPurple = Color(uiColor: UIColor.accentPurple)
     static var softYellow = Color(uiColor: UIColor.softYellow)
@@ -17,7 +16,7 @@ extension Color {
     static var softBlue = Color(uiColor: UIColor.softBlue)
     static var softPinkFirst = Color(uiColor: UIColor.softPinkFirst)
 
-    static var combColor : [String: Color] = [
+    static var combColor: [String: Color] = [
         "😔": .accentPurple,
         "🙂": .softPinkFirst,
         "😊": Color.gray.opacity(0.2),

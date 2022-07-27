@@ -17,18 +17,16 @@ enum Action {
 
 struct JournalEditView: View {
 
-  //MARK: - Vriable init
+  // MARK: - Vriable init
   @StateObject var viewModel = JournalViewModel()
   var mode: Mode = .new
   var completionHandler: ((Result<Action, Error>) -> Void)?
 
-
-  //MARK: - Local variable
+  // MARK: - Local variable
   @Environment(\.presentationMode) private var presentationMode
   @State private var presentActionSheet = false
-  
 
-  //MARK: - UI Component
+  // MARK: - UI Component
   var body: some View {
     NavigationView {
       Form {
@@ -121,8 +119,6 @@ struct JournalEditView: View {
   }
 
 }
-
-
 
 struct JournalEditView_Preview: PreviewProvider {
   static var previews: some View {

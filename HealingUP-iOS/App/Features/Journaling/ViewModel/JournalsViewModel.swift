@@ -27,7 +27,7 @@ class JournalsViewModel: ObservableObject {
     if listenerRegistration == nil {
       listenerRegistration = db.collection(path)
         .whereField("userId", isEqualTo: userId)
-        .addSnapshotListener { (querySnapshot, error) in
+        .addSnapshotListener { (querySnapshot, _) in
         guard let documents = querySnapshot?.documents else {
           print("No documents")
           return
@@ -48,7 +48,4 @@ class JournalsViewModel: ObservableObject {
     }
   }
 
-
-
 }
-

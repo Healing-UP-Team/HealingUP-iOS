@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct JournalDetailView: View {
-  //MARK: - State
+  // MARK: - State
   @Environment(\.presentationMode) var presentationMode
   @State var isShowEditJournalSheet = false
 
-  //MARK: - State via init
+  // MARK: - State via init
   var journal: Journal
 
   private var color: Color {
     Color.combColor[self.journal.emoji] ?? .accentPurple
   }
 
-  //MARK: - UI Component
+  // MARK: - UI Component
   var body: some View {
-    HStack{
+    HStack {
       Spacer(minLength: 16)
       VStack(alignment: .leading, spacing: 20) {
         Text(journal.emoji)
