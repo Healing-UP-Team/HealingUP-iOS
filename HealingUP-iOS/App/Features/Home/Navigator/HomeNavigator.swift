@@ -37,4 +37,8 @@ struct HomeNavigator {
     let navigator: OnboardingNavigator = assembler.resolve()
     return navigator.navigateToOnboarding(data: data, doneFunction: doneFuntion)
   }
+
+  func navigateToTerms() -> TermsView {
+    return TermsView()
+  }
 }

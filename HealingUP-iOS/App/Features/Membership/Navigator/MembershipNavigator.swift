@@ -23,4 +23,8 @@ struct MembershipNavigator {
     return SignUpView(viewModel: assembler.resolve(), navigator: assembler.resolve(), isSignIn: isSignIn)
   }
 
+  func navigateToTerms() -> TermsView {
+    return TermsView()
+  }
+
 }

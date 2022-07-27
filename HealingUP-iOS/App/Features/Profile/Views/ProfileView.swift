@@ -13,9 +13,9 @@ struct ProfileMenu: Hashable {
 }
 
 enum ProfileMenuEnum: String {
-  case personalInfo = "Personal Information"
-  case aboutUs = "About Us"
-  case terms = "General Terms of Use"
+  case personalInfo = "Informasi Personal"
+  case aboutUs = "Tentang Kami"
+  case terms = "Ketentuan Pengguna"
 }
 
 struct ProfileView: View {
@@ -53,12 +53,6 @@ struct ProfileView: View {
                 if item.menu == .personalInfo {
                   Text(item.menu.rawValue)
                 }
-                if item.menu == .aboutUs {
-                  Text(item.menu.rawValue)
-                }
-                if item.menu == .terms {
-                  Text(item.menu.rawValue)
-                }
               }
           ) {
             HStack {
@@ -88,7 +82,7 @@ struct ProfileView: View {
                   Text(item.menu.rawValue)
                 }
                 if item.menu == .terms {
-                  Text(item.menu.rawValue)
+                  navigator.navigateToTerms()
                 }
               }
           ) {

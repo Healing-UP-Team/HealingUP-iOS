@@ -23,4 +23,8 @@ struct ProfileNavigator {
     let navigator: MembershipNavigator = assembler.resolve()
     return navigator.navigateToSignIn()
   }
+
+  func navigateToTerms() -> TermsView {
+    return TermsView()
+  }
 }

@@ -34,7 +34,7 @@ struct ContentView: View {
       }
     }
     .fullScreenCover(isPresented: $onboardingDone) {
-      navigator.navigateToHome()
+      navigator.navigateToSignIn()
     }
   }
 }

@@ -125,6 +125,10 @@
 		AED86E04283B2E8C00C62B98 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86E03283B2E8C00C62B98 /* FirebaseError.swift */; };
 		AED86E06283B2F3100C62B98 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86E05283B2F3100C62B98 /* FirebaseManager.swift */; };
 		AEE0D8B0285F8C6B006FD4F3 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = AEE0D8AF285F8C6B006FD4F3 /* SwiftUICharts */; };
+		AEE2CB7C288FDDBE00BBE2B8 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE2CB7B288FDDBE00BBE2B8 /* SecureInputView.swift */; };
+		AEE2CB80288FF1AE00BBE2B8 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE2CB7F288FF1AE00BBE2B8 /* TermsView.swift */; };
+		AEE2CB89288FF7D100BBE2B8 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE2CB88288FF7D100BBE2B8 /* WebViewModel.swift */; };
+		AEE2CB8B288FF7E100BBE2B8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE2CB8A288FF7E100BBE2B8 /* WebView.swift */; };
 		AEF34A1128684D6700FC4235 /* HeartRateVariabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF34A1028684D6700FC4235 /* HeartRateVariabilityView.swift */; };
 		AEF6F7202888EDF000910B79 /* CounsellorConfirmScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F71F2888EDF000910B79 /* CounsellorConfirmScheduleView.swift */; };
 /* End PBXBuildFile section */
@@ -299,6 +303,10 @@
 		AED86E01283B2E5500C62B98 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		AED86E03283B2E8C00C62B98 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		AED86E05283B2F3100C62B98 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		AEE2CB7B288FDDBE00BBE2B8 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
+		AEE2CB7F288FF1AE00BBE2B8 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		AEE2CB88288FF7D100BBE2B8 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		AEE2CB8A288FF7E100BBE2B8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		AEF34A1028684D6700FC4235 /* HeartRateVariabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateVariabilityView.swift; sourceTree = "<group>"; };
 		AEF6F71F2888EDF000910B79 /* CounsellorConfirmScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorConfirmScheduleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -855,6 +863,8 @@
 		AED86DD8283B1A9200C62B98 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				AEE2CB85288FF7B600BBE2B8 /* WebView */,
+				AEE2CB7D288FEEE500BBE2B8 /* Terms */,
 				AEB07955288697270016256C /* Scheduling */,
 				AE60345728802E0100AE4116 /* Onboarding */,
 				AE33ADCB284D8DBA007F9FA8 /* Kessler */,
@@ -978,6 +988,7 @@
 		AED86DE6283B27DA00C62B98 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
+				AEE2CB7A288FDDA300BBE2B8 /* Component */,
 				AED86DE7283B27E400C62B98 /* Navigator */,
 				AED86DE8283B27E900C62B98 /* ViewModel */,
 				AED86DE9283B27F100C62B98 /* Views */,
@@ -1021,6 +1032,55 @@
 				AE795CDC28754D1300D08F00 /* UIImage.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEE2CB7A288FDDA300BBE2B8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				AEE2CB7B288FDDBE00BBE2B8 /* SecureInputView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		AEE2CB7D288FEEE500BBE2B8 /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				AEE2CB7E288FEEF000BBE2B8 /* Views */,
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
+		AEE2CB7E288FEEF000BBE2B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AEE2CB7F288FF1AE00BBE2B8 /* TermsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AEE2CB85288FF7B600BBE2B8 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				AEE2CB87288FF7C300BBE2B8 /* ViewModel */,
+				AEE2CB86288FF7BD00BBE2B8 /* Views */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		AEE2CB86288FF7BD00BBE2B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AEE2CB8A288FF7E100BBE2B8 /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AEE2CB87288FF7C300BBE2B8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AEE2CB88288FF7D100BBE2B8 /* WebViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AEF34A0B28684C7B00FC4235 /* Depedency */ = {
@@ -1309,6 +1369,7 @@
 				AEB477D1283C7A86005567CA /* ProfileAssembler.swift in Sources */,
 				AE33ADFD284E444D007F9FA8 /* KesslerResultItemView.swift in Sources */,
 				AEB079602886AE5A0016256C /* ScheduleViewModel.swift in Sources */,
+				AEE2CB89288FF7D100BBE2B8 /* WebViewModel.swift in Sources */,
 				AEB477BC283B6E95005567CA /* ProgressHUDModifier.swift in Sources */,
 				AE659FB1286C7AA200133F36 /* SessionManager.swift in Sources */,
 				AED86DF8283B2AE600C62B98 /* UserEntity.swift in Sources */,
@@ -1328,6 +1389,7 @@
 				AE33ADD5284D912C007F9FA8 /* KesslerQuizView.swift in Sources */,
 				AEB079652886CC090016256C /* TextView.swift in Sources */,
 				AEB477DD283C981F005567CA /* HeartRateViewModel.swift in Sources */,
+				AEE2CB7C288FDDBE00BBE2B8 /* SecureInputView.swift in Sources */,
 				AE33ADE2284DA0E8007F9FA8 /* KesslerViewModel.swift in Sources */,
 				AED86DAF283B181A00C62B98 /* Persistence.swift in Sources */,
 				AED86DB2283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld in Sources */,
@@ -1335,6 +1397,7 @@
 				AEB0797E288840840016256C /* NotificationService.swift in Sources */,
 				AED86E00283B2DAE00C62B98 /* String.swift in Sources */,
 				AEB477B9283B574A005567CA /* HomeAssembler.swift in Sources */,
+				AEE2CB8B288FF7E100BBE2B8 /* WebView.swift in Sources */,
 				AE33ADFF284E452B007F9FA8 /* Date.swift in Sources */,
 				AE33ADD3284D8E7D007F9FA8 /* KesslerAssembler.swift in Sources */,
 				AE33ADD9284D9C0A007F9FA8 /* KesslerQuiz.swift in Sources */,
@@ -1359,6 +1422,7 @@
 				AE725A222861A57E0082061F /* HeartRateVariability.swift in Sources */,
 				AED86E04283B2E8C00C62B98 /* FirebaseError.swift in Sources */,
 				AE33ADF5284E159C007F9FA8 /* KesslerResult.swift in Sources */,
+				AEE2CB80288FF1AE00BBE2B8 /* TermsView.swift in Sources */,
 				AED86DF2283B285600C62B98 /* AppAssembler.swift in Sources */,
 				AEB0796A2887E2CA0016256C /* ScheduleEntity.swift in Sources */,
 				AE603460288037C000AE4116 /* Onboarding.swift in Sources */,

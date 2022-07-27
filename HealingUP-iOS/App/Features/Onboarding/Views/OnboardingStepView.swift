@@ -14,6 +14,7 @@ struct OnboardingStepView: View {
       Image(data.image)
         .resizable()
         .scaledToFit()
+        .frame(height: UIScreen.main.bounds.height/3)
         .padding(.bottom, 50)
       Text(data.heading)
         .font(.system(size: 25, design: .rounded))

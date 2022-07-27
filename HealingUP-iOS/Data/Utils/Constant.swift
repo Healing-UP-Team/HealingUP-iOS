@@ -10,4 +10,6 @@ import Foundation
 struct Constant {
   static let membership = "membership"
   static let isUserExist = "is_user_exist"
+
+  static let termsLink = "https://sites.google.com/view/healing-up/terms-and-condition"
 }

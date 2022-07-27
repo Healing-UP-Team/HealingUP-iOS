@@ -19,88 +19,149 @@ struct SignUpView: View {
   @State private var isSignedIn = false
 
   @State private var age = 0
+  @State private var birthDate = Date()
+  @State private var ageComp: DateComponents = DateComponents()
+  @State private var isShowTerms = false
 
   var body: some View {
-    VStack {
-      Spacer()
-      VStack(alignment: .leading) {
-        TextField("Email", text: $email)
-          .font(.system(size: 17, weight: .semibold))
-        Divider()
-          .background(Color.black)
-          .padding(.bottom, 30)
-        SecureField("Password", text: $password)
-          .font(.system(size: 17, weight: .semibold))
-        Divider()
-          .background(Color.black)
+    NavigationView {
+      VStack {
+        NavigationLink(destination: navigator.navigateToTerms(), isActive: $isShowTerms) {
+          EmptyView()
+        }
+        Spacer()
+        VStack(alignment: .leading) {
+          Text("Buat Akun")
+            .font(.system(size: 40, weight: .bold))
+            .padding(.bottom, 50)
+          HStack {
+            Image(systemName: "envelope")
+              .frame(width: 30)
+              .font(.system(size: 20))
+              .foregroundColor(Color.gray)
+            TextField("Email", text: $email)
+              .font(.system(size: 17, weight: .semibold))
+              .textContentType(.emailAddress)
+          }
+          Divider()
+            .background(Color.black)
+            .padding(.top, 10)
+            .padding(.bottom, 30)
 
-        Text("Your age")
-          .font(.system(size: 17, weight: .semibold))
-          .padding(.top)
-        Picker("", selection: $age) {
-          ForEach(1...70, id: \.self) { number in
-            Text("\(number) \tyears old")
+          HStack {
+            Image(systemName: "lock")
+              .frame(width: 30)
+              .font(.system(size: 20))
+              .foregroundColor(Color.gray)
+            SecureInputView("Kata Sandi", text: $password)
               .font(.system(size: 17, weight: .semibold))
           }
+          Divider()
+            .background(Color.black)
+            .padding(.top, 10)
+            .padding(.bottom, 20)
+
+          DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
+            HStack {
+              Image(systemName: "person")
+                .frame(width: 30)
+                .font(.system(size: 20))
+                .foregroundColor(Color.gray)
+              Text("Tanggal Lahir")
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundColor(Color.gray)
+            }
+          }
+          .datePickerStyle(.compact)
+          .onChange(of: birthDate, perform: { _ in
+            ageComp = Calendar.current.dateComponents([.year, .month, .day], from: birthDate, to: Date())
+            age = ageComp.year ?? 0
+          })
+          Divider()
+            .background(Color.black)
+            .padding(.top, 10)
+            .padding(.bottom, 30)
         }
-        .pickerStyle(.wheel)
+        .padding()
 
-      }.padding()
-      Spacer()
-      Button {
-        viewModel.registerUser(email: email, password: password)
-      } label: {
-        Text("Daftar")
-      }
+        VStack(alignment: .center) {
+          Text("Dengan masuk atau mendaftar, saya menyetujui")
+            .font(.system(size: 12, weight: .regular))
+          Button {
+            isShowTerms = true
+          } label: {
+            Text("Ketentuan Pengguna Healing UP")
+              .underline()
+              .font(.system(size: 12, weight: .bold))
+          }
+        }
 
-      Button {
-        isSignIn.toggle()
-      } label: {
-        Text("Sudah punya akun? login sekarang")
+        .padding(.bottom, 50)
+
+        ButtonDefaultView(title: "Daftar", action: {
+          viewModel.registerUser(email: email, password: password)
+        })
+
+        Spacer()
+
+        Button {
+          isSignIn.toggle()
+        } label: {
+          HStack(spacing: 5) {
+            Text("Sudah punya akun?")
+              .foregroundColor(Color.gray)
+              .font(.system(size: 17, weight: .medium))
+            Text("Masuk")
+              .foregroundColor(Color(uiColor: .accentPurple))
+              .font(.system(size: 17, weight: .bold))
+          }
+        }
+        .padding()
       }
       .padding()
+      .alert(isPresented: $isShowAlert) {
+        Alert(
+          title: Text("Gagal"),
+          message: Text("\(signUpError?.localizedDescription ?? "Field tidak boleh kosong")"),
+          dismissButton: .default(Text("OK"))
+        )
+      }
+      .onViewStatable(
+        viewModel.$registerState,
+        onSuccess: { _ in
+          NotificationService.shared.getToken { token in
+            let newUser: User = .init(
+              userId: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.uid ?? "", role: .user,
+              name: "",
+              email: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.email ?? "",
+              age: age,
+              minimumHrv: setupHrvNormal(age: age),
+              fcmToken: token)
+            viewModel.createUser(user: newUser)
+          }
+        },
+        onError: { error in
+          signUpError = error
+          isShowAlert = true
+        })
+      .onViewStatable(
+        viewModel.$createUserState,
+        onSuccess: { success in
+          isSignedIn = success
+          isShowAlert = false
+        },
+        onError: { error in
+          signUpError = error
+          isShowAlert = true
+        })
+      .fullScreenCover(isPresented: $isSignedIn) {
+        navigator.navigateToHome()
+      }
+      .progressHUD(isShowing: $viewModel.registerState.isLoading)
+      .progressHUD(isShowing: $viewModel.createUserState.isLoading)
+      .navigationBarTitle("")
+      .navigationBarHidden(true)
     }
-    .alert(isPresented: $isShowAlert) {
-      Alert(
-        title: Text("Gagal"),
-        message: Text("\(signUpError?.localizedDescription ?? "Field tidak boleh kosong")"),
-        dismissButton: .default(Text("OK"))
-      )
-    }
-
-    .onViewStatable(
-      viewModel.$registerState,
-      onSuccess: { _ in
-        NotificationService.shared.getToken { token in
-          let newUser: User = .init(
-            userId: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.uid ?? "", role: .user,
-            name: "",
-            email: DefaultFirebaseManager.shared.firebaseAuth.currentUser?.email ?? "",
-            age: age,
-            minimumHrv: setupHrvNormal(age: age),
-            fcmToken: token)
-          viewModel.createUser(user: newUser)
-        }
-      },
-      onError: { error in
-        signUpError = error
-        isShowAlert = true
-      })
-    .onViewStatable(
-      viewModel.$createUserState,
-      onSuccess: { success in
-        isSignedIn = success
-        isShowAlert = false
-      },
-      onError: { error in
-        signUpError = error
-        isShowAlert = true
-      })
-    .fullScreenCover(isPresented: $isSignedIn) {
-      navigator.navigateToHome()
-    }
-    .progressHUD(isShowing: $viewModel.registerState.isLoading)
-    .progressHUD(isShowing: $viewModel.createUserState.isLoading)
   }
 
   private func setupHrvNormal(age: Int) -> Double {
