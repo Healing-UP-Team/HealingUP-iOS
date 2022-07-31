@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5495E692896E98100081470 /* DeepBreathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5495E652896E98100081470 /* DeepBreathView.swift */; };
+		A5495E6A2896E98100081470 /* DeepBreathViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5495E662896E98100081470 /* DeepBreathViewModel.swift */; };
+		A5495E6B2896E98100081470 /* DeepBreathReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5495E672896E98100081470 /* DeepBreathReport.swift */; };
+		A5495E6C2896E98100081470 /* DeepBreathingPreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5495E682896E98100081470 /* DeepBreathingPreparationView.swift */; };
 		A575E3BC28915C43005D2E6A /* JournalingAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3BB28915C43005D2E6A /* JournalingAssembler.swift */; };
 		A575E3CC28915C66005D2E6A /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3C228915C66005D2E6A /* JournalCell.swift */; };
 		A575E3D028915C67005D2E6A /* JournalingNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3C728915C66005D2E6A /* JournalingNavigator.swift */; };
@@ -207,6 +211,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A5495E652896E98100081470 /* DeepBreathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathView.swift; sourceTree = "<group>"; };
+		A5495E662896E98100081470 /* DeepBreathViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathViewModel.swift; sourceTree = "<group>"; };
+		A5495E672896E98100081470 /* DeepBreathReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathReport.swift; sourceTree = "<group>"; };
+		A5495E682896E98100081470 /* DeepBreathingPreparationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathingPreparationView.swift; sourceTree = "<group>"; };
 		A575E3BB28915C43005D2E6A /* JournalingAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalingAssembler.swift; sourceTree = "<group>"; };
 		A575E3C228915C66005D2E6A /* JournalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
 		A575E3C728915C66005D2E6A /* JournalingNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalingNavigator.swift; sourceTree = "<group>"; };
@@ -391,6 +399,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5495E642896E96600081470 /* DeepBreath */ = {
+			isa = PBXGroup;
+			children = (
+				A5495E6E2896E99100081470 /* Views */,
+				A5495E6D2896E98600081470 /* ViewModel */,
+			);
+			path = DeepBreath;
+			sourceTree = "<group>";
+		};
+		A5495E6D2896E98600081470 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A5495E662896E98100081470 /* DeepBreathViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A5495E6E2896E99100081470 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5495E682896E98100081470 /* DeepBreathingPreparationView.swift */,
+				A5495E672896E98100081470 /* DeepBreathReport.swift */,
+				A5495E652896E98100081470 /* DeepBreathView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A575E3BD28915C66005D2E6A /* Journaling */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +504,7 @@
 		AE33ADC7284D8BB8007F9FA8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A5495E642896E96600081470 /* DeepBreath */,
 				AE33ADCA284D8D1C007F9FA8 /* HeartRate */,
 				AE33ADC9284D8D15007F9FA8 /* Home */,
 			);
@@ -1456,12 +1492,16 @@
 				AEB477EE283CA5A1005567CA /* ContentView.swift in Sources */,
 				AEF34A1128684D6700FC4235 /* HeartRateVariabilityView.swift in Sources */,
 				AEB477F0283CA5A1005567CA /* HealingUP_iOSApp.swift in Sources */,
+				A5495E6B2896E98100081470 /* DeepBreathReport.swift in Sources */,
+				A5495E6A2896E98100081470 /* DeepBreathViewModel.swift in Sources */,
 				AEB47805283CABF9005567CA /* HeartRateViewModel.swift in Sources */,
 				AEB23BB3286978CD00738864 /* CircularProgressView.swift in Sources */,
 				AEB477F2283CA5A1005567CA /* ComplicationController.swift in Sources */,
 				AEB23C0428699B3000738864 /* SessionManager.swift in Sources */,
 				AE686A6C2875F0FA00B675BC /* Color.swift in Sources */,
+				A5495E6C2896E98100081470 /* DeepBreathingPreparationView.swift in Sources */,
 				AE686A6E2875F15200B675BC /* UIColor.swift in Sources */,
+				A5495E692896E98100081470 /* DeepBreathView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1687,7 +1727,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 4VR7S48W5N;
+				DEVELOPMENT_TEAM = 4SN74J4HZJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
@@ -1725,7 +1765,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 4VR7S48W5N;
+				DEVELOPMENT_TEAM = 4SN74J4HZJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
@@ -1995,7 +2035,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ioss;
 				PRODUCT_NAME = "Healing UP";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
