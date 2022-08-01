@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct KesslerTabItem: View {
   let navigator: KesslerNavigator
@@ -14,7 +15,28 @@ struct KesslerTabItem: View {
   @State private var fetchError: Error?
   @State private var isShowAlert = false
   @State var kesslerData = [KesslerQuiz]()
-
+  @State var cancellables = Set<AnyCancellable>()
+  @State var isShowBreath = false
+  @Binding var tabSelection: Int
+  
+  init(navigator: KesslerNavigator, kesslerViewModel: KesslerViewModel, tabSelection: Binding<Int>) {
+    self.navigator = navigator
+    self.kesslerViewModel = kesslerViewModel
+    self._tabSelection = tabSelection
+    
+    NotificationCenter.default.publisher(for: Notifications.moveToCounselling)
+      .sink(receiveValue: { _ in
+      }).store(in: &cancellables)
+    
+    NotificationCenter.default.publisher(for: Notifications.moveToJournaling)
+      .sink(receiveValue: { _ in
+      }).store(in: &cancellables)
+    
+    NotificationCenter.default.publisher(for: Notifications.moveToBreath)
+      .sink(receiveValue: { _ in
+      }).store(in: &cancellables)
+  }
+  
   var body: some View {
     VStack {
       ScrollView(showsIndicators: false) {
@@ -41,7 +63,7 @@ struct KesslerTabItem: View {
         kesslerViewModel.fetchKesslerQuiz()
       })
       .padding(.vertical)
-
+      
       if !kesslerData.isEmpty {
         NavigationLink(destination: navigator.navigateToKesslerQuizView(kesslerQuizs: kesslerData, isBackToRoot: $isStartQuiz), isActive: $isStartQuiz) {
           EmptyView()
@@ -75,11 +97,25 @@ struct KesslerTabItem: View {
         }
       }
     }
+    .onReceive(NotificationCenter.default.publisher(for: Notifications.moveToCounselling)) { _ in
+      self.tabSelection = 4
+    }
+    .onReceive(NotificationCenter.default.publisher(for: Notifications.moveToJournaling)) { _ in
+      self.tabSelection = 3
+    }
+    .onReceive(NotificationCenter.default.publisher(for: Notifications.moveToBreath)) { _ in
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        self.isShowBreath = true
+      }
+    }
+    .sheet(isPresented: $isShowBreath) {
+      navigator.navigateToDeepBreathing(title: "Bernafas", icon: .watchPerson, message: "Kamu bisa menggunakan fitur ini pada aplikasi HealingUp di Apple Watch kamu.", buttonTitle: "OK")
+    }
   }
 }
 
 struct KesslerTabItem_Previews: PreviewProvider {
   static var previews: some View {
-    KesslerTabItem(navigator: AppAssembler.shared.resolve(), kesslerViewModel: AppAssembler.shared.resolve())
+    KesslerTabItem(navigator: AppAssembler.shared.resolve(), kesslerViewModel: AppAssembler.shared.resolve(), tabSelection: .constant(0))
   }
 }
