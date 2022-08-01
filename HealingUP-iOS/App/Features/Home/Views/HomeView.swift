@@ -23,35 +23,35 @@ struct HomeView: View {
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Heart", systemImage: "bolt.heart.fill")
+        Label("Jantung", systemImage: "bolt.heart.fill")
       }.tag(1)
       NavigationView {
         KesslerTabItem(navigator: assembler.resolve(), kesslerViewModel: assembler.resolve(), tabSelection: $selection)
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Kessler", systemImage: "doc.text.magnifyingglass")
+        Label("Stres", systemImage: "doc.text.magnifyingglass")
       }.tag(2)
         NavigationView {
           JournalingTabItem()
             .navigationTitle(navigationSetTitle(item: selection))
         }
         .tabItem {
-          Label("Journaling", systemImage: "pencil.and.outline")
+          Label("Jurnal", systemImage: "pencil.and.outline")
         }.tag(3)
       NavigationView {
         ScheduleTabItem(navigator: assembler.resolve(), viewModel: assembler.resolve())
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Schedule", systemImage: "timer")
+        Label("Konseling", systemImage: "timer")
       }.tag(4)
       NavigationView {
         ProfileView(viewModel: assembler.resolve(), navigator: assembler.resolve())
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Profile", systemImage: "person")
+        Label("Profil", systemImage: "person")
       }.tag(5)
     }
   }
