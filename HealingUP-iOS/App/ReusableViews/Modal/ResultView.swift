@@ -24,6 +24,9 @@ struct ResultView: View {
         .multilineTextAlignment(.center)
       Spacer()
       Image(uiImage: icon ?? .icSuccess)
+        .resizable()
+        .scaledToFit()
+        .frame(width: 300)
       Spacer()
       Text(message ?? "")
         .font(.system(size: 15, weight: .medium))
@@ -41,6 +44,6 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
   static var previews: some View {
-    ResultView(title: "Berhasil", icon: .icSuccess, message: "", buttonTitle: "OK", buttonAction: {})
+    ResultView(title: "Berhasil", icon: .icSuccess, message: "Kamu bisa", buttonTitle: "OK", buttonAction: {})
   }
 }

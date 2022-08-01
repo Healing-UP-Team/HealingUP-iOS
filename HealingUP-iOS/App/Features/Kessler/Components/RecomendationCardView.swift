@@ -57,7 +57,6 @@ struct RecomendationCardView: View {
         stressHandling.type?.backgroundColor
       )
       .cornerRadius(10)
-      .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 0)
     }
 }
 

@@ -13,15 +13,15 @@ import FirebaseMessaging
 struct HealingUP_iOSApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   let persistenceController = PersistenceController.shared
-
+  
   private var isSignedIn: Bool = false
   private let navigator: HomeNavigator = AppAssembler.shared.resolve()
-
+  
   init() {
     FirebaseApp.configure()
     isSignedIn = DefaultFirebaseManager.shared.firebaseAuth.currentUser != nil
   }
-
+  
   var body: some Scene {
     WindowGroup {
       ContentView(isSignedIn: isSignedIn, navigator: navigator)
@@ -35,15 +35,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
     MembershipViewModel.shared.setupUserData()
     NotificationService.register(application: application)
-
+    
     return true
   }
-
+  
   func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-      print("Unable to register for remote notifications: \(error.localizedDescription)")
-    }
-
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-      print("APNs token retrieved: \(deviceToken)")
-    }
+    print("Unable to register for remote notifications: \(error.localizedDescription)")
+  }
+  
+  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    print("APNs token retrieved: \(deviceToken)")
+  }
 }

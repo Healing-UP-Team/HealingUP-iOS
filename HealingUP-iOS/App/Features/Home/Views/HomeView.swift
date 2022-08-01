@@ -26,7 +26,7 @@ struct HomeView: View {
         Label("Heart", systemImage: "bolt.heart.fill")
       }.tag(1)
       NavigationView {
-        KesslerTabItem(navigator: assembler.resolve(), kesslerViewModel: assembler.resolve())
+        KesslerTabItem(navigator: assembler.resolve(), kesslerViewModel: assembler.resolve(), tabSelection: $selection)
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
@@ -59,17 +59,15 @@ struct HomeView: View {
   private func navigationSetTitle(item: Int) -> String {
     switch item {
     case 1:
-      return "Heart"
+      return "Jantung"
     case 2:
-      return "Kessler"
-    case 4:
-      return "Schedule"
+      return "Stres"
     case 3:
-        return "Journaling"
+      return "Jurnal"
     case 4:
-      return "Schedule"
+      return "Konseling"
     default:
-      return "Profile"
+      return "Profil"
     }
   }
 

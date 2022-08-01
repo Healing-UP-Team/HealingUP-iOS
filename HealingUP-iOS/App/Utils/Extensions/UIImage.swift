@@ -12,6 +12,7 @@ extension UIImage {
   // MARK: Kessler
   static let kesslerIntro = UIImage(named: "img-kessler-intro")!
   static let appIcon = UIImage(named: "healingUpIcon")!
+  static let watchPerson = UIImage(named: "img-watch")!
 
   // MARK: Schedule
   static let icSuccess = UIImage(named: "ic-success")!
