@@ -78,6 +78,7 @@
 		AEB07980288840AA0016256C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = AEB0797F288840AA0016256C /* FirebaseMessaging */; };
 		AEB07982288841F30016256C /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = AEB07981288841F30016256C /* FirebaseDynamicLinks */; };
 		AEB07984288842000016256C /* DynamicLinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB07983288842000016256C /* DynamicLinkService.swift */; };
+		AEB0C03328982C2C00A0B5AD /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0C03228982C2C00A0B5AD /* Notifications.swift */; };
 		AEB23BB3286978CD00738864 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB23BB2286978CD00738864 /* CircularProgressView.swift */; };
 		AEB23C0428699B3000738864 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB23C0328699B3000738864 /* SessionManager.swift */; };
 		AEB23C072869A58100738864 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AEB23C062869A58100738864 /* FirebaseAuth */; };
@@ -273,6 +274,7 @@
 		AEB0797B288836490016256C /* CounsellorScheduleTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorScheduleTabItem.swift; sourceTree = "<group>"; };
 		AEB0797D288840840016256C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		AEB07983288842000016256C /* DynamicLinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLinkService.swift; sourceTree = "<group>"; };
+		AEB0C03228982C2C00A0B5AD /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		AEB23BB2286978CD00738864 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		AEB23C0328699B3000738864 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		AEB23C182869CAE500738864 /* NotLoginStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoginStateView.swift; sourceTree = "<group>"; };
@@ -757,7 +759,6 @@
 		AEB477B5283B55F8005567CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AED86DA7283B181900C62B98 /* ContentView.swift */,
 				AEB477B0283B556D005567CA /* HomeView.swift */,
 				AEB07976288834B50016256C /* CounsellorHomeView.swift */,
 			);
@@ -968,6 +969,7 @@
 			isa = PBXGroup;
 			children = (
 				AED86DA5283B181900C62B98 /* HealingUP_iOSApp.swift */,
+				AED86DA7283B181900C62B98 /* ContentView.swift */,
 				AE60345A2880332E00AE4116 /* LaunchScreen.storyboard */,
 			);
 			path = Main;
@@ -993,6 +995,7 @@
 				AE659FB0286C7AA200133F36 /* SessionManager.swift */,
 				AEB0797D288840840016256C /* NotificationService.swift */,
 				AEB07983288842000016256C /* DynamicLinkService.swift */,
+				AEB0C03228982C2C00A0B5AD /* Notifications.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1468,6 +1471,7 @@
 				AE603467288040A700AE4116 /* OnboardingAssembler.swift in Sources */,
 				AEF6F7202888EDF000910B79 /* CounsellorConfirmScheduleView.swift in Sources */,
 				AE33ADD5284D912C007F9FA8 /* KesslerQuizView.swift in Sources */,
+				AEB0C03328982C2C00A0B5AD /* Notifications.swift in Sources */,
 				AEB079652886CC090016256C /* TextView.swift in Sources */,
 				AEB477DD283C981F005567CA /* HeartRateViewModel.swift in Sources */,
 				AEE2CB7C288FDDBE00BBE2B8 /* SecureInputView.swift in Sources */,
@@ -1912,6 +1916,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1951,6 +1956,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
