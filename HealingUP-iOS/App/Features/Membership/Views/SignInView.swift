@@ -129,6 +129,8 @@ struct SignInView: View {
               }
               if data.role == .psikolog {
                 SessionManager.setUserCounsellor()
+              } else {
+                SessionManager.setUserNotCounsellor()
               }
               isSignedIn = true
               isShowAlert = false
