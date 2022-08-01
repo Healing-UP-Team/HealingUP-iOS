@@ -18,9 +18,4 @@ struct HeartRateNavigator {
   func navigateToHeartRateTabItem(tabSelection: Binding<Int>) -> HeartRateTabItem {
     return HeartRateTabItem(navigator: assembler.resolve(), viewModel: assembler.resolve(), tabSelection: tabSelection)
   }
-
-  func navigateToKesslerTabItem() -> KesslerTabItem {
-    let navigator: KesslerNavigator = assembler.resolve()
-    return navigator.navigateToKesslerTabItem()
-  }
 }

@@ -20,17 +20,17 @@ struct HeartRateTabItem: View {
   @State private var age = 0
   @State private var isKessler = false
   @Binding var tabSelection: Int
-
+  
   var body: some View {
     ScrollView(showsIndicators: false) {
       VStack(alignment: .center) {
-        Picker("What is your favorite color?", selection: $selectedDateIndex) {
-          Text("Today").tag(0)
-          Text("Week").tag(1)
-          Text("Month").tag(2)
+        Picker("HRV", selection: $selectedDateIndex) {
+          Text("Hari ini").tag(0)
+          Text("Minggu").tag(1)
+          Text("Bulan").tag(2)
         }
         .pickerStyle(.segmented)
-
+        
         switch selectedDateIndex {
         case 0:
           if !heart.todayHRV.isEmpty {
@@ -44,7 +44,7 @@ struct HeartRateTabItem: View {
                 .fontWeight(.bold)
                 .font(.system(size: 18))
                 .foregroundColor(Color(uiColor: .accentPurple))
-
+              
               if let data = heart.dataToday {
                 LineChart(chartData: data)
                   .xAxisLabels(chartData: data)
@@ -57,7 +57,7 @@ struct HeartRateTabItem: View {
           } else {
             emptyDataView()
           }
-
+          
         case 1:
           if !heart.weekHRV.isEmpty {
             valueCard(progress: Double(heart.calculateAverage(datas: heart.weekHRV)), minimumHrv: self.minimumHrv)
@@ -70,7 +70,8 @@ struct HeartRateTabItem: View {
                 .fontWeight(.bold)
                 .font(.system(size: 18))
                 .foregroundColor(Color(uiColor: .accentPurple))
-
+                .padding(.horizontal)
+              
               if let data = heart.dataWeek {
                 LineChart(chartData: data)
                   .xAxisLabels(chartData: data)
@@ -83,7 +84,7 @@ struct HeartRateTabItem: View {
           } else {
             emptyDataView()
           }
-
+          
         default:
           if !heart.monthHRV.isEmpty {
             valueCard(progress: Double(heart.calculateAverage(datas: heart.monthHRV)), minimumHrv: self.minimumHrv)
@@ -96,7 +97,7 @@ struct HeartRateTabItem: View {
                 .fontWeight(.bold)
                 .font(.system(size: 18))
                 .foregroundColor(Color(uiColor: .accentPurple))
-
+              
               if let data = heart.dataMonth {
                 LineChart(chartData: data)
                   .xAxisLabels(chartData: data)
@@ -131,7 +132,7 @@ struct HeartRateTabItem: View {
     }
     .progressHUD(isShowing: $viewModel.userState.isLoading)
   }
-
+  
   @ViewBuilder
   private func emptyDataView() -> some View {
     VStack {
@@ -140,17 +141,17 @@ struct HeartRateTabItem: View {
         .font(.system(size: 20))
         .foregroundColor(Color(uiColor: .accentPurple))
         .padding(.bottom, 2)
-
+      
       Text("Tolong gunakan apple watch kamu, jika kamu baru saja menggunakan apple watch dan data belum ditampilkan, kamu bisa membuka aplikasi Breathe pada apple watch kamu dan mulai menggunakan fitur breathing. Aplikasi akan membutuhkan waktu beberapa saat untuk menerima data dari apple watch.")
         .fontWeight(.medium)
         .font(.system(size: 15))
         .foregroundColor(.gray)
         .multilineTextAlignment(.leading)
-
+      
     }
     .padding(.vertical)
   }
-
+  
   @ViewBuilder
   private func infoCard() -> some View {
     VStack(alignment: .leading, spacing: 10) {
@@ -162,7 +163,7 @@ struct HeartRateTabItem: View {
           .font(.system(size: 18, weight: .bold))
           .foregroundColor(Color(uiColor: .accentPurple))
       }
-
+      
       Text("Heart Rate Variability (HRV) adalah ukuran variasi dalam interval waktu antara detak jantung. Apple Watch menghitung HRV dengan menggunakan standar deviasi pengukuran detak ke detak yang ditangkap oleh sensor detak jantung.")
         .font(.system(size: 13))
         .multilineTextAlignment(.leading)
@@ -170,7 +171,7 @@ struct HeartRateTabItem: View {
     }
     .padding(.vertical)
   }
-
+  
   @ViewBuilder
   private func valueCard(progress: Double, minimumHrv: Double) -> some View {
     VStack(alignment: .center) {
@@ -178,7 +179,7 @@ struct HeartRateTabItem: View {
         .fontWeight(.medium)
         .font(.system(size: 15))
         .foregroundColor(.gray)
-
+      
       Text("Heart Rate Variability")
         .fontWeight(.bold)
         .font(.system(size: 18))
@@ -201,13 +202,13 @@ struct HeartRateTabItem: View {
           HStack {
             Image(systemName: "chevron.forward.circle")
               .foregroundColor(Color(uiColor: .accentPurple))
-
+            
             VStack(alignment: .leading) {
               Text((progress/150 * 100) < minimumHrv ? "Buruk" : "Baik")
                 .fontWeight(.bold)
                 .font(.system(size: 20))
                 .foregroundColor((progress/150 * 100) < minimumHrv ? .pink : .blue)
-
+              
               Text("Status")
                 .fontWeight(.medium)
                 .font(.system(size: 10))
@@ -217,14 +218,14 @@ struct HeartRateTabItem: View {
           HStack {
             Image(systemName: "chevron.forward.circle")
               .foregroundColor(Color(uiColor: .accentPurple))
-
+            
             VStack(alignment: .leading) {
               Text("\(Int(minimumHrv)) ms")
                 .fontWeight(.bold)
                 .font(.system(size: 17))
                 .foregroundColor(.black)
                 .padding(.top, 5)
-
+              
               Text("HRV Minimal")
                 .fontWeight(.medium)
                 .font(.system(size: 10))
@@ -234,15 +235,15 @@ struct HeartRateTabItem: View {
           HStack {
             Image(systemName: "chevron.forward.circle")
               .foregroundColor(Color(uiColor: .accentPurple))
-
+            
             VStack(alignment: .leading) {
               Text("\(age)")
                 .fontWeight(.bold)
                 .font(.system(size: 17))
                 .foregroundColor(.black)
                 .padding(.top, 5)
-
-              Text("Age")
+              
+              Text("Umur")
                 .fontWeight(.medium)
                 .font(.system(size: 10))
                 .foregroundColor(.gray)
@@ -254,44 +255,32 @@ struct HeartRateTabItem: View {
     }
     .padding(.vertical)
   }
-
+  
   @ViewBuilder
   private func recomendationCard(value: Double) -> some View {
-    VStack(alignment: .leading) {
+    VStack(alignment: .center) {
       HStack {
         Text("Rekomendasi")
           .font(.system(size: 18, weight: .bold))
           .foregroundColor(Color(uiColor: .accentPurple))
         Spacer()
       }
-      Text((value/150 * 100) < minimumHrv ? "HRV kamu lebih rendah dari kisaran normal, HRV kamu dapat dipengaruhi oleh stres, kamu dapat memeriksa tingkat stres kamu dengan menjawab beberapa pertanyaan dan aplikasi akan memberikan rekomendasi." : "kamu baik-baik saja, pertahankan dan tingkatkan HRV kamu")
-        .fontWeight(.regular)
-        .font(.system(size: 16))
-        .foregroundColor((value/150 * 100) < minimumHrv ? .pink : .black)
-        .padding(.top, 5)
-
-      NavigationLink(destination: navigator.navigateToKesslerTabItem(), isActive: $isKessler) {
-        EmptyView()
+      HStack {
+        Text((value/150 * 100) < minimumHrv ? "HRV kamu lebih rendah dari kisaran normal, HRV kamu dapat dipengaruhi oleh stres, kamu dapat memeriksa tingkat stres kamu dengan menjawab beberapa pertanyaan dan aplikasi akan memberikan rekomendasi." : "Kamu baik-baik saja, pertahankan dan tingkatkan HRV kamu")
+          .fontWeight(.regular)
+          .font(.system(size: 16))
+          .foregroundColor(.black)
+          .padding(.top, 5)
+        Spacer()
       }
       if (value/150 * 100) < minimumHrv {
-        HStack {
-          Spacer()
-          Button {
-            self.tabSelection = 2
-          }label: {
-            Text("Mulai")
-              .fontWeight(.bold)
-              .padding(10)
-              .background(Color(uiColor: .accentPurple))
-              .foregroundColor(.white)
-              .cornerRadius(5)
-          }
+        ButtonDefaultView(title: "Mulai") {
+          self.tabSelection = 2
         }
-        .padding(.top, 10)
-        .padding(.horizontal)
+        .padding(.vertical)
       }
     }
-    .padding(.vertical)
+    .padding()
   }
 }
 
