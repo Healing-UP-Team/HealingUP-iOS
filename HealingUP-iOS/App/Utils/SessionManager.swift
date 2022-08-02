@@ -56,7 +56,7 @@ class SessionManager: ObservableObject {
   static func setUserCounsellor() {
     UserDefaults.standard.set(true, forKey: KeyValue.userType.rawValue)
   }
-  
+
   static func setUserNotCounsellor() {
     UserDefaults.standard.set(false, forKey: KeyValue.userType.rawValue)
   }

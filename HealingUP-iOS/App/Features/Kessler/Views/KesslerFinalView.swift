@@ -41,7 +41,7 @@ struct KesslerFinalView: View {
           .padding(.horizontal)
           .foregroundColor(.gray)
           .font(.system(size: 12, weight: .regular))
-        
+
         Button {
           isShowTerms = true
         } label: {
@@ -52,7 +52,7 @@ struct KesslerFinalView: View {
             .foregroundColor(Color.accentPurple)
             .font(.system(size: 12, weight: .semibold))
         }.padding(.bottom, 30)
-        
+
         if stressLevelCheck() != .well {
           recomendationView()
         } else {
@@ -108,7 +108,7 @@ struct KesslerFinalView: View {
       .navigationTitle("")
       .navigationBarHidden(true)
     }
-    
+
   }
 
   private func stressLevelCheck() -> StressLevel {
