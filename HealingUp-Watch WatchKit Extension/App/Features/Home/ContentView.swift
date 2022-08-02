@@ -10,7 +10,6 @@ import HealthKit
 
 public enum MenuWatch {
   case heart
-  case profile
 }
 
 struct HomeMenu: Hashable {
@@ -23,8 +22,7 @@ struct ContentView: View {
   @ObservedObject var heart = HeartRateViewModel()
 
   private var menu: [HomeMenu] = [
-    .init(imageName: "bolt.heart", title: "Heart", menuType: .heart),
-    .init(imageName: "person.fill", title: "Profile", menuType: .profile)
+    .init(imageName: "bolt.heart", title: "Jantung", menuType: .heart)
   ]
 
   var body: some View {
@@ -65,8 +63,6 @@ struct ContentView: View {
     switch menu {
     case .heart:
       return AnyView(HeartRateVariabilityView())
-    case .profile:
-      return AnyView(Text("Profile"))
     }
   }
 }
