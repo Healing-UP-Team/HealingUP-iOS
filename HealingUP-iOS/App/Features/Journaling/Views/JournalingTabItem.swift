@@ -39,7 +39,7 @@ struct JournalingTabItem: View {
         }
       }
     }
-    .onAppear() { // (1)
+    .onAppear { // (1)
       self.viewModel.subscribe()
     }
   }

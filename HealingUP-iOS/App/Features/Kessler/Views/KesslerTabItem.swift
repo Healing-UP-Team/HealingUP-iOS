@@ -18,25 +18,25 @@ struct KesslerTabItem: View {
   @State var cancellables = Set<AnyCancellable>()
   @State var isShowBreath = false
   @Binding var tabSelection: Int
-  
+
   init(navigator: KesslerNavigator, kesslerViewModel: KesslerViewModel, tabSelection: Binding<Int>) {
     self.navigator = navigator
     self.kesslerViewModel = kesslerViewModel
     self._tabSelection = tabSelection
-    
+
     NotificationCenter.default.publisher(for: Notifications.moveToCounselling)
       .sink(receiveValue: { _ in
       }).store(in: &cancellables)
-    
+
     NotificationCenter.default.publisher(for: Notifications.moveToJournaling)
       .sink(receiveValue: { _ in
       }).store(in: &cancellables)
-    
+
     NotificationCenter.default.publisher(for: Notifications.moveToBreath)
       .sink(receiveValue: { _ in
       }).store(in: &cancellables)
   }
-  
+
   var body: some View {
     VStack {
       ScrollView(showsIndicators: false) {
@@ -63,7 +63,7 @@ struct KesslerTabItem: View {
         kesslerViewModel.fetchKesslerQuiz()
       })
       .padding(.vertical)
-      
+
       if !kesslerData.isEmpty {
         NavigationLink(destination: navigator.navigateToKesslerQuizView(kesslerQuizs: kesslerData, isBackToRoot: $isStartQuiz), isActive: $isStartQuiz) {
           EmptyView()

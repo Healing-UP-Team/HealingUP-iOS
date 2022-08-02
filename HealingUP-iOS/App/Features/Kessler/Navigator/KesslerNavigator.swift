@@ -25,12 +25,12 @@ struct KesslerNavigator {
   func navigateToKesslerHistory() -> KesslerHistoryView {
     return KesslerHistoryView(kesslerViewModel: assembler.resolve())
   }
-  
+
   func navigateToWebView(url: String, title: String? = nil) -> WebView {
     let navigator: WebViewNavigator = assembler.resolve()
     return navigator.navigateToWebView(url: url, title: title)
   }
-  
+
   func navigateToDeepBreathing(title: String, icon: UIImage, message: String, buttonTitle: String) -> ResultView {
     return ResultView(title: title, icon: icon, message: message, buttonTitle: buttonTitle, buttonAction: {})
   }

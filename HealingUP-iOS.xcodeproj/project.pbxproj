@@ -1587,7 +1587,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealingUP-iOS.app/HealingUP-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Healing UP.app/Healing UP";
 			};
 			name = Debug;
 		};
@@ -1606,7 +1606,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealingUP-iOS.app/HealingUP-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Healing UP.app/Healing UP";
 			};
 			name = Release;
 		};
