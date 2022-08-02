@@ -35,12 +35,12 @@ struct HeartRateVariabilityView: View {
       }
       .padding()
 
-      Text("Today")
+      Text("Hari ini")
         .frame(width: proxy.size.width)
         .font(.system(size: 13, weight: .medium))
 
       Spacer()
-      Text((progress/150 * 100) < minimumHrv ? "Bad" : "Good")
+      Text((progress/150 * 100) < minimumHrv ? "Buruk" : "Baik")
         .font(.system(size: 13, weight: .medium))
         .foregroundColor((progress/150 * 100) < minimumHrv ? .pink : .blue)
     }.padding(5)
@@ -60,12 +60,12 @@ struct HeartRateVariabilityView: View {
       }
       .padding()
 
-      Text("Week")
+      Text("Minggu")
         .frame(width: proxy.size.width)
         .font(.system(size: 13, weight: .medium))
 
       Spacer()
-      Text((progress/150 * 100) < minimumHrv ? "Bad" : "Good")
+      Text((progress/150 * 100) < minimumHrv ? "Buruk" : "Baik")
         .font(.system(size: 13, weight: .medium))
         .foregroundColor((progress/150 * 100) < minimumHrv ? .pink : .blue)
     }.padding(5)
@@ -85,12 +85,12 @@ struct HeartRateVariabilityView: View {
       }
       .padding()
 
-      Text("Month")
+      Text("Bulan")
         .frame(width: proxy.size.width)
         .font(.system(size: 13, weight: .medium))
 
       Spacer()
-      Text((progress/150 * 100) < minimumHrv ? "Bad" : "Good")
+      Text((progress/150 * 100) < minimumHrv ? "Buruk" : "Baik")
         .font(.system(size: 13, weight: .medium))
         .foregroundColor((progress/150 * 100) < minimumHrv ? .pink : .blue)
     }.padding(5)
