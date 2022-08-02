@@ -2,16 +2,16 @@
 <testsuites name='HealingUP-iOSUITests.xctest' tests='8' failures='0'>
   <testsuite name='HealingUP_iOSTests.HealingUP_iOSTests' tests='2' failures='0'>
     <testcase classname='HealingUP_iOSTests.HealingUP_iOSTests' name='testExample' time='0.002'/>
-    <testcase classname='HealingUP_iOSTests.HealingUP_iOSTests' name='testPerformanceExample' time='0.270'/>
+    <testcase classname='HealingUP_iOSTests.HealingUP_iOSTests' name='testPerformanceExample' time='0.299'/>
   </testsuite>
   <testsuite name='HealingUP_iOSUITests.HealingUP_iOSUITests' tests='2' failures='0'>
-    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITests' name='testExample' time='2.232'/>
-    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITests' name='testLaunchPerformance' time='78.853'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITests' name='testExample' time='2.262'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITests' name='testLaunchPerformance' time='78.630'/>
   </testsuite>
   <testsuite name='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' tests='4' failures='0'>
-    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='3.846'/>
-    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='5.570'/>
-    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='3.792'/>
-    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='5.487'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='3.460'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='5.514'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='4.270'/>
+    <testcase classname='HealingUP_iOSUITests.HealingUP_iOSUITestsLaunchTests' name='testLaunch' time='5.514'/>
   </testsuite>
 </testsuites>
