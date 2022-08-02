@@ -16,10 +16,10 @@ struct KesslerResult: Equatable {
 }
 
 enum StressLevel: String, Codable, Equatable {
-  case well = "Likely to be well"
-  case mild = "Likely to have a mild disorder"
-  case moderate = "Likely to have a moderate disorder"
-  case disorder = "Likely to have a severe disorder"
+  case well = "Baik-baik saja"
+  case mild = "Mengalami stres ringan"
+  case moderate = "Mengalami stres sedang"
+  case disorder = "Mengalami stres berat"
 
   var backgroundColor: Color {
     switch self {
