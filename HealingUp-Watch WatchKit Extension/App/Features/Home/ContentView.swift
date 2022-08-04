@@ -23,8 +23,8 @@ struct ContentView: View {
   @ObservedObject var heart = HeartRateViewModel()
 
   private var menu: [HomeMenu] = [
-    .init(imageName: "bolt.heart", title: "Heart", menuType: .heart),
-    .init(imageName: "pills.circle", title: "Deep Breathing", menuType: .deepBreathing)
+    .init(imageName: "wind", title: "Bernapas", menuType: .deepBreathing),
+    .init(imageName: "heart", title: "Jantung", menuType: .heart)
   ]
 
   var body: some View {

@@ -31,7 +31,7 @@ struct JournalEditView: View {
     NavigationView {
       Form {
         Section {
-          Picker("Emotion", selection: $viewModel.journal.emoji) {
+          Picker("Emosi", selection: $viewModel.journal.emoji) {
             ForEach(viewModel.emotion, id: \.self) { emoji in
               Text(emoji)
             }
@@ -62,38 +62,38 @@ struct JournalEditView: View {
             Button {
               self.presentActionSheet.toggle()
             } label: {
-              Text("Delete Journal")
+              Text("Hapus Jurnal")
                 .foregroundColor(.red)
             }
 
           }
         }
       }
-      .navigationTitle(mode == .new ? "New Journal" : viewModel.journal.title)
+      .navigationTitle(mode == .new ? "Jurnal Baru" : viewModel.journal.title)
       .navigationBarTitleDisplayMode(mode == .new ? .inline : .large)
       .toolbar {
         ToolbarItem(placement: .navigationBarLeading) {
           Button(action: { self.handleCancelTapped() }) {
-            Text("Cancel")
+            Text("Kembali")
           }
         }
         ToolbarItem(placement: .navigationBarTrailing) {
           Button(action: { self.handleDoneTapped() }) {
-            Text(mode == .new ? "Done" : "Save")
+            Text(mode == .new ? "Selesai" : "Simpan")
           }
           .disabled(!viewModel.modified) // (8)
         }
 
       }
-      .confirmationDialog("Are You Sure?", isPresented: self.$presentActionSheet) {
+      .confirmationDialog("Apakah kamu yakin?", isPresented: self.$presentActionSheet) {
         Button(role: .destructive) {
           self.handleDeleteTapped()
         } label: {
-          Text("Delete")
+          Text("Hapus")
         }
 
         Button(role: .cancel, action: {}) {
-          Text("Cancel")
+          Text("Kembali")
         }
       }
     }

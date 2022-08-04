@@ -23,14 +23,14 @@ struct CounsellorHomeView: View {
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Schedule", systemImage: "timer")
+        Label("Konseling", systemImage: "person.2")
       }.tag(1)
       NavigationView {
         ProfileView(viewModel: assembler.resolve(), navigator: assembler.resolve())
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Profile", systemImage: "person")
+        Label("Profil", systemImage: "person")
       }.tag(2)
     }
   }
@@ -38,9 +38,9 @@ struct CounsellorHomeView: View {
   private func navigationSetTitle(item: Int) -> String {
     switch item {
     case 1:
-      return "Schedule"
+      return "Konseling"
     default:
-      return "Profile"
+      return "Profil"
     }
   }
 }
