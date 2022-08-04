@@ -21,7 +21,7 @@ struct JournalingTabItem: View {
         .frame(height: 250)
         .padding()
       VStack(alignment: .leading) {
-        Text("Journal Kosong")
+        Text("Jurnal Kosong")
           .font(.system(size: 30, weight: .bold))
           .foregroundColor(Color.accentColor)
           .padding(.top, 10)
@@ -61,7 +61,7 @@ struct JournalingTabItem: View {
       JournalEditView()
     }
     .searchable(text: $searchText)
-    .navigationBarTitle("Journaling")
+    .navigationBarTitle("Jurnal")
     .toolbar {
       ToolbarItem(placement: .navigationBarTrailing) {
         Button {

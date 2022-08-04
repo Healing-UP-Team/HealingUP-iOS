@@ -10,7 +10,7 @@ import SwiftUI
 
 class DeepBreathViewModel: ObservableObject {
   @Published var isStartBreathAnimation = false
-  @Published var counter: Int = 30
+  @Published var counter: Int = 300
   @Published var counterText: String = ""
   @Published var instruction: String = ""
   @Published var animationColor: Color = .yellow
@@ -54,10 +54,10 @@ class DeepBreathViewModel: ObservableObject {
             self.setupHapticsCaller()
           }
           self.inhale -= 1
-          self.instruction = "Deep Breath"
+          self.instruction = "Tarik napas, tangan mengikuti gerakan perut"
         } else if self.exhale > 0 {
           self.exhale -= 1
-          self.instruction = "Exhale"
+          self.instruction = "Hembuskan dari mulut, seperti melewati sedotan"
           if self.exhale == 0 {
             //memastikan hanya disetup sekali, pas diakhir
             self.hapticTimer?.cancel()
@@ -65,7 +65,7 @@ class DeepBreathViewModel: ObservableObject {
           }
         } else if self.normal > 0 {
           self.normal -= 1
-          self.instruction = "Istirahat \(self.normal)"
+          self.instruction = "Istirahat \(self.normal), bernapas seperti biasa"
 
         }else {
           self.inhale = 4

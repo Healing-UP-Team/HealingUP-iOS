@@ -33,19 +33,22 @@ struct CounsellorConfirmScheduleView: View {
               VStack(alignment: .leading, spacing: 5) {
                 Text("Nama")
                   .font(.system(size: 15, weight: .bold))
-                Text("Schedule")
+                Text("Jam")
+                  .font(.system(size: 15, weight: .bold))
+                Text("Tanggal")
                   .font(.system(size: 15, weight: .bold))
               }
               Spacer()
               VStack(alignment: .trailing, spacing: 5) {
                 Text(user?.name ?? "")
                   .font(.system(size: 15, weight: .medium))
+                Text(schedule.schedule.toStringWith(format: "HH:mm") ?? "")
                 Text(schedule.schedule.toStringWith(format: "EE, dd MMM yyyy") ?? "")
                   .font(.system(size: 15, weight: .medium))
               }
             }.padding()
 
-            Text("Additional Notes")
+            Text("Catatan Keluhan")
               .font(.system(size: 18, weight: .bold))
           }
 
@@ -58,7 +61,7 @@ struct CounsellorConfirmScheduleView: View {
 
         if schedule.status == .scheduled {
           VStack(alignment: .leading) {
-            Text("Journal \(user?.name ?? "")")
+            Text("Jurnal \(user?.name ?? "")")
               .font(.system(size: 18, weight: .bold))
           }
           ForEach(vm.journals) { journal in
@@ -87,7 +90,7 @@ struct CounsellorConfirmScheduleView: View {
       }
     }
     .padding(.vertical)
-    .navigationTitle("Schedule Detail")
+    .navigationTitle("Detail Konseling")
     .navigationBarTitleDisplayMode(.inline)
     .alert(isPresented: $isShowAlert) {
       Alert(

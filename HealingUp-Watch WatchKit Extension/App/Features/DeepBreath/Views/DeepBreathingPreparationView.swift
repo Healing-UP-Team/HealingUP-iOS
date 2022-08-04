@@ -8,28 +8,45 @@
 import SwiftUI
 import Combine
 
-
+enum Instructions {
+  case one, two, three, startSession
+}
 
 struct DeepBreathingPreparationView: View {
+  @State private var selection: Instructions = .one
+  @State private var isStartSession = false
 
-    var body: some View {
+  var body: some View {
+    ZStack {
+      NavigationLink(destination: DeepBreathView(), isActive: $isStartSession) {
+        EmptyView()
+      }.hidden()
       VStack {
-        Spacer()
-        Text("Pokokonya disini penjelasans ebelum mulai sesi deep breathing")
+          Spacer()
+          TabView(selection: $selection) {
+            Text("Cari tempat yang kondusif")
+              .tag(Instructions.one)
+            Text("Tidur telentang")
+              .tag(Instructions.two)
+            Text("Letakkan tangan di perut bagian bawah")
+              .tag(Instructions.three)
+            Button("Mulai"){
+              isStartSession.toggle()
+            }
+              .tag(Instructions.startSession)
+          }
           .font(.subheadline)
           .multilineTextAlignment(.center)
-        Spacer()
-
-        NavigationLink(destination: DeepBreathView()) {
-          Text("Selanjutnya")
-        }
+          .scenePadding()
+          Spacer()
 
       }
     }
+  }
 }
 
 struct DeepBreathingPreparationView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeepBreathingPreparationView()
-    }
+  static var previews: some View {
+    DeepBreathingPreparationView()
+  }
 }

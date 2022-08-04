@@ -16,11 +16,7 @@ struct DeepBreathView: View {
   var body: some View {
     ZStack {
       NavigationLink(destination: DeepBreathReport(), isActive: $vm.isSessionCompleted, label: { EmptyView() })
-        .disabled(true)
-        .hidden()
       NavigationLink(destination: ContentView(), isActive: $vm.isSessionStopped, label: { EmptyView() })
-        .disabled(true)
-        .hidden()
       TabView {
         VStack {
           Spacer()
@@ -61,7 +57,7 @@ struct DeepBreathView: View {
           wm.requestAuthorization()
         }
 
-        Button("Stop") {
+        Button("Berhenti") {
           wm.endWorkout()
           vm.isSessionStopped = true
           vm.stopTimer()

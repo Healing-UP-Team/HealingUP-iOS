@@ -14,7 +14,12 @@ struct DeepBreathReport: View {
   var body: some View {
     ScrollView {
       VStack(alignment: .leading) {
-        Text("Selamat, kamu telah berhasil menyelesaikan sesi deep breathing")
+
+        SummaryMetricView(
+          title: "Pernapasan",
+          value: "Perut",
+          color: .green
+        )
 
         SummaryMetricView(
           title: "Waktu Total",
@@ -28,7 +33,7 @@ struct DeepBreathReport: View {
           color: .blue
         )
 
-        NavigationLink("DONE") {
+        NavigationLink("Selesai") {
           ContentView()
         }
 

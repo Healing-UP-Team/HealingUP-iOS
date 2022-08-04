@@ -18,7 +18,7 @@ struct CounsellorScheduleTabItem: View {
   var body: some View {
     ScrollView(showsIndicators: false) {
       VStack(alignment: .leading) {
-        Text("Need confirmation")
+        Text("Butuh Konfirmasi")
           .font(.system(size: 18, weight: .semibold))
         if !schedules.isEmpty {
           ForEach(schedules, id: \.id) { item in
@@ -59,7 +59,7 @@ struct CounsellorScheduleTabItem: View {
   private func scheduleCard(schedule: Schedule) -> some View {
     HStack(alignment: .top) {
       VStack(alignment: .leading) {
-        Text("Conseling")
+        Text("Konseling")
           .font(.system(size: 17, weight: .semibold))
           .foregroundColor(Color(uiColor: .accentPurple))
           .padding(.bottom, 5)
