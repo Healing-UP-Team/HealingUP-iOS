@@ -11,7 +11,6 @@ import HealthKit
 class WorkoutManager: NSObject, ObservableObject {
   var selectedWorkout: HKWorkoutActivityType = .yoga
 
-
   let healthStore = HKHealthStore()
   var session: HKWorkoutSession?
   var builder: HKLiveWorkoutBuilder?
@@ -35,7 +34,7 @@ class WorkoutManager: NSObject, ObservableObject {
 
     let startdate = Date()
     session?.startActivity(with: startdate)
-    builder?.beginCollection(withStart: startdate, completion: { success, error in
+    builder?.beginCollection(withStart: startdate, completion: { _, _ in
 
     })
   }
@@ -56,23 +55,21 @@ class WorkoutManager: NSObject, ObservableObject {
     ]
 
     // Request authorization for those quantity types
-    healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { success, error in
+    healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { _, _ in
       // Handle error.
     }
 
   }
 
-
-  //MARK: - State Control
+  // MARK: - State Control
 
   @Published var running = false
-
 
   func endWorkout() {
     session?.end()
   }
 
-  //MARK: - Workout Metrics
+  // MARK: - Workout Metrics
 
   @Published var avgHR: Double = 0
   @Published var heartRate: Double = 0
@@ -115,8 +112,8 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     }
 
     if toState == .ended {
-      builder?.endCollection(withEnd: date) { success, error in
-        self.builder?.finishWorkout { workout, error in
+      builder?.endCollection(withEnd: date) { _, error in
+        self.builder?.finishWorkout { workout, _ in
           DispatchQueue.main.async {
             self.workout = workout
           }
@@ -127,7 +124,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
   }
 }
 
-//MARK: - HKLiveWorkoutBuilderDelegate
+// MARK: - HKLiveWorkoutBuilderDelegate
 extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
   func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
 

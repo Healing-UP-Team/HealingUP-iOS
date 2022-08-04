@@ -30,7 +30,7 @@ struct DeepBreathingPreparationView: View {
               .tag(Instructions.two)
             Text("Letakkan tangan di perut bagian bawah")
               .tag(Instructions.three)
-            Button("Mulai"){
+            Button("Mulai") {
               isStartSession.toggle()
             }
               .tag(Instructions.startSession)
