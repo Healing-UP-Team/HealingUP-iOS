@@ -36,6 +36,9 @@ struct CounsellorScheduleTabItem: View {
         dismissButton: .default(Text("OK"))
       )
     }
+    .refreshable {
+      viewModel.fetchCounsellorSchedule()
+    }
     .onAppear {
       viewModel.fetchCounsellorSchedule()
     }
