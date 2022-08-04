@@ -10,11 +10,12 @@ import SwiftUI
 
 class DeepBreathViewModel: ObservableObject {
   @Published var isStartBreathAnimation = false
-  @Published var counter: Int = 300
+  @Published var counter: Int = 30
   @Published var counterText: String = ""
   @Published var instruction: String = ""
   @Published var animationColor: Color = .yellow
   @Published var isSessionCompleted: Bool = false
+  @Published var isSessionStopped: Bool = false
   
   private var cancellables = Set<AnyCancellable>()
   var hapticTimer: AnyCancellable?
@@ -42,6 +43,7 @@ class DeepBreathViewModel: ObservableObject {
           self.counter -= 1
         } else {
           self.stopTimer()
+          self.isSessionCompleted = true
         }
 
         if self.inhale > 0 {
@@ -110,7 +112,6 @@ class DeepBreathViewModel: ObservableObject {
     for item in cancellables {
       item.cancel()
       self.counter = 300
-      self.isSessionCompleted = true
       self.isStartBreathAnimation = false
     }
   }
