@@ -22,4 +22,5 @@ struct Schedule: Equatable {
   var schedule: Date = Date()
   var note: String = ""
   var status: ScheduleStatus = .waiting
+  var linkMeeting: String = ""
 }

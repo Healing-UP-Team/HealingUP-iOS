@@ -23,14 +23,14 @@ struct HomeView: View {
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Jantung", systemImage: "bolt.heart.fill")
+        Label("Beranda", systemImage: "house")
       }.tag(1)
       NavigationView {
         KesslerTabItem(navigator: assembler.resolve(), kesslerViewModel: assembler.resolve(), tabSelection: $selection)
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Stres", systemImage: "doc.text.magnifyingglass")
+        Label("Pengukuran", systemImage: "doc.text.magnifyingglass")
       }.tag(2)
         NavigationView {
           JournalingTabItem()
@@ -44,7 +44,7 @@ struct HomeView: View {
           .navigationTitle(navigationSetTitle(item: selection))
       }
       .tabItem {
-        Label("Konseling", systemImage: "timer")
+        Label("Konseling", systemImage: "person.2")
       }.tag(4)
       NavigationView {
         ProfileView(viewModel: assembler.resolve(), navigator: assembler.resolve())
@@ -59,9 +59,9 @@ struct HomeView: View {
   private func navigationSetTitle(item: Int) -> String {
     switch item {
     case 1:
-      return "Jantung"
+      return "Beranda"
     case 2:
-      return "Stres"
+      return "Pengukuran Stres"
     case 3:
       return "Jurnal"
     case 4:

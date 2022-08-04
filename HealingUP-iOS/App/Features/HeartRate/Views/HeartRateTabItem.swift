@@ -44,6 +44,7 @@ struct HeartRateTabItem: View {
                 .fontWeight(.bold)
                 .font(.system(size: 18))
                 .foregroundColor(Color(uiColor: .accentPurple))
+                .padding(.horizontal)
 
               if let data = heart.dataToday {
                 LineChart(chartData: data)
@@ -97,6 +98,7 @@ struct HeartRateTabItem: View {
                 .fontWeight(.bold)
                 .font(.system(size: 18))
                 .foregroundColor(Color(uiColor: .accentPurple))
+                .padding(.horizontal)
 
               if let data = heart.dataMonth {
                 LineChart(chartData: data)

@@ -59,6 +59,7 @@
 		AE877513289BB46F00C8C1BA /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE877512289BB46F00C8C1BA /* SegmentedControlView.swift */; };
 		AE877515289BDFEA00C8C1BA /* UINavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE877514289BDFEA00C8C1BA /* UINavigation.swift */; };
 		AE877518289BE02A00C8C1BA /* ScheduleCardComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE877517289BE02A00C8C1BA /* ScheduleCardComponentView.swift */; };
+		AE87751A289C17BD00C8C1BA /* SchedulingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE877519289C17BD00C8C1BA /* SchedulingDetailView.swift */; };
 		AE93AB6328730A8D006C1B9D /* HealingUP_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB6228730A8D006C1B9D /* HealingUP_iOSTests.swift */; };
 		AE93AB7028730C32006C1B9D /* HealingUP_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB6F28730C32006C1B9D /* HealingUP_iOSUITests.swift */; };
 		AE93AB7228730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB7128730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift */; };
@@ -258,6 +259,7 @@
 		AE877512289BB46F00C8C1BA /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		AE877514289BDFEA00C8C1BA /* UINavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigation.swift; sourceTree = "<group>"; };
 		AE877517289BE02A00C8C1BA /* ScheduleCardComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardComponentView.swift; sourceTree = "<group>"; };
+		AE877519289C17BD00C8C1BA /* SchedulingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingDetailView.swift; sourceTree = "<group>"; };
 		AE93AB6028730A8D006C1B9D /* HealingUP-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealingUP-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE93AB6228730A8D006C1B9D /* HealingUP_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealingUP_iOSTests.swift; sourceTree = "<group>"; };
 		AE93AB6D28730C32006C1B9D /* HealingUP-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealingUP-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -685,6 +687,7 @@
 				AEB07959288699A70016256C /* ScheduleTabItem.swift */,
 				AEB0795B2886A06D0016256C /* CounsellorChoiceView.swift */,
 				AEB0795D2886A9940016256C /* ChooseTimeView.swift */,
+				AE877519289C17BD00C8C1BA /* SchedulingDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1567,6 +1570,7 @@
 				AEB079622886AE6B0016256C /* ScheduleNavigator.swift in Sources */,
 				AEB07984288842000016256C /* DynamicLinkService.swift in Sources */,
 				AE33ADF7284E163B007F9FA8 /* KesslerResultEntity.swift in Sources */,
+				AE87751A289C17BD00C8C1BA /* SchedulingDetailView.swift in Sources */,
 				AEB477B7283B561C005567CA /* HomeNavigator.swift in Sources */,
 				AED86E06283B2F3100C62B98 /* FirebaseManager.swift in Sources */,
 				AE33ADDD284D9D2D007F9FA8 /* KesslerQuizMapper.swift in Sources */,

@@ -20,7 +20,7 @@ struct KesslerQuizView: View {
     VStack {
       VStack(alignment: .leading, spacing: 0) {
         HStack(alignment: .bottom, spacing: 5) {
-          Text("Question")
+          Text("Pertanyaan")
             .font(.system(size: 20, weight: .semibold))
             .foregroundColor(Color.accentColor)
           Text("\(i+1)/10")

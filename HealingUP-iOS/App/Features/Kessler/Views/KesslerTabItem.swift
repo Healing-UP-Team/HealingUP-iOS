@@ -109,7 +109,7 @@ struct KesslerTabItem: View {
       }
     }
     .sheet(isPresented: $isShowBreath) {
-      navigator.navigateToDeepBreathing(title: "Bernafas", icon: .watchPerson, message: "Kamu bisa menggunakan fitur ini pada aplikasi HealingUp di Apple Watch kamu.", buttonTitle: "OK")
+      navigator.navigateToDeepBreathing(title: "Bernapas Perut", icon: .watchPerson, message: "Kamu bisa menggunakan fitur ini pada aplikasi HealingUp di Apple Watch kamu.", buttonTitle: "OK")
     }
   }
 }

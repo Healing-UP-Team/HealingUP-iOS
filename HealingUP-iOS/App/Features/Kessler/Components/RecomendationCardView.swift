@@ -45,7 +45,7 @@ struct RecomendationCardView: View {
             .foregroundColor(Color(uiColor: .accentPurple))
           Text(stressHandling.caption ?? "Express your feelings in writing")
             .font(.system(size: 10, weight: .regular))
-            .lineLimit(nil)
+            .fixedSize(horizontal: false, vertical: true)
             .foregroundColor(Color(uiColor: .accentPurple))
         }
         Spacer()
@@ -62,6 +62,6 @@ struct RecomendationCardView: View {
 
 struct RecomendationCardView_Previews: PreviewProvider {
     static var previews: some View {
-      RecomendationCardView(stressHandling: StressHandling(title: "Deep Breathing", caption: "Lorem Ipsum", img: "nose", type: .breathing))
+      RecomendationCardView(stressHandling: StressHandling(title: "Deep Breathing", caption: "Latihan bernapas menggunakan teknik pernapasan dalam", img: "nose", type: .breathing))
     }
 }

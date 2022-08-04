@@ -48,7 +48,7 @@ struct ChooseTimeView: View {
           buttonTitle: "OK")
       }
 
-      ButtonDefaultView(title: "Request", action: {
+      ButtonDefaultView(title: "Ajukan", action: {
         let param: Schedule = .init(
           userId: SessionManager.getUserId(),
           counsellorId: counsellor.email,
