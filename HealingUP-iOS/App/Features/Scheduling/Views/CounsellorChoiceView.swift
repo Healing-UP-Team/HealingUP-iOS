@@ -23,7 +23,7 @@ struct CounsellorChoiceView: View {
             counsellorCard(user: item)
           }
         }
-      }
+      }.padding(.vertical)
     }
     .onAppear {
       membershipViewModel.fetchUsers(isUser: false)
@@ -45,7 +45,7 @@ struct CounsellorChoiceView: View {
         isShowAlert = true
       })
      .progressHUD(isShowing: $membershipViewModel.allUserState.isLoading)
-    .navigationTitle("Choose your counsellor")
+    .navigationTitle("Psikolog")
     .navigationBarTitleDisplayMode(.inline)
   }
 
@@ -66,7 +66,7 @@ struct CounsellorChoiceView: View {
           Text(user.name)
           HStack {
             Image(systemName: "bag.fill")
-            Text("6 Tahun")
+            Text(user.experience)
           }
           .font(.system(size: 10))
           .padding(.vertical, 5)
@@ -74,7 +74,7 @@ struct CounsellorChoiceView: View {
           .background(Color(uiColor: .softYellow))
           .cornerRadius(10)
 
-          Text("Available 09.00 - 17.00")
+          Text("Tersedia 09.00 - 17.00")
             .font(.system(size: 13))
           Spacer()
         }
@@ -82,9 +82,10 @@ struct CounsellorChoiceView: View {
         Image(systemName: "chevron.forward")
       }
       Divider()
-        .padding(.vertical)
+        .padding(.top)
     }
-    .padding()
+    .padding(.horizontal)
+    .padding(.vertical, 5)
   }
 }
 

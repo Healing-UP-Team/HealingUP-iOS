@@ -19,14 +19,22 @@ class MembershipViewModel: ObservableObject {
   @Published var signInState: ViewState<Bool> = .initiate
   @Published var signOutState: ViewState<Bool> = .initiate
   @Published var userByIdState: ViewState<User> = .initiate
+  @Published var userCounselorState: ViewState<User> = .initiate
 
   @Published var userData: User?
+  @Published var counselorName: String = ""
+  @Published var schedule: Schedule?
 
   private let firebaseManager: FirebaseManager
   static let shared = MembershipViewModel(firebaseManager: AppAssembler.shared.resolve())
 
-  init(firebaseManager: FirebaseManager) {
+  init(firebaseManager: FirebaseManager, schedule: Schedule? = nil) {
     self.firebaseManager = firebaseManager
+    self.schedule = schedule
+  }
+
+  func viewOnListSchedule() {
+    fetchCounselorSchedule(email: schedule?.counsellorId ?? "")
   }
 
   func setupUserData() {
@@ -63,6 +71,21 @@ class MembershipViewModel: ObservableObject {
       case .failure(let firebaseError):
         if case .invalidRequest(let error) = firebaseError {
           self.userByEmailState = .error(error: error)
+        }
+      }
+    }
+  }
+
+  func fetchCounselorSchedule(email: String) {
+    userCounselorState = .loading
+    firebaseManager.fetchUser(email: email) { result in
+      switch result {
+      case .success(let data):
+        self.userCounselorState = .success(data: data.map())
+        self.counselorName = data.map().name
+      case .failure(let firebaseError):
+        if case .invalidRequest(let error) = firebaseError {
+          self.userCounselorState = .error(error: error)
         }
       }
     }

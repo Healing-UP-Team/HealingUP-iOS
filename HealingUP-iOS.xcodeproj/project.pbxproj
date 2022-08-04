@@ -56,6 +56,9 @@
 		AE795CDB28753BE500D08F00 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE795CDA28753BE500D08F00 /* UIColor.swift */; };
 		AE795CDD28754D1300D08F00 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE795CDC28754D1300D08F00 /* UIImage.swift */; };
 		AE795CE1287578DA00D08F00 /* ButtonDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE795CE0287578DA00D08F00 /* ButtonDefaultView.swift */; };
+		AE877513289BB46F00C8C1BA /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE877512289BB46F00C8C1BA /* SegmentedControlView.swift */; };
+		AE877515289BDFEA00C8C1BA /* UINavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE877514289BDFEA00C8C1BA /* UINavigation.swift */; };
+		AE877518289BE02A00C8C1BA /* ScheduleCardComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE877517289BE02A00C8C1BA /* ScheduleCardComponentView.swift */; };
 		AE93AB6328730A8D006C1B9D /* HealingUP_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB6228730A8D006C1B9D /* HealingUP_iOSTests.swift */; };
 		AE93AB7028730C32006C1B9D /* HealingUP_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB6F28730C32006C1B9D /* HealingUP_iOSUITests.swift */; };
 		AE93AB7228730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AB7128730C32006C1B9D /* HealingUP_iOSUITestsLaunchTests.swift */; };
@@ -252,6 +255,9 @@
 		AE795CDA28753BE500D08F00 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AE795CDC28754D1300D08F00 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		AE795CE0287578DA00D08F00 /* ButtonDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultView.swift; sourceTree = "<group>"; };
+		AE877512289BB46F00C8C1BA /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
+		AE877514289BDFEA00C8C1BA /* UINavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigation.swift; sourceTree = "<group>"; };
+		AE877517289BE02A00C8C1BA /* ScheduleCardComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardComponentView.swift; sourceTree = "<group>"; };
 		AE93AB6028730A8D006C1B9D /* HealingUP-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealingUP-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE93AB6228730A8D006C1B9D /* HealingUP_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealingUP_iOSTests.swift; sourceTree = "<group>"; };
 		AE93AB6D28730C32006C1B9D /* HealingUP-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealingUP-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -612,6 +618,7 @@
 		AE795CDE2875785E00D08F00 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				AE877511289BB45B00C8C1BA /* SegmentedControl */,
 				AEB079662886CC3C0016256C /* Modal */,
 				AEB079632886CBF40016256C /* TextView */,
 				AE795CDF2875786700D08F00 /* Button */,
@@ -625,6 +632,22 @@
 				AE795CE0287578DA00D08F00 /* ButtonDefaultView.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		AE877511289BB45B00C8C1BA /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				AE877512289BB46F00C8C1BA /* SegmentedControlView.swift */,
+			);
+			path = SegmentedControl;
+			sourceTree = "<group>";
+		};
+		AE877516289BE00A00C8C1BA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AE877517289BE02A00C8C1BA /* ScheduleCardComponentView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		AE93AB6128730A8D006C1B9D /* HealingUP-iOSTests */ = {
@@ -657,6 +680,7 @@
 		AEB079562886975B0016256C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AE877516289BE00A00C8C1BA /* Components */,
 				AEB07979288836050016256C /* Counsellor */,
 				AEB07959288699A70016256C /* ScheduleTabItem.swift */,
 				AEB0795B2886A06D0016256C /* CounsellorChoiceView.swift */,
@@ -1123,6 +1147,7 @@
 				AE33ADFE284E452B007F9FA8 /* Date.swift */,
 				AE795CDA28753BE500D08F00 /* UIColor.swift */,
 				AE795CDC28754D1300D08F00 /* UIImage.swift */,
+				AE877514289BDFEA00C8C1BA /* UINavigation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1444,6 +1469,7 @@
 				AE33ADDB284D9CA8007F9FA8 /* KesslerQuizEntity.swift in Sources */,
 				AEB477C3283B71F1005567CA /* ViewStateModifier.swift in Sources */,
 				AEB0795E2886A9940016256C /* ChooseTimeView.swift in Sources */,
+				AE877515289BDFEA00C8C1BA /* UINavigation.swift in Sources */,
 				AEB477AF283B3C25005567CA /* Query.swift in Sources */,
 				A575E3D828915E39005D2E6A /* JournalsViewModel.swift in Sources */,
 				AEB477D1283C7A86005567CA /* ProfileAssembler.swift in Sources */,
@@ -1467,6 +1493,7 @@
 				AEB477DB283C91A0005567CA /* HeartRateTabItem.swift in Sources */,
 				AED86E02283B2E5500C62B98 /* ViewState.swift in Sources */,
 				AE725A1B286194C00082061F /* HeartRateNavigator.swift in Sources */,
+				AE877518289BE02A00C8C1BA /* ScheduleCardComponentView.swift in Sources */,
 				AE33ADCF284D8E01007F9FA8 /* KesslerTabItem.swift in Sources */,
 				AE603467288040A700AE4116 /* OnboardingAssembler.swift in Sources */,
 				AEF6F7202888EDF000910B79 /* CounsellorConfirmScheduleView.swift in Sources */,
@@ -1501,6 +1528,7 @@
 				AED86DEF283B283800C62B98 /* MembershipNavigator.swift in Sources */,
 				AEB477AD283B3BB1005567CA /* FirebaseReference.swift in Sources */,
 				AEB477BF283B6ECD005567CA /* BlurView.swift in Sources */,
+				AE877513289BB46F00C8C1BA /* SegmentedControlView.swift in Sources */,
 				AEB0796C2887E3830016256C /* ScheduleMapper.swift in Sources */,
 				AEB477AB283B3B2A005567CA /* FirebaseManager+Membership.swift in Sources */,
 				AED86DFC283B2D4000C62B98 /* UserMapper.swift in Sources */,
