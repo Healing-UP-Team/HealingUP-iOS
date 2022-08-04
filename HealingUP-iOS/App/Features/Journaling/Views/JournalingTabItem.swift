@@ -12,16 +12,51 @@ struct JournalingTabItem: View {
   @State private var searchText = ""
   @State private var showForm = false
 
-  var body: some View {
-    List {
-      ForEach(searchResult) { journal in
-        NavigationLink(destination: JournalDetailView(journal: journal)) {
-          JournalCell(journal: journal)
-        }
+  var emptyListView: some View {
+    VStack(alignment: .center) {
+      Spacer()
+      Image(uiImage: .kesslerIntro)
+        .resizable()
+        .scaledToFit()
+        .frame(height: 250)
+        .padding()
+      VStack(alignment: .leading) {
+        Text("Journal Kosong")
+          .font(.system(size: 30, weight: .bold))
+          .foregroundColor(Color.accentColor)
+          .padding(.top, 10)
+          .padding(.bottom, 10)
+          .padding(.horizontal)
+        Text("Sepertinya kamu belum mengisi jurnal sebelumnya, silahkan isi jurnal dengan klik tombol di kanan atas")
+          .foregroundColor(Color.accentColor)
+          .padding(.horizontal)
+          .multilineTextAlignment(.leading)
       }
-
+      Spacer()
     }
-    .listStyle(.inset)
+  }
+  var journalListView: some View {
+    List {
+        ForEach(searchResult) { journal in
+          NavigationLink(destination: JournalDetailView(journal: journal)) {
+            JournalCell(journal: journal)
+          }
+        }
+    }
+    .listStyle(.plain)
+    .listRowSeparator(Visibility.hidden)
+    .onAppear() { // (1)
+      self.viewModel.subscribe()
+    }
+  }
+
+
+  var body: some View {
+    ZStack {
+      emptyListView
+        .opacity(searchResult.isEmpty ? 1.0 : 0.0)
+      journalListView
+    }
     .sheet(isPresented: $showForm) {
       JournalEditView()
     }
@@ -42,6 +77,7 @@ struct JournalingTabItem: View {
     .onAppear { // (1)
       self.viewModel.subscribe()
     }
+
   }
 
   var searchResult: [Journal] {
@@ -57,5 +93,6 @@ struct JournalingTabItem: View {
 struct JournalList_Previews: PreviewProvider {
   static var previews: some View {
     JournalingTabItem()
+      .previewDevice("iPhone 13")
   }
 }
