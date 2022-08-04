@@ -39,6 +39,7 @@ struct ContentView: View {
         .padding(.horizontal, 10)
       }
     }.navigationTitle("Healing UP")
+      .navigationBarBackButtonHidden(true)
   }
 
   @ViewBuilder
