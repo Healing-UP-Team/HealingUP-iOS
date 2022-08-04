@@ -23,7 +23,10 @@ class JournalsViewModel: ObservableObject {
 
   func subscribe() {
     guard let userId = Auth.auth().currentUser?.uid else { return }
-
+    fetchJournalById(userId: userId)
+  }
+  
+  func fetchJournalById(userId: String) {
     if listenerRegistration == nil {
       listenerRegistration = db.collection(path)
         .whereField("userId", isEqualTo: userId)
