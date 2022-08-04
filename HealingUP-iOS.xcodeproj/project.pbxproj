@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		A5495E692896E98100081470 /* DeepBreathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5495E652896E98100081470 /* DeepBreathView.swift */; };
 		A5495E6A2896E98100081470 /* DeepBreathViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5495E662896E98100081470 /* DeepBreathViewModel.swift */; };
-		A5495E6B2896E98100081470 /* DeepBreathReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5495E672896E98100081470 /* DeepBreathReport.swift */; };
 		A5495E6C2896E98100081470 /* DeepBreathingPreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5495E682896E98100081470 /* DeepBreathingPreparationView.swift */; };
+		A56CF0A6289ABA780088320B /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CF09C289ABA780088320B /* WorkoutManager.swift */; };
+		A56CF0AB289ABA780088320B /* SummaryMetricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CF0A2289ABA780088320B /* SummaryMetricView.swift */; };
+		A56CF0B0289ADA140088320B /* DeepBreathReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CF0AF289ADA140088320B /* DeepBreathReport.swift */; };
 		A575E3BC28915C43005D2E6A /* JournalingAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3BB28915C43005D2E6A /* JournalingAssembler.swift */; };
 		A575E3CC28915C66005D2E6A /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3C228915C66005D2E6A /* JournalCell.swift */; };
 		A575E3D028915C67005D2E6A /* JournalingNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3C728915C66005D2E6A /* JournalingNavigator.swift */; };
@@ -213,8 +215,10 @@
 /* Begin PBXFileReference section */
 		A5495E652896E98100081470 /* DeepBreathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathView.swift; sourceTree = "<group>"; };
 		A5495E662896E98100081470 /* DeepBreathViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathViewModel.swift; sourceTree = "<group>"; };
-		A5495E672896E98100081470 /* DeepBreathReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathReport.swift; sourceTree = "<group>"; };
 		A5495E682896E98100081470 /* DeepBreathingPreparationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathingPreparationView.swift; sourceTree = "<group>"; };
+		A56CF09C289ABA780088320B /* WorkoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		A56CF0A2289ABA780088320B /* SummaryMetricView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryMetricView.swift; sourceTree = "<group>"; };
+		A56CF0AF289ADA140088320B /* DeepBreathReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepBreathReport.swift; sourceTree = "<group>"; };
 		A575E3BB28915C43005D2E6A /* JournalingAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalingAssembler.swift; sourceTree = "<group>"; };
 		A575E3C228915C66005D2E6A /* JournalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
 		A575E3C728915C66005D2E6A /* JournalingNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalingNavigator.swift; sourceTree = "<group>"; };
@@ -411,6 +415,7 @@
 		A5495E6D2896E98600081470 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A56CF09C289ABA780088320B /* WorkoutManager.swift */,
 				A5495E662896E98100081470 /* DeepBreathViewModel.swift */,
 			);
 			path = ViewModel;
@@ -419,8 +424,9 @@
 		A5495E6E2896E99100081470 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A56CF0A2289ABA780088320B /* SummaryMetricView.swift */,
 				A5495E682896E98100081470 /* DeepBreathingPreparationView.swift */,
-				A5495E672896E98100081470 /* DeepBreathReport.swift */,
+				A56CF0AF289ADA140088320B /* DeepBreathReport.swift */,
 				A5495E652896E98100081470 /* DeepBreathView.swift */,
 			);
 			path = Views;
@@ -1489,14 +1495,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB23C192869CAE500738864 /* NotLoginStateView.swift in Sources */,
+				A56CF0B0289ADA140088320B /* DeepBreathReport.swift in Sources */,
 				AEB477EE283CA5A1005567CA /* ContentView.swift in Sources */,
+				A56CF0A6289ABA780088320B /* WorkoutManager.swift in Sources */,
 				AEF34A1128684D6700FC4235 /* HeartRateVariabilityView.swift in Sources */,
 				AEB477F0283CA5A1005567CA /* HealingUP_iOSApp.swift in Sources */,
-				A5495E6B2896E98100081470 /* DeepBreathReport.swift in Sources */,
 				A5495E6A2896E98100081470 /* DeepBreathViewModel.swift in Sources */,
 				AEB47805283CABF9005567CA /* HeartRateViewModel.swift in Sources */,
 				AEB23BB3286978CD00738864 /* CircularProgressView.swift in Sources */,
 				AEB477F2283CA5A1005567CA /* ComplicationController.swift in Sources */,
+				A56CF0AB289ABA780088320B /* SummaryMetricView.swift in Sources */,
 				AEB23C0428699B3000738864 /* SessionManager.swift in Sources */,
 				AE686A6C2875F0FA00B675BC /* Color.swift in Sources */,
 				A5495E6C2896E98100081470 /* DeepBreathingPreparationView.swift in Sources */,
@@ -1723,11 +1731,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HealingUp-Watch WatchKit Extension/HealingUp-Watch WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 4SN74J4HZJ;
+				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
@@ -1746,7 +1754,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = healingupextensionwatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1761,11 +1769,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HealingUp-Watch WatchKit Extension/HealingUp-Watch WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 4SN74J4HZJ;
+				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
@@ -1784,7 +1792,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = healingupextensionwatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1800,8 +1808,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1811,7 +1819,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp;
 				PRODUCT_NAME = "Healing UP";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = healingUpWatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1827,8 +1835,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1838,7 +1846,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp;
 				PRODUCT_NAME = "Healing UP";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = healingUpWatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1970,8 +1978,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
@@ -1997,7 +2005,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios;
 				PRODUCT_NAME = "Healing UP";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = healingupprovisioning;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2010,8 +2018,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
@@ -2035,9 +2043,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ioss;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios;
 				PRODUCT_NAME = "Healing UP";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = healingupprovisioning;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
