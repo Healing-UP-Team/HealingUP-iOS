@@ -13,6 +13,7 @@ struct CounsellorConfirmScheduleView: View {
   @State var user: User?
   @ObservedObject var membershipViewModel: MembershipViewModel
   @ObservedObject var scheduleViewModel: ScheduleViewModel
+  @ObservedObject var vm = JournalsViewModel()
   @Environment(\.presentationMode) var presentationMode
   let navigator: ScheduleNavigator
 
@@ -54,7 +55,19 @@ struct CounsellorConfirmScheduleView: View {
             .background(Color(uiColor: .softYellow))
             .cornerRadius(12)
         }.padding()
+
+        if schedule.status == .scheduled {
+          VStack(alignment: .leading) {
+            Text("Journal \(user?.name ?? "")")
+              .font(.system(size: 18, weight: .bold))
+          }
+          ForEach(vm.journals) { journal in
+              JournalCell(journal: journal)
+          }
+        }
+
       }
+
 
       if isConfirm && schedule.status == .waiting {
         ButtonDefaultView(title: "Terima", action: {
@@ -85,6 +98,7 @@ struct CounsellorConfirmScheduleView: View {
     }
     .onAppear {
       membershipViewModel.fetchUserById(id: schedule.userId)
+      vm.fetchJournalById(userId: schedule.userId)
     }
     .fullScreenCover(isPresented: $isDone, onDismiss: {
       presentationMode.wrappedValue.dismiss()
