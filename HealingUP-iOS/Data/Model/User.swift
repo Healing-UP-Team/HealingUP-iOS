@@ -22,4 +22,5 @@ struct User: Equatable {
   var age: Int = 0
   var minimumHrv: Double = 0
   var fcmToken: String = ""
+  var experience: String = ""
 }

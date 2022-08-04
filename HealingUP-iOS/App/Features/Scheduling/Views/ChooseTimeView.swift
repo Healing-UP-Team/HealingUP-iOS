@@ -25,7 +25,7 @@ struct ChooseTimeView: View {
       VStack(alignment: .leading) {
         DatePicker("Picker Date", selection: $date)
           .datePickerStyle(.graphical)
-        Text("Additional Notes")
+        Text("Catatan Keluhan")
           .font(.system(size: 18, weight: .bold))
 
         VStack {
@@ -44,7 +44,7 @@ struct ChooseTimeView: View {
         navigator.navigateToResult(
           title: "Jadwal berhasil dibuat",
           icon: .icSuccess,
-          message: "Permintaan anda berhasil dibuat, silahkan menunggu konfirmasi dari konselor untuk memulai konsultasi.",
+          message: "Permintaan anda berhasil dibuat, silahkan menunggu konfirmasi dari psikolog untuk memulai konsultasi.",
           buttonTitle: "OK")
       }
 
@@ -60,7 +60,7 @@ struct ChooseTimeView: View {
       .padding(.bottom)
     }
     .padding(.horizontal)
-    .navigationTitle("Choose date and time")
+    .navigationTitle("Pilih Tanggal & Waktu")
     .navigationBarTitleDisplayMode(.inline)
     .alert(isPresented: $isShowAlert) {
       Alert(

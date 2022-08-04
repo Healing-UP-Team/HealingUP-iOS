@@ -17,6 +17,7 @@ extension UIImage {
   // MARK: Schedule
   static let icSuccess = UIImage(named: "ic-success")!
   static let icXmark = UIImage(named: "ic-xmark")!
+  static let imgCounseling = UIImage(named: "img-counseling")!
 
 }
 
