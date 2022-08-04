@@ -50,7 +50,6 @@ struct JournalingTabItem: View {
     }
   }
 
-
   var body: some View {
     ZStack {
       emptyListView

@@ -71,7 +71,6 @@ struct CounsellorConfirmScheduleView: View {
 
       }
 
-
       if isConfirm && schedule.status == .waiting {
         ButtonDefaultView(title: "Terima", action: {
           var newSchedule = schedule

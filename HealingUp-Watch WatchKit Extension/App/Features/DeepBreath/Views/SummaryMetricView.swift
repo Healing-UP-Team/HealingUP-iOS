@@ -11,15 +11,15 @@ struct SummaryMetricView: View {
   var title: String
   var value: String
   var color: Color
-  
+
   var body: some View {
-    
+
     Text(title)
     Text(value)
       .font(.system(.title2, design: .rounded).lowercaseSmallCaps())
       .foregroundColor(color)
     Divider()
-    
+
   }
 }
 

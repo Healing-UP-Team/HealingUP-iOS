@@ -70,7 +70,6 @@ struct DeepBreathView: View {
     .indexViewStyle(.page(backgroundDisplayMode: .automatic))
     }
 
-
   }
 }
 

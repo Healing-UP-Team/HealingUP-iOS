@@ -16,15 +16,13 @@ class DeepBreathViewModel: ObservableObject {
   @Published var animationColor: Color = .yellow
   @Published var isSessionCompleted: Bool = false
   @Published var isSessionStopped: Bool = false
-  
+
   private var cancellables = Set<AnyCancellable>()
   var hapticTimer: AnyCancellable?
-
 
   private var inhale = 4
   private var exhale = 4
   private var normal = 7
-
 
   deinit {
     self.stopTimer()
@@ -50,7 +48,7 @@ class DeepBreathViewModel: ObservableObject {
 
           if self.inhale == 4 {
             self.animationColor = .yellow
-            //memastikan hanya disetup sekali, pas diawal
+            // memastikan hanya disetup sekali, pas diawal
             self.setupHapticsCaller()
           }
           self.inhale -= 1
@@ -59,7 +57,7 @@ class DeepBreathViewModel: ObservableObject {
           self.exhale -= 1
           self.instruction = "Hembuskan dari mulut, seperti melewati sedotan"
           if self.exhale == 0 {
-            //memastikan hanya disetup sekali, pas diakhir
+            // memastikan hanya disetup sekali, pas diakhir
             self.hapticTimer?.cancel()
             self.animationColor = .green
           }
@@ -67,14 +65,13 @@ class DeepBreathViewModel: ObservableObject {
           self.normal -= 1
           self.instruction = "Istirahat \(self.normal), bernapas seperti biasa"
 
-        }else {
+        } else {
           self.inhale = 4
           self.exhale = 4
           self.normal = 7
         }
         let minutes = self.counter / 60
         let seconds = self.counter % 60
-
 
         self.counterText = String(format: "%02d:%02d", minutes, seconds)
       }
@@ -95,12 +92,12 @@ class DeepBreathViewModel: ObservableObject {
           }
           WKInterfaceDevice.current().play(.start)
           print("\(count): medium")
-        } else if count < 30{
+        } else if count < 30 {
           if count % 10 == 0 {
             WKInterfaceDevice.current().play(.stop)
             print("\(count): rigid")
           }
-        } else if count == 50{
+        } else if count == 50 {
             count = 0
         }
         count += 1
