@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct DeepBreathView: View {
+  @StateObject var wm = WorkoutManager()
   @StateObject var vm = DeepBreathViewModel()
+  @ObservedObject var heart = HeartRateViewModel()
   @State var progressValue: Float = 0.0
 
   var body: some View {
     ZStack {
       NavigationLink(destination: DeepBreathReport(), isActive: $vm.isSessionCompleted, label: { EmptyView() })
+        .disabled(true)
+        .hidden()
+      NavigationLink(destination: ContentView(), isActive: $vm.isSessionStopped, label: { EmptyView() })
         .disabled(true)
         .hidden()
       TabView {
@@ -47,13 +52,18 @@ struct DeepBreathView: View {
           }
           Spacer()
           Text(vm.counterText)
+
         }
         .onAppear {
           vm.isStartBreathAnimation = true
           vm.setupTimer()
+
+          wm.requestAuthorization()
         }
 
         Button("Stop") {
+          wm.endWorkout()
+          vm.isSessionStopped = true
           vm.stopTimer()
           vm.hapticTimer?.cancel()
           vm.isStartBreathAnimation = false
