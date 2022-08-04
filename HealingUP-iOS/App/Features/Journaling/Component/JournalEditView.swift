@@ -42,7 +42,7 @@ struct JournalEditView: View {
 
         Section {
           TextField("Apa aktivitasmu hari ini?", text: $viewModel.journal.title)
-          Text(viewModel.journal.date)
+          Text(viewModel.journal.date.toStringWith(format: "EE, dd MMM yyyy") ?? "")
         } header: {
           Text("Judul")
         }

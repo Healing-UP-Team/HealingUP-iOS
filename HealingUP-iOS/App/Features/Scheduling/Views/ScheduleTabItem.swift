@@ -45,8 +45,10 @@ struct ScheduleTabItem: View {
           }
           if !schedules.isEmpty {
             ForEach(filteringSchedule(status: .scheduled, schedules), id: \.id) { item in
-              let viewModel = MembershipViewModel(firebaseManager: AppAssembler.shared.resolve(), schedule: item)
-              ScheduleCardComponentView(viewModel: viewModel)
+              NavigationLink(destination: navigator.navigateToScheduleDetail(schedule: item)) {
+                let viewModel = MembershipViewModel(firebaseManager: AppAssembler.shared.resolve(), schedule: item)
+                ScheduleCardComponentView(viewModel: viewModel)
+              }
             }
           }
         }

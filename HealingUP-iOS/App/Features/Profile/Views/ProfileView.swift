@@ -108,7 +108,7 @@ struct ProfileView: View {
               .foregroundColor(Color.gray)
               .font(.system(size: 20))
               .frame(width: 30)
-            Text("Logout")
+            Text("Keluar")
               .foregroundColor(Color.black)
             Spacer()
           }.padding()

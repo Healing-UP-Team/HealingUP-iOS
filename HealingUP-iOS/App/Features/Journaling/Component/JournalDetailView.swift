@@ -40,7 +40,7 @@ struct JournalDetailView: View {
           Image(systemName: "calendar")
             .font(.system(size: 20))
             .foregroundColor(.accentPurple)
-          Text(journal.date)
+          Text(journal.date.toStringWith(format: "EE, dd MMM yyyy") ?? "")
             .font(.system(size: 14))
             .foregroundColor(.accentPurple)
         }
@@ -59,6 +59,8 @@ struct JournalDetailView: View {
       }
       Spacer(minLength: 16)
     }
+    .navigationTitle("")
+    .navigationBarTitleDisplayMode(.inline)
     .toolbar {
       ToolbarItem(placement: .navigationBarTrailing) {
         Button {
@@ -81,7 +83,7 @@ struct JournalDetailView: View {
 }
 
 struct JournalView_Previews: PreviewProvider {
-  static var journal = Journal(emoji: "🫠", title: "tes", note: "tes", date: "23 jul 2022")
+  static var journal = Journal(emoji: "🫠", title: "tes", note: "tes", date: Date())
   static var previews: some View {
     NavigationView {
       JournalDetailView(journal: journal)

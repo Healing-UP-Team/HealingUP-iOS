@@ -30,7 +30,7 @@ struct KesslerHistoryView: View {
           }
         }
       }
-      .navigationTitle("Stress Level")
+      .navigationTitle("Riwayat Pengukuran")
       .alert(isPresented: $isShowAlert) {
         Alert(
           title: Text("Gagal"),

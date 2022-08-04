@@ -37,7 +37,7 @@ struct JournalCell: View {
           Image(systemName: "calendar")
             .font(.system(size: 10))
             .foregroundColor(textColor)
-          Text(journal.date)
+          Text(journal.date.toStringWith(format: "EE, dd MMM yyyy") ?? "")
             .font(.system(size: 10))
             .foregroundColor(textColor)
         }
@@ -53,7 +53,7 @@ struct JournalCell: View {
 }
 
 struct JournalCell_Previews: PreviewProvider {
-  static var journal = Journal(emoji: "🫠", title: "tes", note: "tes", date: "2022-07-27T12:14:31Z")
+  static var journal = Journal(emoji: "🫠", title: "tes", note: "tes", date: Date())
   static var previews: some View {
     List(0..<5) { _ in
       JournalCell(journal: journal)

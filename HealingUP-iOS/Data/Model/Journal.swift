@@ -14,7 +14,7 @@ struct Journal: Identifiable, Codable {
     var emoji: String
     var title: String
     var note: String
-    var date: String
+    var date: Date
 
   enum CodingKeys: String, CodingKey {
     case id

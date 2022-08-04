@@ -19,7 +19,7 @@ class JournalViewModel: ObservableObject {
 
   private var cancellables = Set<AnyCancellable>()
 
-  init(journal: Journal = Journal(emoji: "", title: "", note: "", date: Date().ISO8601Format())) {
+  init(journal: Journal = Journal(emoji: "", title: "", note: "", date: Date())) {
     self.journal = journal
     self.$journal
       .dropFirst()

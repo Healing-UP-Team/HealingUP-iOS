@@ -15,7 +15,8 @@ extension ScheduleEntity {
       counsellorId: counsellorId.orEmpty(),
       schedule: schedule?.toDate() ?? Date(),
       note: note.orEmpty(),
-      status: ScheduleStatus(rawValue: status?.rawValue ?? "")!)
+      status: ScheduleStatus(rawValue: status?.rawValue ?? "")!,
+      linkMeeting: linkMeeting.orEmpty())
   }
 }
 
@@ -27,6 +28,7 @@ extension Schedule {
       counsellorId: counsellorId,
       schedule: String(schedule.timeIntervalSince1970),
       note: note,
-      status: status)
+      status: status,
+      linkMeeting: linkMeeting)
   }
 }
