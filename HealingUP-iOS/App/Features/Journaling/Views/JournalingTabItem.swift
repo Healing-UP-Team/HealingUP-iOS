@@ -35,7 +35,8 @@ struct JournalingTabItem: View {
       Spacer()
     }
   }
-  var journalListView: some View {
+
+  var body: some View {
     List {
         ForEach(searchResult) { journal in
           NavigationLink(destination: JournalDetailView(journal: journal)) {
@@ -45,17 +46,6 @@ struct JournalingTabItem: View {
     }
     .listStyle(.plain)
     .listRowSeparator(Visibility.hidden)
-    .onAppear() { // (1)
-      self.viewModel.subscribe()
-    }
-  }
-
-  var body: some View {
-    ZStack {
-      emptyListView
-        .opacity(searchResult.isEmpty ? 1.0 : 0.0)
-      journalListView
-    }
     .sheet(isPresented: $showForm) {
       JournalEditView()
     }
