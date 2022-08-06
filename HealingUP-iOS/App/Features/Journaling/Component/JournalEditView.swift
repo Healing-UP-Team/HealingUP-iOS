@@ -42,7 +42,7 @@ struct JournalEditView: View {
 
         Section {
           TextField("Apa aktivitasmu hari ini?", text: $viewModel.journal.title)
-          Label(viewModel.journal.date.toStringWith(format: "EE, dd MMM yyyy") ?? "", systemImage: "calendar")
+          Label(viewModel.journal.date.toStringWith(format: "HH:mm EEEE, dd MMMM yyyy") ?? "", systemImage: "calendar")
             .foregroundColor(.gray)
         } header: {
           Text("Judul")

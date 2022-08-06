@@ -37,7 +37,7 @@ struct JournalCell: View {
           Image(systemName: "calendar")
             .font(.system(size: 10))
             .foregroundColor(textColor)
-          Text(journal.date.toStringWith(format: "EE, dd MMM yyyy") ?? "")
+          Text(journal.date.toStringWith(format: "HH:mm EEEE, dd MMMM yyyy") ?? "")
             .font(.system(size: 10))
             .foregroundColor(textColor)
         }
