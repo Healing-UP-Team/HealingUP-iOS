@@ -71,7 +71,9 @@ struct JournalingTabItem: View {
 
   var searchResult: [Journal] {
     if searchText.isEmpty {
-      return viewModel.journals
+      return viewModel.journals.sorted {
+        $1.date < $0.date
+      }
     } else {
       return viewModel.journals.filter { $0.title.contains(searchText) }
     }
