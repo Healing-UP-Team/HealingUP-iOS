@@ -14,8 +14,11 @@ struct CounsellorConfirmScheduleView: View {
   @ObservedObject var membershipViewModel: MembershipViewModel
   @ObservedObject var scheduleViewModel: ScheduleViewModel
   @ObservedObject var vm = JournalsViewModel()
+
   @Environment(\.presentationMode) var presentationMode
   let navigator: ScheduleNavigator
+
+  @State private var isShowAddLinkMeeting = false
 
   @State private var isShowAlert = false
   @State private var storeError: Error?
@@ -33,6 +36,8 @@ struct CounsellorConfirmScheduleView: View {
               VStack(alignment: .leading, spacing: 5) {
                 Text("Nama")
                   .font(.system(size: 15, weight: .bold))
+                Text("Umur")
+                  .font(.system(size: 15, weight: .bold))
                 Text("Jam")
                   .font(.system(size: 15, weight: .bold))
                 Text("Tanggal")
@@ -42,11 +47,33 @@ struct CounsellorConfirmScheduleView: View {
               VStack(alignment: .trailing, spacing: 5) {
                 Text(user?.name ?? "")
                   .font(.system(size: 15, weight: .medium))
+                Text(String(user?.age ?? 0))
+                  .font(.system(size: 15, weight: .medium))
                 Text(schedule.schedule.toStringWith(format: "HH:mm") ?? "")
                 Text(schedule.schedule.toStringWith(format: "EE, dd MMM yyyy") ?? "")
                   .font(.system(size: 15, weight: .medium))
               }
             }.padding()
+
+
+            if schedule.status == .scheduled && schedule.linkMeeting.isEmpty {
+              Button {
+                isShowAddLinkMeeting.toggle()
+              } label: {
+                HStack {
+                  Spacer()
+                  Label("Tambah Link", systemImage: "link.badge.plus")
+                    .foregroundColor(.white)
+                  Spacer()
+                }
+                .padding()
+                .background(Color.accentPurple)
+
+
+              }
+            }
+
+
 
             Text("Catatan Keluhan")
               .font(.system(size: 18, weight: .bold))
@@ -87,6 +114,9 @@ struct CounsellorConfirmScheduleView: View {
         }, backgroundColor: .white, titleColor: .accentColor)
 
       }
+    }
+    .sheet(isPresented: $isShowAddLinkMeeting) {
+      CounsellorAddLinkMeeting()
     }
     .padding(.vertical)
     .navigationTitle("Detail Konseling")
