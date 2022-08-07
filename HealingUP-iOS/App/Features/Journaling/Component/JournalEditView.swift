@@ -18,6 +18,7 @@ enum Action {
 struct JournalEditView: View {
 
   // MARK: - Vriable init
+  @State private var isAllFormFilled = false
   @StateObject var viewModel = JournalViewModel()
   var mode: Mode = .new
   var completionHandler: ((Result<Action, Error>) -> Void)?
@@ -79,7 +80,13 @@ struct JournalEditView: View {
           }
         }
         ToolbarItem(placement: .navigationBarTrailing) {
-          Button(action: { self.handleDoneTapped() }) {
+          Button(action: {
+            if viewModel.journal.emoji.isEmpty || viewModel.journal.note.isEmpty || viewModel.journal.title.isEmpty {
+              isAllFormFilled.toggle()
+            } else {
+              self.handleDoneTapped()
+            }
+          }) {
             Text(mode == .new ? "Selesai" : "Simpan")
           }
           .disabled(!viewModel.modified) // (8)
@@ -96,6 +103,9 @@ struct JournalEditView: View {
         Button(role: .cancel, action: {}) {
           Text("Kembali")
         }
+      }
+      .alert(isPresented: $isAllFormFilled) {
+        Alert(title: Text("Jurnal Belum lengkap"), message: Text("Apakah kamu yakin sudah mengisi semuanya?"), dismissButton: .default(Text("Ok, Saya mengerti")))
       }
     }
   }
