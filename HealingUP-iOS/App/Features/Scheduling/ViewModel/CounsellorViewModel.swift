@@ -13,7 +13,6 @@ class CounsellorViewModel: ObservableObject {
   private var db = Firestore.firestore()
   private let path = "schedule"
 
-
   func updateScheduleCounsellor(_ scheduleId: String) {
     db.collection(path).document(scheduleId).updateData(["link_meeting": self.link]) { error in
       if let error = error {

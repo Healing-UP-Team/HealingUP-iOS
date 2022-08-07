@@ -11,17 +11,17 @@ struct CounsellorConfirmScheduleView: View {
   let isConfirm: Bool
   let schedule: Schedule
   @State var user: User?
-  
+
   @StateObject var cvm = CounsellorViewModel()
   @ObservedObject var membershipViewModel: MembershipViewModel
   @ObservedObject var scheduleViewModel: ScheduleViewModel
   @ObservedObject var vm = JournalsViewModel()
-  
+
   @Environment(\.presentationMode) var presentationMode
   let navigator: ScheduleNavigator
-  
+
   @State private var isShowAddLinkMeeting = false
-  
+
   @State private var isShowAlert = false
   @State private var storeError: Error?
   @State var isRejected = false
@@ -29,7 +29,7 @@ struct CounsellorConfirmScheduleView: View {
 
   @State private var isShowConfirmation = false
   @State private var isShowJournalsView = false
-  
+
   var body: some View {
     VStack {
       ScrollView(showsIndicators: false) {
@@ -51,7 +51,7 @@ struct CounsellorConfirmScheduleView: View {
                   Text("Link")
                     .font(.system(size: 15, weight: .bold))
                 }
-                
+
               }
               Spacer()
               VStack(alignment: .trailing, spacing: 5) {
@@ -66,7 +66,7 @@ struct CounsellorConfirmScheduleView: View {
                   Text(schedule.linkMeeting.isEmpty ? "Belum ada link" : schedule.linkMeeting)
                     .font(.system(size: 15, weight: .medium))
                 }
-                
+
               }
             }.padding()
 
@@ -87,11 +87,11 @@ struct CounsellorConfirmScheduleView: View {
                 )
               }
             }
-            
+
             Text("Catatan Keluhan")
               .font(.system(size: 18, weight: .bold))
           }
-          
+
           Text(schedule.note.isEmpty ? "Tidak ada keluhan" : schedule.note)
             .padding()
             .frame(width: UIScreen.main.bounds.width / 1.1)
@@ -131,7 +131,7 @@ struct CounsellorConfirmScheduleView: View {
           isRejected = false
           scheduleViewModel.updateSchedule(schedule: newSchedule)
         })
-        
+
         ButtonDefaultView(title: "Tolak", action: {
           var newSchedule = schedule
           newSchedule.status = .rejected
@@ -229,8 +229,8 @@ struct CounsellorConfirmScheduleView: View {
     )
     .progressHUD(isShowing: $membershipViewModel.userByIdState.isLoading)
   }
-  
-  private var sortedJournal : [Journal] {
+
+  private var sortedJournal: [Journal] {
     return vm.journals.sorted {
       $1.date < $0.date
     }
