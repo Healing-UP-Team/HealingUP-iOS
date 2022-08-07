@@ -118,7 +118,6 @@ struct CounsellorConfirmScheduleView: View {
     .sheet(isPresented: $isShowAddLinkMeeting) {
       CounsellorAddLinkMeeting()
     }
-    .padding(.vertical)
     .navigationTitle("Detail Konseling")
     .navigationBarTitleDisplayMode(.inline)
     .alert(isPresented: $isShowAlert) {
