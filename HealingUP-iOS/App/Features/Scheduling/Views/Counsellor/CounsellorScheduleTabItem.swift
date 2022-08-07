@@ -15,19 +15,65 @@ struct CounsellorScheduleTabItem: View {
   @State var storeError: Error?
   @State var isShowAlert = false
 
+  let titles: [String] = ["Menunggu", "Ditolak", "Selesai"]
+  @State var selectedIndex: Int = 0
+
   var body: some View {
     ScrollView(showsIndicators: false) {
       VStack(alignment: .leading) {
-        Text("Butuh Konfirmasi")
-          .font(.system(size: 18, weight: .semibold))
+        HStack {
+          Text("Konseling Terjadwal")
+            .font(.system(size: 15, weight: .bold))
+          Spacer()
+        }
         if !schedules.isEmpty {
-          ForEach(schedules, id: \.id) { item in
+          ForEach(filteringSchedule(status: .scheduled, schedules), id: \.id) { item in
             NavigationLink(destination: navigator.navigateToScheduleConfirm(isConfirm: true, schedule: item)) {
               scheduleCard(schedule: item)
             }
           }
         }
-      }.padding()
+      }
+      .padding()
+      VStack(alignment: .leading) {
+        HStack {
+          Text("Butuh Konfirmasi")
+            .font(.system(size: 15, weight: .bold))
+          Spacer()
+        }
+
+        SegmentedControlView(selectedIndex: $selectedIndex, titles: titles)
+          .padding(.bottom, 5)
+
+        switch selectedIndex {
+        case 0:
+          if !schedules.isEmpty {
+            ForEach(filteringSchedule(status: .waiting, schedules), id: \.id) { item in
+              NavigationLink(destination: navigator.navigateToScheduleConfirm(isConfirm: true, schedule: item)) {
+                scheduleCard(schedule: item)
+              }
+            }
+          }
+        case 1:
+          if !schedules.isEmpty {
+            ForEach(filteringSchedule(status: .rejected, schedules), id: \.id) { item in
+              NavigationLink(destination: navigator.navigateToScheduleConfirm(isConfirm: true, schedule: item)) {
+                scheduleCard(schedule: item)
+              }
+            }
+          }
+
+        default:
+          if !schedules.isEmpty {
+            ForEach(filteringSchedule(status: .done, schedules), id: \.id) { item in
+              NavigationLink(destination: navigator.navigateToScheduleConfirm(isConfirm: true, schedule: item)) {
+                scheduleCard(schedule: item)
+              }
+            }
+          }
+        }
+      }
+      .padding()
     }
     .alert(isPresented: $isShowAlert) {
       Alert(
@@ -53,6 +99,11 @@ struct CounsellorScheduleTabItem: View {
         isShowAlert = true
       })
     .progressHUD(isShowing: $viewModel.fetchCounsellorScheduleState.isLoading)
+  }
+
+  private func filteringSchedule(status: ScheduleStatus, _ schedule: [Schedule]) -> [Schedule] {
+    let filteredSchedule = schedule.filter { $0.status == status }
+    return filteredSchedule
   }
 
   @ViewBuilder
