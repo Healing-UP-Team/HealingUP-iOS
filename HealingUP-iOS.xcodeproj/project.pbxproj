@@ -24,6 +24,8 @@
 		A575E3DE28915E46005D2E6A /* JournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3DB28915E46005D2E6A /* JournalDetailView.swift */; };
 		A575E3DF28915E46005D2E6A /* JournalEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3DC28915E46005D2E6A /* JournalEditView.swift */; };
 		A5857283289F6DA600925384 /* CounsellorAddLinkMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5857282289F6DA600925384 /* CounsellorAddLinkMeeting.swift */; };
+		A5857286289FB38500925384 /* CounsellorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5857285289FB38500925384 /* CounsellorViewModel.swift */; };
+		A585728A289FDB8800925384 /* CounsellorJurnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5857289289FDB8800925384 /* CounsellorJurnalView.swift */; };
 		AE0058CA2860757000684F81 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0058C92860757000684F81 /* CircularProgressView.swift */; };
 		AE33ADCF284D8E01007F9FA8 /* KesslerTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADCE284D8E01007F9FA8 /* KesslerTabItem.swift */; };
 		AE33ADD1284D8E20007F9FA8 /* KesslerNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADD0284D8E20007F9FA8 /* KesslerNavigator.swift */; };
@@ -231,6 +233,8 @@
 		A575E3DB28915E46005D2E6A /* JournalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalDetailView.swift; sourceTree = "<group>"; };
 		A575E3DC28915E46005D2E6A /* JournalEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEditView.swift; sourceTree = "<group>"; };
 		A5857282289F6DA600925384 /* CounsellorAddLinkMeeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorAddLinkMeeting.swift; sourceTree = "<group>"; };
+		A5857285289FB38500925384 /* CounsellorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorViewModel.swift; sourceTree = "<group>"; };
+		A5857289289FDB8800925384 /* CounsellorJurnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorJurnalView.swift; sourceTree = "<group>"; };
 		AE0058C92860757000684F81 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		AE33ADCE284D8E01007F9FA8 /* KesslerTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerTabItem.swift; sourceTree = "<group>"; };
 		AE33ADD0284D8E20007F9FA8 /* KesslerNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerNavigator.swift; sourceTree = "<group>"; };
@@ -747,6 +751,7 @@
 		AEB07958288697920016256C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A5857285289FB38500925384 /* CounsellorViewModel.swift */,
 				AEB0795F2886AE5A0016256C /* ScheduleViewModel.swift */,
 			);
 			path = ViewModel;
@@ -781,6 +786,7 @@
 			children = (
 				AEB0797B288836490016256C /* CounsellorScheduleTabItem.swift */,
 				AEF6F71F2888EDF000910B79 /* CounsellorConfirmScheduleView.swift */,
+				A5857289289FDB8800925384 /* CounsellorJurnalView.swift */,
 				A5857282289F6DA600925384 /* CounsellorAddLinkMeeting.swift */,
 			);
 			path = Counsellor;
@@ -1578,6 +1584,7 @@
 				A575E3D928915E39005D2E6A /* JournalViewModel.swift in Sources */,
 				AEB0795A288699A70016256C /* ScheduleTabItem.swift in Sources */,
 				AE725A242861AB5D0082061F /* RecomendationCardView.swift in Sources */,
+				A5857286289FB38500925384 /* CounsellorViewModel.swift in Sources */,
 				AED86DFA283B2BB000C62B98 /* BodyCodable.swift in Sources */,
 				AE33ADF0284E12DC007F9FA8 /* ButtonAnswerView.swift in Sources */,
 				AED86DEF283B283800C62B98 /* MembershipNavigator.swift in Sources */,
@@ -1606,6 +1613,7 @@
 				AE60345E2880368E00AE4116 /* OnboardingView.swift in Sources */,
 				AED86DA8283B181900C62B98 /* ContentView.swift in Sources */,
 				A575E3DF28915E46005D2E6A /* JournalEditView.swift in Sources */,
+				A585728A289FDB8800925384 /* CounsellorJurnalView.swift in Sources */,
 				AE0058CA2860757000684F81 /* CircularProgressView.swift in Sources */,
 				AEB079702887EB4D0016256C /* ScheduleAssembler.swift in Sources */,
 				AEB0796E2887E4BF0016256C /* FirebaseManager+Schedule.swift in Sources */,
