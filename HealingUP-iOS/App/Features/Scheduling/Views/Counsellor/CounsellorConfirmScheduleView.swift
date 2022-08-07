@@ -64,7 +64,7 @@ struct CounsellorConfirmScheduleView: View {
             Text("Jurnal \(user?.name ?? "")")
               .font(.system(size: 18, weight: .bold))
           }
-          ForEach(vm.journals) { journal in
+          ForEach(sortedJournal) { journal in
               JournalCell(journal: journal)
           }
         }
@@ -141,6 +141,12 @@ struct CounsellorConfirmScheduleView: View {
       }
     )
     .progressHUD(isShowing: $membershipViewModel.userByIdState.isLoading)
+  }
+
+  private var sortedJournal : [Journal] {
+    return vm.journals.sorted {
+      $1.date < $0.date
+    }
   }
 }
 
