@@ -9,13 +9,17 @@ import SwiftUI
 import SwiftUICharts
 
 struct CounsellorAddLinkMeeting: View {
-  @State private var link = ""
+  var action: () -> Void
+  @Binding var link: String
+  var isAdd: Bool
+
+  
   @State private var isLinkFilled = false
   @Environment(\.presentationMode) private var presentationMode
   var body: some View {
     VStack(spacing: 5) {
       HStack {
-        Text("Tambah Tautan")
+        Text(isAdd ? "Tambah tautan" : "Ubah tautan")
         .font(.system(size: 30))
         .fontWeight(.bold)
         .padding(.horizontal)
@@ -36,7 +40,6 @@ struct CounsellorAddLinkMeeting: View {
         }
 
       }
-
       VStack(alignment: .leading) {
           TextEditor(text: $link)
             .padding()
@@ -51,6 +54,7 @@ struct CounsellorAddLinkMeeting: View {
               if link.isEmpty {
                 isLinkFilled.toggle()
               } else {
+                action()
                 presentationMode.wrappedValue.dismiss()
               }
             }.foregroundColor(.white)
@@ -72,6 +76,6 @@ struct CounsellorAddLinkMeeting: View {
 
 struct CounsellorAddLinkMeeting_Previews: PreviewProvider {
   static var previews: some View {
-    CounsellorAddLinkMeeting()
+    CounsellorAddLinkMeeting(action: {}, link: .constant(""), isAdd: true)
   }
 }
