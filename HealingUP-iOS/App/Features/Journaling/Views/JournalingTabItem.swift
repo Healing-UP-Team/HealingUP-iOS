@@ -27,9 +27,11 @@ struct JournalingTabItem: View {
           .padding(.top, 10)
           .padding(.bottom, 10)
           .padding(.horizontal)
-        Text("Sepertinya kamu belum mengisi jurnal sebelumnya, silahkan isi jurnal dengan klik tombol di kanan atas")
+        Text("Jurnal yang kamu cari tidak ada, silahkan isi jurnal dengan klik tombol di kanan atas")
+          .lineLimit(2)
           .foregroundColor(Color.accentColor)
           .padding(.horizontal)
+          .padding(.vertical, 5)
           .multilineTextAlignment(.leading)
       }
       Spacer()
@@ -38,13 +40,19 @@ struct JournalingTabItem: View {
 
   var body: some View {
     List {
+      if searchResult.isEmpty {
+        emptyListView
+      }
         ForEach(searchResult) { journal in
-          NavigationLink(destination: JournalDetailView(journal: journal)) {
+          ZStack {
+            NavigationLink(destination: JournalDetailView(journal: journal)) {
+              EmptyView()
+            }
             JournalCell(journal: journal)
           }
         }
     }
-    .listStyle(.plain)
+    .listStyle(.grouped)
     .listRowSeparator(Visibility.hidden)
     .sheet(isPresented: $showForm) {
       JournalEditView()
