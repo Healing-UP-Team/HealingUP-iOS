@@ -11,20 +11,25 @@ struct CounsellorConfirmScheduleView: View {
   let isConfirm: Bool
   let schedule: Schedule
   @State var user: User?
+  
+  @StateObject var cvm = CounsellorViewModel()
   @ObservedObject var membershipViewModel: MembershipViewModel
   @ObservedObject var scheduleViewModel: ScheduleViewModel
   @ObservedObject var vm = JournalsViewModel()
-
+  
   @Environment(\.presentationMode) var presentationMode
   let navigator: ScheduleNavigator
-
+  
   @State private var isShowAddLinkMeeting = false
-
+  
   @State private var isShowAlert = false
   @State private var storeError: Error?
   @State var isRejected = false
   @State var isDone = false
 
+  @State private var isShowConfirmation = false
+  @State private var isShowJournalsView = false
+  
   var body: some View {
     VStack {
       ScrollView(showsIndicators: false) {
@@ -42,6 +47,11 @@ struct CounsellorConfirmScheduleView: View {
                   .font(.system(size: 15, weight: .bold))
                 Text("Tanggal")
                   .font(.system(size: 15, weight: .bold))
+                if schedule.status == .scheduled {
+                  Text("Link")
+                    .font(.system(size: 15, weight: .bold))
+                }
+                
               }
               Spacer()
               VStack(alignment: .trailing, spacing: 5) {
@@ -52,52 +62,68 @@ struct CounsellorConfirmScheduleView: View {
                 Text(schedule.schedule.toStringWith(format: "HH:mm") ?? "")
                 Text(schedule.schedule.toStringWith(format: "EE, dd MMM yyyy") ?? "")
                   .font(.system(size: 15, weight: .medium))
+                if schedule.status == .scheduled {
+                  Text(schedule.linkMeeting.isEmpty ? "Belum ada link" : schedule.linkMeeting)
+                    .font(.system(size: 15, weight: .medium))
+                }
+                
               }
             }.padding()
 
-
-            if schedule.status == .scheduled && schedule.linkMeeting.isEmpty {
+            if schedule.status == .scheduled {
               Button {
                 isShowAddLinkMeeting.toggle()
               } label: {
                 HStack {
                   Spacer()
-                  Label("Tambah Link", systemImage: "link.badge.plus")
+                  Label(schedule.linkMeeting.isEmpty ? "Tambah Link" : "Update Link", systemImage: "link.badge.plus")
                     .foregroundColor(.white)
                   Spacer()
                 }
                 .padding()
-                .background(Color.accentPurple)
-
-
+                .background(
+                  RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.accentPurple)
+                )
               }
             }
-
-
-
+            
             Text("Catatan Keluhan")
               .font(.system(size: 18, weight: .bold))
           }
-
-          Text(schedule.note)
+          
+          Text(schedule.note.isEmpty ? "Tidak ada keluhan" : schedule.note)
             .padding()
             .frame(width: UIScreen.main.bounds.width / 1.1)
             .background(Color(uiColor: .softYellow))
             .cornerRadius(12)
+          if schedule.status == .scheduled {
+            ZStack {
+              NavigationLink(destination: CounsellorJurnalView(viewModel: vm, userName: user?.name ?? ""), isActive: $isShowJournalsView) {
+                EmptyView()
+              }
+              Button {
+                isShowJournalsView.toggle()
+              } label: {
+                HStack {
+                  Label("Jurnal \(user?.name ?? "")", systemImage: "pencil.and.outline")
+                    .foregroundColor(.white)
+                  Spacer()
+                  Image(systemName: "chevron.right")
+                    .foregroundColor(.white)
+                }
+                .padding()
+                .background(
+                  RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.accentPurple)
+                )
+              }
+            }
+            .padding(.vertical, 10)
+          }
+
         }.padding()
-
-        if schedule.status == .scheduled {
-          VStack(alignment: .leading) {
-            Text("Jurnal \(user?.name ?? "")")
-              .font(.system(size: 18, weight: .bold))
-          }
-          ForEach(sortedJournal) { journal in
-              JournalCell(journal: journal)
-          }
-        }
-
       }
-
       if isConfirm && schedule.status == .waiting {
         ButtonDefaultView(title: "Terima", action: {
           var newSchedule = schedule
@@ -105,21 +131,52 @@ struct CounsellorConfirmScheduleView: View {
           isRejected = false
           scheduleViewModel.updateSchedule(schedule: newSchedule)
         })
-
+        
         ButtonDefaultView(title: "Tolak", action: {
           var newSchedule = schedule
           newSchedule.status = .rejected
           isRejected = true
           scheduleViewModel.updateSchedule(schedule: newSchedule)
         }, backgroundColor: .white, titleColor: .accentColor)
-
+      }
+      if schedule.status == .scheduled && !schedule.linkMeeting.isEmpty {
+        Button {
+          isShowConfirmation.toggle()
+        } label: {
+          HStack {
+            Spacer()
+            Label("Akhiri Sesi Konseling", systemImage: "xmark.circle.fill")
+              .foregroundColor(.red)
+            Spacer()
+          }
+          .padding()
+          .background(
+            RoundedRectangle(cornerRadius: 12)
+              .stroke(.red, lineWidth: 2)
+          )
+          .padding()
+        }
       }
     }
     .sheet(isPresented: $isShowAddLinkMeeting) {
-      CounsellorAddLinkMeeting()
+      CounsellorAddLinkMeeting(action: {
+        cvm.updateScheduleCounsellor(schedule.id.uuidString)
+      }, link: $cvm.link, isAdd: schedule.linkMeeting.isEmpty)
     }
     .navigationTitle("Detail Konseling")
     .navigationBarTitleDisplayMode(.inline)
+    .confirmationDialog("Apakah kamu yakin?", isPresented: self.$isShowConfirmation) {
+      Button(role: .destructive) {
+        cvm.updateStatusScheduelingToDone(schedule.id.uuidString)
+        isDone.toggle()
+      } label: {
+        Text("Akhiri")
+      }
+
+      Button(role: .cancel, action: {}) {
+        Text("Kembali")
+      }
+    }
     .alert(isPresented: $isShowAlert) {
       Alert(
         title: Text("Gagal"),
@@ -130,6 +187,7 @@ struct CounsellorConfirmScheduleView: View {
     .onAppear {
       membershipViewModel.fetchUserById(id: schedule.userId)
       vm.fetchJournalById(userId: schedule.userId)
+      cvm.link = self.schedule.linkMeeting
     }
     .fullScreenCover(isPresented: $isDone, onDismiss: {
       presentationMode.wrappedValue.dismiss()
@@ -171,7 +229,7 @@ struct CounsellorConfirmScheduleView: View {
     )
     .progressHUD(isShowing: $membershipViewModel.userByIdState.isLoading)
   }
-
+  
   private var sortedJournal : [Journal] {
     return vm.journals.sorted {
       $1.date < $0.date
