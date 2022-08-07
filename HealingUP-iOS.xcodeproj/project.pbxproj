@@ -23,6 +23,7 @@
 		A575E3DD28915E46005D2E6A /* JournalingTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3DA28915E46005D2E6A /* JournalingTabItem.swift */; };
 		A575E3DE28915E46005D2E6A /* JournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3DB28915E46005D2E6A /* JournalDetailView.swift */; };
 		A575E3DF28915E46005D2E6A /* JournalEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575E3DC28915E46005D2E6A /* JournalEditView.swift */; };
+		A5857283289F6DA600925384 /* CounsellorAddLinkMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5857282289F6DA600925384 /* CounsellorAddLinkMeeting.swift */; };
 		AE0058CA2860757000684F81 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0058C92860757000684F81 /* CircularProgressView.swift */; };
 		AE33ADCF284D8E01007F9FA8 /* KesslerTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADCE284D8E01007F9FA8 /* KesslerTabItem.swift */; };
 		AE33ADD1284D8E20007F9FA8 /* KesslerNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33ADD0284D8E20007F9FA8 /* KesslerNavigator.swift */; };
@@ -229,6 +230,7 @@
 		A575E3DA28915E46005D2E6A /* JournalingTabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalingTabItem.swift; sourceTree = "<group>"; };
 		A575E3DB28915E46005D2E6A /* JournalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalDetailView.swift; sourceTree = "<group>"; };
 		A575E3DC28915E46005D2E6A /* JournalEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEditView.swift; sourceTree = "<group>"; };
+		A5857282289F6DA600925384 /* CounsellorAddLinkMeeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounsellorAddLinkMeeting.swift; sourceTree = "<group>"; };
 		AE0058C92860757000684F81 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		AE33ADCE284D8E01007F9FA8 /* KesslerTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerTabItem.swift; sourceTree = "<group>"; };
 		AE33ADD0284D8E20007F9FA8 /* KesslerNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesslerNavigator.swift; sourceTree = "<group>"; };
@@ -779,6 +781,7 @@
 			children = (
 				AEB0797B288836490016256C /* CounsellorScheduleTabItem.swift */,
 				AEF6F71F2888EDF000910B79 /* CounsellorConfirmScheduleView.swift */,
+				A5857282289F6DA600925384 /* CounsellorAddLinkMeeting.swift */,
 			);
 			path = Counsellor;
 			sourceTree = "<group>";
@@ -1555,6 +1558,7 @@
 				AEE2CB7C288FDDBE00BBE2B8 /* SecureInputView.swift in Sources */,
 				AE33ADE2284DA0E8007F9FA8 /* KesslerViewModel.swift in Sources */,
 				A575E3CC28915C66005D2E6A /* JournalCell.swift in Sources */,
+				A5857283289F6DA600925384 /* CounsellorAddLinkMeeting.swift in Sources */,
 				AED86DAF283B181A00C62B98 /* Persistence.swift in Sources */,
 				AED86DB2283B181A00C62B98 /* HealingUP_iOS.xcdatamodeld in Sources */,
 				AEB079722887F2550016256C /* ResultView.swift in Sources */,
