@@ -11,48 +11,18 @@ struct JournalingTabItem: View {
   @ObservedObject var viewModel = JournalsViewModel()
   @State private var searchText = ""
   @State private var showForm = false
+  @State private var isListEmpty: Bool = false
 
-  var emptyListView: some View {
-    VStack(alignment: .center) {
-      Spacer()
-      Image(uiImage: .kesslerIntro)
-        .resizable()
-        .scaledToFit()
-        .frame(height: 250)
-        .padding()
-      VStack(alignment: .leading) {
-        Text("Jurnal Kosong")
-          .font(.system(size: 30, weight: .bold))
-          .foregroundColor(Color.accentColor)
-          .padding(.top, 10)
-          .padding(.bottom, 10)
-          .padding(.horizontal)
-        Text("Jurnal yang kamu cari tidak ada, silahkan isi jurnal dengan klik tombol di kanan atas")
-          .lineLimit(2)
-          .foregroundColor(Color.accentColor)
-          .padding(.horizontal)
-          .padding(.vertical, 5)
-          .multilineTextAlignment(.leading)
-      }
-      Spacer()
-    }
-  }
-
-  var body: some View {
-    List {
-      if searchResult.isEmpty {
-        emptyListView
-      }
-        ForEach(searchResult) { journal in
-          ZStack {
-            NavigationLink(destination: JournalDetailView(journal: journal)) {
-              EmptyView()
-            }
-            JournalCell(journal: journal)
-          }
+  var journalListView: some View {
+    List(searchResult) { journal in
+      ZStack {
+        NavigationLink(destination: JournalDetailView(journal: journal)) {
+          EmptyView()
         }
+        JournalCell(journal: journal)
+      }
     }
-    .listStyle(.grouped)
+    .listStyle(.plain)
     .listRowSeparator(Visibility.hidden)
     .sheet(isPresented: $showForm) {
       JournalEditView()
@@ -74,7 +44,10 @@ struct JournalingTabItem: View {
     .onAppear { // (1)
       self.viewModel.subscribe()
     }
+  }
 
+  var body: some View {
+    journalListView
   }
 
   var searchResult: [Journal] {
@@ -86,7 +59,6 @@ struct JournalingTabItem: View {
       return viewModel.journals.filter { $0.title.contains(searchText) }
     }
   }
-
 }
 
 struct JournalList_Previews: PreviewProvider {
