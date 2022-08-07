@@ -13,7 +13,6 @@ struct CounsellorAddLinkMeeting: View {
   @Binding var link: String
   var isAdd: Bool
 
-  
   @State private var isLinkFilled = false
   @Environment(\.presentationMode) private var presentationMode
   var body: some View {
