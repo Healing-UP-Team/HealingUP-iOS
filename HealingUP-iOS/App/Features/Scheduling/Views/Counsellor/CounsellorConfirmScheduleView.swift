@@ -14,6 +14,7 @@ struct CounsellorConfirmScheduleView: View {
   @ObservedObject var membershipViewModel: MembershipViewModel
   @ObservedObject var scheduleViewModel: ScheduleViewModel
   @ObservedObject var vm = JournalsViewModel()
+  @ObservedObject var kesslerViewModel: KesslerViewModel
   @Environment(\.presentationMode) var presentationMode
   let navigator: ScheduleNavigator
 
@@ -63,12 +64,17 @@ struct CounsellorConfirmScheduleView: View {
           VStack(alignment: .leading) {
             Text("Jurnal \(user?.name ?? "")")
               .font(.system(size: 18, weight: .bold))
-          }
-          ForEach(vm.journals) { journal in
+
+            ForEach(vm.journals) { journal in
               JournalCell(journal: journal)
+            }
+
+            Text("Hasil pengukuran kessler terakhir")
+              .font(.system(size: 18, weight: .bold))
+
+            KesslerResultItemView(kesslerResult: kesslerViewModel.fetchLastKesslerState.value ?? KesslerResult.init())
           }
         }
-
       }
 
       if isConfirm && schedule.status == .waiting {
@@ -101,6 +107,7 @@ struct CounsellorConfirmScheduleView: View {
     .onAppear {
       membershipViewModel.fetchUserById(id: schedule.userId)
       vm.fetchJournalById(userId: schedule.userId)
+      kesslerViewModel.fetchLastKesslerById(id: schedule.userId)
     }
     .fullScreenCover(isPresented: $isDone, onDismiss: {
       presentationMode.wrappedValue.dismiss()
@@ -146,6 +153,6 @@ struct CounsellorConfirmScheduleView: View {
 
 struct CounsellorConfirmScheduleView_Previews: PreviewProvider {
   static var previews: some View {
-    CounsellorConfirmScheduleView(isConfirm: true, schedule: Schedule.init(), membershipViewModel: AppAssembler.shared.resolve(), scheduleViewModel: AppAssembler.shared.resolve(), navigator: AppAssembler.shared.resolve())
+    CounsellorConfirmScheduleView(isConfirm: true, schedule: Schedule.init(), membershipViewModel: AppAssembler.shared.resolve(), scheduleViewModel: AppAssembler.shared.resolve(), kesslerViewModel: AppAssembler.shared.resolve(), navigator: AppAssembler.shared.resolve())
   }
 }

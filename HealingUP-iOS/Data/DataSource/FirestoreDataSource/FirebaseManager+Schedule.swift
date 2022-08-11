@@ -30,7 +30,7 @@ extension DefaultFirebaseManager {
     firestoreCollection(.schedule)
       .whereField("user_id", isEqualTo: userId)
       .orderByDate(recordDate: .schedule, descending: false)
-      .getDocuments { querySnapshot, error in
+      .addSnapshotListener { querySnapshot, error in
         if let error = error {
           completion(.failure(.invalidRequest(error: error)))
         } else if let querySnapshot = querySnapshot, !querySnapshot.isEmpty {
@@ -59,7 +59,7 @@ extension DefaultFirebaseManager {
     firestoreCollection(.schedule)
       .whereField("counsellor_id", isEqualTo: userEmail)
       .orderByDate(recordDate: .schedule, descending: false)
-      .getDocuments { querySnapshot, error in
+      .addSnapshotListener { querySnapshot, error in
         if let error = error {
           completion(.failure(.invalidRequest(error: error)))
         } else if let querySnapshot = querySnapshot, !querySnapshot.isEmpty {

@@ -32,6 +32,9 @@ struct HealingUP_iOSApp: App {
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+  
+  let gcmMessageIDKey = "gcm.message_id"
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
     MembershipViewModel.shared.setupUserData()
     NotificationService.register(application: application)
@@ -45,5 +48,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     print("APNs token retrieved: \(deviceToken)")
+  }
+  
+  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    
+    if let messageID = userInfo[gcmMessageIDKey] {
+      print("Message ID: \(messageID)")
+    }
+    
+    print(userInfo)
+    completionHandler(UIBackgroundFetchResult.newData)
   }
 }

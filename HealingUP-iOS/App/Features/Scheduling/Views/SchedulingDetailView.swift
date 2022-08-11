@@ -26,7 +26,9 @@ struct SchedulingDetailView: View {
               VStack(alignment: .leading, spacing: 5) {
                 Text("Konselor")
                   .font(.system(size: 15, weight: .bold))
-                Text("Schedule")
+                Text("Tanggal")
+                  .font(.system(size: 15, weight: .bold))
+                Text("Waktu")
                   .font(.system(size: 15, weight: .bold))
               }
               Spacer()
@@ -34,6 +36,8 @@ struct SchedulingDetailView: View {
                 Text(membershipViewModel.userByEmailState.value?.name ?? "")
                   .font(.system(size: 15, weight: .medium))
                 Text(schedule.schedule.toStringWith(format: "EE, dd MMM yyyy") ?? "")
+                  .font(.system(size: 15, weight: .medium))
+                Text(schedule.schedule.toStringWith(format: "HH:mm") ?? "")
                   .font(.system(size: 15, weight: .medium))
               }
             }.padding()

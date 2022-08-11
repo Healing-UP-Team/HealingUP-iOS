@@ -45,7 +45,7 @@ struct JournalingTabItem: View {
     }
     .listStyle(.plain)
     .listRowSeparator(Visibility.hidden)
-    .onAppear() { // (1)
+    .onAppear { // (1)
       self.viewModel.subscribe()
     }
   }

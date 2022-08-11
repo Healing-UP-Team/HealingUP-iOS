@@ -75,8 +75,10 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "32">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/(null)">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEB477DF283CA59F005567CA"
@@ -84,7 +86,7 @@
             BlueprintName = "HealingUp-Watch"
             ReferencedContainer = "container:HealingUP-iOS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -93,8 +95,10 @@
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "32">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/(null)">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEB477DF283CA59F005567CA"
@@ -102,7 +106,16 @@
             BlueprintName = "HealingUp-Watch"
             ReferencedContainer = "container:HealingUP-iOS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AEB477DF283CA59F005567CA"
+            BuildableName = "Healing UP.app"
+            BlueprintName = "HealingUp-Watch"
+            ReferencedContainer = "container:HealingUP-iOS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
