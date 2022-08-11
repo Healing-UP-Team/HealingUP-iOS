@@ -28,6 +28,7 @@ protocol FirebaseManager {
   func fetchQuiz(completion: @escaping CompletionResult<[KesslerQuizEntity]>)
   func addKesslerResult(kResult: KesslerResultEntity, completion: @escaping CompletionResult<Bool>)
   func fetchKesslerResult(completion: @escaping CompletionResult<[KesslerResultEntity]>)
+  func fetchKesslerById(id: String, completion: @escaping CompletionResult<[KesslerResultEntity]>)
 
   // MARK: Schedule
   func createSchedule(schedule: ScheduleEntity, completion: @escaping CompletionResult<Bool>)
@@ -37,8 +38,6 @@ protocol FirebaseManager {
 }
 
 class DefaultFirebaseManager: FirebaseManager {
-
   static let shared: DefaultFirebaseManager = DefaultFirebaseManager()
   let firebaseAuth = Auth.auth()
-
 }

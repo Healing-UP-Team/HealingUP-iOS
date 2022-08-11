@@ -39,11 +39,20 @@ final class NotificationService: NSObject, ObservableObject {
 
   static func register(application: UIApplication) {
     Messaging.messaging().delegate = shared
-    UNUserNotificationCenter.current().delegate = shared
-
-    let authOptions: UNAuthorizationOptions = [.badge, .sound, .alert]
-    UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
-
+    
+    if #available(iOS 10.0, *) {
+      UNUserNotificationCenter.current().delegate = shared
+      
+      let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+      UNUserNotificationCenter.current().requestAuthorization(
+        options: authOptions,
+        completionHandler: {_, _ in })
+    } else {
+      let settings: UIUserNotificationSettings =
+      UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+      application.registerUserNotificationSettings(settings)
+    }
+    
     application.registerForRemoteNotifications()
   }
 

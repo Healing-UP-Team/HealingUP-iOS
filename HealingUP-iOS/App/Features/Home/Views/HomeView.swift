@@ -46,6 +46,7 @@ struct HomeView: View {
       .tabItem {
         Label("Konseling", systemImage: "person.2")
       }.tag(4)
+        .navigationViewStyle(.stack)
       NavigationView {
         ProfileView(viewModel: assembler.resolve(), navigator: assembler.resolve())
           .navigationTitle(navigationSetTitle(item: selection))

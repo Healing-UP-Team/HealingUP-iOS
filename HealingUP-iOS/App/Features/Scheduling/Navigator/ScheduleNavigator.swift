@@ -28,7 +28,7 @@ struct ScheduleNavigator {
   }
 
   func navigateToScheduleConfirm(isConfirm: Bool, schedule: Schedule) -> CounsellorConfirmScheduleView {
-    return CounsellorConfirmScheduleView(isConfirm: isConfirm, schedule: schedule, membershipViewModel: assembler.resolve(), scheduleViewModel: assembler.resolve(), navigator: assembler.resolve())
+    return CounsellorConfirmScheduleView(isConfirm: isConfirm, schedule: schedule, membershipViewModel: assembler.resolve(), scheduleViewModel: assembler.resolve(), kesslerViewModel: assembler.resolve(), navigator: assembler.resolve())
   }
 
   func navigateToScheduleDetail(schedule: Schedule) -> SchedulingDetailView {
