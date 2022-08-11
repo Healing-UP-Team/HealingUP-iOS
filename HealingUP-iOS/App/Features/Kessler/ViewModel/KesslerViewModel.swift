@@ -12,6 +12,7 @@ class KesslerViewModel: ObservableObject {
   @Published var kesslerQuizState: ViewState<[KesslerQuiz]> = .initiate
   @Published var fetchKesslerResultState: ViewState<[KesslerResult]> = .initiate
   @Published var addKesslerState: ViewState<Bool> = .initiate
+  @Published var fetchLastKesslerState: ViewState<KesslerResult> = .initiate
 
   @Published var score = 0
 
@@ -59,6 +60,26 @@ class KesslerViewModel: ObservableObject {
         } else {
           self.fetchKesslerResultState = .success(data: data.map {
             $0.map() })
+        }
+      case .failure(let firebaseError):
+        if case .invalidRequest(let error) = firebaseError {
+          self.fetchKesslerResultState = .error(error: error)
+        }
+      }
+    }
+  }
+
+  func fetchLastKesslerById(id: String) {
+    fetchLastKesslerState = .loading
+    firebaseManager.fetchKesslerById(id: id) { result in
+      switch result {
+      case .success(let data):
+        if data.isEmpty {
+          self.fetchLastKesslerState = .empty
+        } else {
+          if let lastData = data.first {
+            self.fetchLastKesslerState = .success(data: lastData.map())
+          }
         }
       case .failure(let firebaseError):
         if case .invalidRequest(let error) = firebaseError {

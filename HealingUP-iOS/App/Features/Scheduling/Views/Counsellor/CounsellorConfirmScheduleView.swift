@@ -11,25 +11,25 @@ struct CounsellorConfirmScheduleView: View {
   let isConfirm: Bool
   let schedule: Schedule
   @State var user: User?
-
+  
   @StateObject var cvm = CounsellorViewModel()
   @ObservedObject var membershipViewModel: MembershipViewModel
   @ObservedObject var scheduleViewModel: ScheduleViewModel
   @ObservedObject var vm = JournalsViewModel()
-
+  @ObservedObject var kesslerViewModel: KesslerViewModel
   @Environment(\.presentationMode) var presentationMode
   let navigator: ScheduleNavigator
-
+  
   @State private var isShowAddLinkMeeting = false
-
+  
   @State private var isShowAlert = false
   @State private var storeError: Error?
   @State var isRejected = false
   @State var isDone = false
-
+  
   @State private var isShowConfirmation = false
   @State private var isShowJournalsView = false
-
+  
   var body: some View {
     VStack {
       ScrollView(showsIndicators: false) {
@@ -51,7 +51,7 @@ struct CounsellorConfirmScheduleView: View {
                   Text("Link")
                     .font(.system(size: 15, weight: .bold))
                 }
-
+                
               }
               Spacer()
               VStack(alignment: .trailing, spacing: 5) {
@@ -66,10 +66,10 @@ struct CounsellorConfirmScheduleView: View {
                   Text(schedule.linkMeeting.isEmpty ? "Belum ada link" : schedule.linkMeeting)
                     .font(.system(size: 15, weight: .medium))
                 }
-
+                
               }
             }.padding()
-
+            
             if schedule.status == .scheduled {
               Button {
                 isShowAddLinkMeeting.toggle()
@@ -87,11 +87,11 @@ struct CounsellorConfirmScheduleView: View {
                 )
               }
             }
-
+            
             Text("Catatan Keluhan")
               .font(.system(size: 18, weight: .bold))
           }
-
+          
           Text(schedule.note.isEmpty ? "Tidak ada keluhan" : schedule.note)
             .padding()
             .frame(width: UIScreen.main.bounds.width / 1.1)
@@ -120,8 +120,13 @@ struct CounsellorConfirmScheduleView: View {
               }
             }
             .padding(.vertical, 10)
+            
+            Text("Hasil pengukuran kessler terakhir")
+              .font(.system(size: 18, weight: .bold))
+            
+            KesslerResultItemView(kesslerResult: kesslerViewModel.fetchLastKesslerState.value ?? KesslerResult.init())
           }
-
+          
         }.padding()
       }
       if isConfirm && schedule.status == .waiting {
@@ -131,7 +136,7 @@ struct CounsellorConfirmScheduleView: View {
           isRejected = false
           scheduleViewModel.updateSchedule(schedule: newSchedule)
         })
-
+        
         ButtonDefaultView(title: "Tolak", action: {
           var newSchedule = schedule
           newSchedule.status = .rejected
@@ -172,7 +177,7 @@ struct CounsellorConfirmScheduleView: View {
       } label: {
         Text("Akhiri")
       }
-
+      
       Button(role: .cancel, action: {}) {
         Text("Kembali")
       }
@@ -188,6 +193,7 @@ struct CounsellorConfirmScheduleView: View {
       membershipViewModel.fetchUserById(id: schedule.userId)
       vm.fetchJournalById(userId: schedule.userId)
       cvm.link = self.schedule.linkMeeting
+      kesslerViewModel.fetchLastKesslerById(id: schedule.userId)
     }
     .fullScreenCover(isPresented: $isDone, onDismiss: {
       presentationMode.wrappedValue.dismiss()
@@ -229,7 +235,7 @@ struct CounsellorConfirmScheduleView: View {
     )
     .progressHUD(isShowing: $membershipViewModel.userByIdState.isLoading)
   }
-
+  
   private var sortedJournal: [Journal] {
     return vm.journals.sorted {
       $1.date < $0.date
@@ -239,6 +245,6 @@ struct CounsellorConfirmScheduleView: View {
 
 struct CounsellorConfirmScheduleView_Previews: PreviewProvider {
   static var previews: some View {
-    CounsellorConfirmScheduleView(isConfirm: true, schedule: Schedule.init(), membershipViewModel: AppAssembler.shared.resolve(), scheduleViewModel: AppAssembler.shared.resolve(), navigator: AppAssembler.shared.resolve())
+    CounsellorConfirmScheduleView(isConfirm: true, schedule: Schedule.init(), membershipViewModel: AppAssembler.shared.resolve(), scheduleViewModel: AppAssembler.shared.resolve(), kesslerViewModel: AppAssembler.shared.resolve(), navigator: AppAssembler.shared.resolve())
   }
 }

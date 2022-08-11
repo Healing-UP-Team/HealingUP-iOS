@@ -53,4 +53,32 @@ extension DefaultFirebaseManager {
         }
       }
   }
+
+  func fetchKesslerById(id: String, completion: @escaping CompletionResult<[KesslerResultEntity]>) {
+    firestoreCollection(.kesslerResult)
+      .whereField("user_id", isEqualTo: id)
+      .orderByDate(recordDate: .kesslerResult, descending: true)
+      .addSnapshotListener { querySnapshot, error in
+        if let error = error {
+          completion(.failure(.invalidRequest(error: error)))
+        } else if let querySnapshot = querySnapshot, !querySnapshot.isEmpty {
+          var kResults = [KesslerResultEntity]()
+          for document in querySnapshot.documents {
+            do {
+              if document.exists {
+              let kResult = try document.data(as: KesslerResultEntity.self)
+              kResults.append(kResult)
+              completion(.success(kResults))
+              } else {
+                completion(.failure(.unknownError))
+              }
+            } catch {
+              completion(.failure(.unknownError))
+            }
+          }
+        } else if let querySnapshot = querySnapshot, querySnapshot.isEmpty {
+          completion(.success([KesslerResultEntity]()))
+        }
+      }
+  }
 }
