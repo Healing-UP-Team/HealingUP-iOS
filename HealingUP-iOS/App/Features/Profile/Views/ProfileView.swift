@@ -35,7 +35,7 @@ struct ProfileView: View {
   var body: some View {
     ScrollView(showsIndicators: false) {
       VStack {
-        Image(uiImage: .appIcon)
+        Image(uiImage: .imgTextLogo)
           .resizable()
           .scaledToFit()
           .frame(height: UIScreen.main.bounds.height/4)
@@ -50,7 +50,7 @@ struct ProfileView: View {
             destination:
               Group {
                 if item.menu == .personalInfo {
-                  Text(item.menu.rawValue)
+                  navigator.navigateToPersonalInfo()
                 }
               }
           ) {

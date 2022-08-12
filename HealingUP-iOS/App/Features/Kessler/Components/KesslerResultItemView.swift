@@ -16,6 +16,7 @@ struct KesslerResultItemView: View {
           HStack(alignment: .center) {
             Image(systemName: "calendar")
               .foregroundColor(Color(uiColor: .accentPurple))
+              .font(.system(size: 13))
             Text(kesslerResult.createAt.toStringWith(format: "EE, dd MMM yyyy") ?? "")
               .foregroundColor(Color(uiColor: .accentPurple))
               .font(.system(size: 10, weight: .medium))
@@ -23,7 +24,7 @@ struct KesslerResultItemView: View {
           .padding(.bottom, 5)
           Text(kesslerResult.stressLevel.rawValue)
             .foregroundColor(Color(uiColor: .accentPurple))
-            .font(.system(size: 18, weight: .bold))
+            .font(.system(size: 15, weight: .bold))
         }
         Spacer()
       }
