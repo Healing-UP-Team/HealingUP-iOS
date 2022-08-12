@@ -13,15 +13,16 @@ struct KesslerHistoryView: View {
   @State private var fetchError: Error?
   @State var kResults = [KesslerResult]()
   @State var isFirstTime = false
-
+  
   var body: some View {
     if isFirstTime {
-      VStack {
-        Text("Tidak ada Data")
-          .font(.system(size: 18, weight: .semibold))
-      }
+      EmptyStateView(image: .kesslerIntro, title: "Tidak ada riwayat", message: "Sepertinya kamu belum mengukur tingkat stres sebelumnya")
     } else {
       ScrollView(showsIndicators: false) {
+        Text("Hi! Kamu bisa melihat daftar pengukuran stres yang telah dilakukan sebelumnya")
+          .font(.system(size: 13, weight: .semibold))
+          .foregroundColor(Color.gray)
+          .padding()
         if !kResults.isEmpty {
           ForEach(kResults, id: \.id) { result in
             VStack {
@@ -30,6 +31,7 @@ struct KesslerHistoryView: View {
           }
         }
       }
+      .padding(.horizontal)
       .navigationTitle("Riwayat Pengukuran")
       .alert(isPresented: $isShowAlert) {
         Alert(

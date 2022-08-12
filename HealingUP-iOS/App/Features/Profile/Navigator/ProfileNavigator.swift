@@ -28,4 +28,8 @@ struct ProfileNavigator {
     let navigator: WebViewNavigator = assembler.resolve()
     return navigator.navigateToWebView(url: url, title: title)
   }
+  
+  func navigateToPersonalInfo() -> PeronalInfoView {
+    return PeronalInfoView(viewModel: assembler.resolve())
+  }
 }

@@ -18,6 +18,9 @@ extension UIImage {
   static let icSuccess = UIImage(named: "ic-success")!
   static let icXmark = UIImage(named: "ic-xmark")!
   static let imgCounseling = UIImage(named: "img-counseling")!
+  
+  //MARK: Profile
+  static let imgTextLogo = UIImage(named: "logoTextHealingUp")!
 
 }
 

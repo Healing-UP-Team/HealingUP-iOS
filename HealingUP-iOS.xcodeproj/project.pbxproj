@@ -62,6 +62,8 @@
 		AE725A2028619B920082061F /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = AE725A1F28619B920082061F /* Introspect */; };
 		AE725A222861A57E0082061F /* HeartRateVariability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE725A212861A57E0082061F /* HeartRateVariability.swift */; };
 		AE725A242861AB5D0082061F /* RecomendationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE725A232861AB5D0082061F /* RecomendationCardView.swift */; };
+		AE7552C828A6283700A97DAF /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7552C728A6283700A97DAF /* EmptyStateView.swift */; };
+		AE7552CA28A6308400A97DAF /* PeronalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7552C928A6308400A97DAF /* PeronalInfoView.swift */; };
 		AE795CDB28753BE500D08F00 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE795CDA28753BE500D08F00 /* UIColor.swift */; };
 		AE795CDD28754D1300D08F00 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE795CDC28754D1300D08F00 /* UIImage.swift */; };
 		AE795CE1287578DA00D08F00 /* ButtonDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE795CE0287578DA00D08F00 /* ButtonDefaultView.swift */; };
@@ -271,6 +273,8 @@
 		AE725A1C286194D70082061F /* HeartAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAssembler.swift; sourceTree = "<group>"; };
 		AE725A212861A57E0082061F /* HeartRateVariability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateVariability.swift; sourceTree = "<group>"; };
 		AE725A232861AB5D0082061F /* RecomendationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationCardView.swift; sourceTree = "<group>"; };
+		AE7552C728A6283700A97DAF /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		AE7552C928A6308400A97DAF /* PeronalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeronalInfoView.swift; sourceTree = "<group>"; };
 		AE795CDA28753BE500D08F00 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AE795CDC28754D1300D08F00 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		AE795CE0287578DA00D08F00 /* ButtonDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultView.swift; sourceTree = "<group>"; };
@@ -665,9 +669,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AE7552C628A6282600A97DAF /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				AE7552C728A6283700A97DAF /* EmptyStateView.swift */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
 		AE795CDE2875785E00D08F00 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				AE7552C628A6282600A97DAF /* EmptyView */,
 				AE877511289BB45B00C8C1BA /* SegmentedControl */,
 				AEB079662886CC3C0016256C /* Modal */,
 				AEB079632886CBF40016256C /* TextView */,
@@ -874,6 +887,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB477CC283C77A8005567CA /* ProfileView.swift */,
+				AE7552C928A6308400A97DAF /* PeronalInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1527,6 +1541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE33ADDB284D9CA8007F9FA8 /* KesslerQuizEntity.swift in Sources */,
+				AE7552C828A6283700A97DAF /* EmptyStateView.swift in Sources */,
 				AEB477C3283B71F1005567CA /* ViewStateModifier.swift in Sources */,
 				AEB0795E2886A9940016256C /* ChooseTimeView.swift in Sources */,
 				AE877515289BDFEA00C8C1BA /* UINavigation.swift in Sources */,
@@ -1607,6 +1622,7 @@
 				AE4D87D228911EC80052B216 /* WebViewAssembler.swift in Sources */,
 				AEB079682887E18F0016256C /* Schedule.swift in Sources */,
 				AEB0795C2886A06D0016256C /* CounsellorChoiceView.swift in Sources */,
+				AE7552CA28A6308400A97DAF /* PeronalInfoView.swift in Sources */,
 				AE33ADE4284DB735007F9FA8 /* View.swift in Sources */,
 				AEB0797C2888364A0016256C /* CounsellorScheduleTabItem.swift in Sources */,
 				AE33ADD1284D8E20007F9FA8 /* KesslerNavigator.swift in Sources */,
