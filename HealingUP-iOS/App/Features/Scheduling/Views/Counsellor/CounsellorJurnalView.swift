@@ -10,6 +10,8 @@ import SwiftUI
 struct CounsellorJurnalView: View {
   var viewModel: JournalsViewModel
 
+    @Binding var journals: [Journal]
+
   var userName: String
 
   @State private var searchText = ""
@@ -17,11 +19,13 @@ struct CounsellorJurnalView: View {
   var body: some View {
     List(searchResult) { journal in
       JournalCell(journal: journal)
-
     }
-    .navigationTitle(userName)
+    .navigationTitle("Jurnal \(userName)")
     .listStyle(.plain)
     .listRowSeparator(Visibility.hidden)
+    .refreshable {
+        self.viewModel.subscribe()
+    }
     .searchable(text: $searchText)
     .navigationBarTitle("Jurnal")
     .onAppear { // (1)
@@ -31,11 +35,11 @@ struct CounsellorJurnalView: View {
 
   var searchResult: [Journal] {
     if searchText.isEmpty {
-      return viewModel.journals.sorted {
+      return journals.sorted {
         $1.date < $0.date
       }
     } else {
-      return viewModel.journals.filter { $0.title.contains(searchText) }
+      return journals.filter { $0.title.contains(searchText) }
     }
   }
 }
