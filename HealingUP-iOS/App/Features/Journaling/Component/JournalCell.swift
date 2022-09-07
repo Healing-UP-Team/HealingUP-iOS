@@ -53,7 +53,7 @@ struct JournalCell: View {
 }
 
 struct JournalCell_Previews: PreviewProvider {
-  static var journal = Journal(emoji: "🫠", title: "tes", note: "tes", date: Date())
+  static var journal = Journal(emoji: "😊", title: "tes", note: "tes", date: Date())
   static var previews: some View {
     List(0..<5) { _ in
       JournalCell(journal: journal)
