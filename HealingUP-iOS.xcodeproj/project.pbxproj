@@ -1761,7 +1761,7 @@
 				CODE_SIGN_ENTITLEMENTS = "HealingUp-Watch WatchKit Extension/HealingUp-Watch WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;
@@ -1770,8 +1770,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Healing UP";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need records your heart rate";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Healing UP need share your heart rate";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Healing UP need update your heart rate";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Data yang berkaitan dengan fitur deep breathing akan digunakan untuk tampilan di aplikasi HealingUP";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Data workout yang diperoleh dari apple watch akan tersimpan di HealthKit";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1799,7 +1799,7 @@
 				CODE_SIGN_ENTITLEMENTS = "HealingUp-Watch WatchKit Extension/HealingUp-Watch WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;
@@ -1808,8 +1808,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Healing UP";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need records your heart rate";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Healing UP need share your heart rate";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Healing UP need update your heart rate";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Data yang berkaitan dengan fitur deep breathing akan digunakan untuk tampilan di aplikasi HealingUP";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Data workout yang diperoleh dari apple watch akan tersimpan di HealthKit";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1838,7 +1838,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
@@ -1865,7 +1865,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
@@ -2008,7 +2008,7 @@
 				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;
@@ -2048,7 +2048,7 @@
 				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;

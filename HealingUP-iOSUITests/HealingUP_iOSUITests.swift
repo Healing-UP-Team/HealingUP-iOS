@@ -8,34 +8,217 @@
 import XCTest
 
 class HealingUP_iOSUITests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+  let app = XCUIApplication()
+  
+  override func setUpWithError() throws {
+    continueAfterFailure = false
+    XCUIApplication().launch()
+  }
+  
+  override func tearDownWithError() throws {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
+  }
+  
+  //MARK: Test for stress level 1
+  func test_StressLevelOne_ShouldbeTrue() {
+    let pengukuranTab = app.tabBars["Tab Bar"].buttons["Pengukuran"]
+    let mulaiButton = app.buttons["Mulai"]
+    let jarangButton = app.buttons["Jarang"]
+    let tidakPernahButton = app.buttons["Tidak pernah"]
+    let tingkatStresKamuAlamiElement = app.scrollViews.otherElements.containing(.staticText, identifier:"Baik-baik saja").element
+    
+    pengukuranTab.tap()
+    mulaiButton.tap()
+    
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    jarangButton.tap()
+    
+    XCTAssertTrue(tingkatStresKamuAlamiElement.exists)
+  }
+  
+  func test_StressLevelOne_ShouldbeFalse() {
+    let pengukuranTab = app.tabBars["Tab Bar"].buttons["Pengukuran"]
+    let mulaiButton = app.buttons["Mulai"]
+    let jarangButton = app.buttons["Jarang"]
+    let seringButton =  app.buttons["Sering"]
+    let tingkatStresKamuAlamiElement = app.scrollViews.otherElements.containing(.staticText, identifier:"Mengalami stres ringan").element
+    
+    pengukuranTab.tap()
+    mulaiButton.tap()
+    
+    seringButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    seringButton.tap()
+    seringButton.tap()
+    seringButton.tap()
+    jarangButton.tap()
+    
+    XCTAssertFalse(tingkatStresKamuAlamiElement.exists)
+  }
+  
+  
+  //MARK: Test for stress level 2
+  func test_StressLevelTwo_ShouldbeTrue() {
+    let pengukuranTab = app.tabBars["Tab Bar"].buttons["Pengukuran"]
+    let mulaiButton = app.buttons["Mulai"]
+    let jarangButton = app.buttons["Jarang"]
+    let kadangKadangButton = app.buttons["Kadang-kadang"]
+    let tidakPernahButton = app.buttons["Tidak pernah"]
+    let seringButton =  app.buttons["Sering"]
+    let tingkatStresKamuAlamiElement = app.scrollViews.otherElements.containing(.staticText, identifier:"Mengalami stres ringan").element
+    
+    pengukuranTab.tap()
+    mulaiButton.tap()
+    
+    jarangButton.tap()
+    jarangButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    kadangKadangButton.tap()
+    tidakPernahButton.tap()
+    jarangButton.tap()
+    kadangKadangButton.tap()
+    kadangKadangButton.tap()
+    seringButton.tap()
+    
+    XCTAssertTrue(tingkatStresKamuAlamiElement.exists)
+  }
+  
+  func test_StressLevelTwo_ShouldbeFalse() {
+    let pengukuranTab = app.tabBars["Tab Bar"].buttons["Pengukuran"]
+    let mulaiButton = app.buttons["Mulai"]
+    let jarangButton = app.buttons["Jarang"]
+    let tidakPernahButton = app.buttons["Tidak pernah"]
+    let tingkatStresKamuAlamiElement = app.scrollViews.otherElements.containing(.staticText, identifier:"Mengalami stres ringan").element
+    
+    pengukuranTab.tap()
+    mulaiButton.tap()
+    
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    jarangButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    
+    XCTAssertFalse(tingkatStresKamuAlamiElement.exists)
+  }
+  
+  //MARK: Test for stress level 3
+  func test_StressLevelThree_ShouldbeTrue() {
+    let pengukuranTab = app.tabBars["Tab Bar"].buttons["Pengukuran"]
+    let mulaiButton = app.buttons["Mulai"]
+    let jarangButton = app.buttons["Jarang"]
+    let kadangKadangButton = app.buttons["Kadang-kadang"]
+    let seringButton =  app.buttons["Sering"]
+    let tingkatStresKamuAlamiElement = app.scrollViews.otherElements.containing(.staticText, identifier:"Mengalami stres sedang").element
+    
+    pengukuranTab.tap()
+    mulaiButton.tap()
+    
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    seringButton.tap()
+    seringButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    kadangKadangButton.tap()
+    
+    XCTAssertTrue(tingkatStresKamuAlamiElement.exists)
+  }
+  
+  func test_StressLevelThree_ShouldbeFalse() {
+    let pengukuranTab = app.tabBars["Tab Bar"].buttons["Pengukuran"]
+    let mulaiButton = app.buttons["Mulai"]
+    let jarangButton = app.buttons["Jarang"]
+    let tidakPernahButton = app.buttons["Tidak pernah"]
+    let kadangKadangButton = app.buttons["Kadang-kadang"]
+    let tingkatStresKamuAlamiElement = app.scrollViews.otherElements.containing(.staticText, identifier:"Mengalami stres sedang").element
+    
+    pengukuranTab.tap()
+    mulaiButton.tap()
+    
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    jarangButton.tap()
+    kadangKadangButton.tap()
+    
+    XCTAssertFalse(tingkatStresKamuAlamiElement.exists)
+  }
+  
+  //MARK: Test for stress level 4
+  func test_StressLevelFour_ShouldbeTrue() {
+    let pengukuranTab = app.tabBars["Tab Bar"].buttons["Pengukuran"]
+    let mulaiButton = app.buttons["Mulai"]
+    let kadangKadangButton = app.buttons["Kadang-kadang"]
+    let seringButton =  app.buttons["Sering"]
+    let tingkatStresKamuAlamiElement = app.scrollViews.otherElements.containing(.staticText, identifier:"Mengalami stres berat").element
+    
+    pengukuranTab.tap()
+    mulaiButton.tap()
+    
+    seringButton.tap()
+    seringButton.tap()
+    seringButton.tap()
+    seringButton.tap()
+    seringButton.tap()
+    kadangKadangButton.tap()
+    seringButton.tap()
+    kadangKadangButton.tap()
+    seringButton.tap()
+    seringButton.tap()
+    
+    XCTAssertTrue(tingkatStresKamuAlamiElement.exists)
+  }
+  
+  func test_StressLevelFour_ShouldbeFalse() {
+    let pengukuranTab = app.tabBars["Tab Bar"].buttons["Pengukuran"]
+    let mulaiButton = app.buttons["Mulai"]
+    let jarangButton = app.buttons["Jarang"]
+    let tidakPernahButton = app.buttons["Tidak pernah"]
+    let kadangKadangButton = app.buttons["Kadang-kadang"]
+    let tingkatStresKamuAlamiElement = app.scrollViews.otherElements.containing(.staticText, identifier:"Mengalami stres sedang").element
+    
+    pengukuranTab.tap()
+    mulaiButton.tap()
+    
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    jarangButton.tap()
+    tidakPernahButton.tap()
+    tidakPernahButton.tap()
+    jarangButton.tap()
+    kadangKadangButton.tap()
+    
+    XCTAssertFalse(tingkatStresKamuAlamiElement.exists)
+  }
+  
 }

@@ -141,7 +141,6 @@ struct KesslerFinalView: View {
 
       ForEach(recomendation, id: \.self) { item in
         RecomendationCardView(stressHandling: item)
-
           .onTapGesture {
             presentationMode.wrappedValue.dismiss()
             switch item.type {

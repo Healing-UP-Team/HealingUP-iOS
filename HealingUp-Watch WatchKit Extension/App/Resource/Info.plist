@@ -18,9 +18,5 @@
 	<array>
 		<string>workout-processing</string>
 	</array>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Data yang berkaitan dengan fitur deep breathing akan digunakan untuk tampilan di aplikasi HealingUP</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Data workout yang diperoleh dari apple watch akan tersimpan di HealthKit</string>
 </dict>
 </plist>
