@@ -15,6 +15,7 @@ extension Color {
     static var softPinkSecond = Color(uiColor: UIColor.softPinkSecond)
     static var softBlue = Color(uiColor: UIColor.softBlue)
     static var softPinkFirst = Color(uiColor: UIColor.softPinkFirst)
+    static var softGray = Color("SoftGray")
 
     static var combColor: [String: Color] = [
         "😔": .accentPurple,

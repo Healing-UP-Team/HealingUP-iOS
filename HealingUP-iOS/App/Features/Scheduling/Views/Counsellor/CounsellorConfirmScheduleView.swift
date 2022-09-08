@@ -99,8 +99,11 @@ struct CounsellorConfirmScheduleView: View {
             .cornerRadius(12)
           if schedule.status == .scheduled {
             ZStack {
-              NavigationLink(destination: CounsellorJurnalView(viewModel: vm, userName: user?.name ?? ""), isActive: $isShowJournalsView) {
+              NavigationLink(destination: CounsellorJurnalView(viewModel: vm, journals: self.$vm.journals, userName: user?.name ?? ""), isActive: $isShowJournalsView) {
                 EmptyView()
+              }
+              .onAppear {
+                self.vm.subscribe()
               }
               Button {
                 isShowJournalsView.toggle()

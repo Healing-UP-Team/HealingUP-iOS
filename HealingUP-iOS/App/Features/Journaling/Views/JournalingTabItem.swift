@@ -11,43 +11,41 @@ struct JournalingTabItem: View {
   @ObservedObject var viewModel = JournalsViewModel()
   @State private var searchText = ""
   @State private var showForm = false
-  @State private var isListEmpty: Bool = false
-
-  var journalListView: some View {
-    List(searchResult) { journal in
-      ZStack {
-        NavigationLink(destination: JournalDetailView(journal: journal)) {
-          EmptyView()
-        }
-        JournalCell(journal: journal)
-      }
-    }
-    .listStyle(.plain)
-    .listRowSeparator(Visibility.hidden)
-    .sheet(isPresented: $showForm) {
-      JournalEditView()
-    }
-    .searchable(text: $searchText)
-    .navigationBarTitle("Jurnal")
-    .toolbar {
-      ToolbarItem(placement: .navigationBarTrailing) {
-        Button {
-          showForm.toggle()
-        } label: {
-          Image(systemName: "square.and.pencil")
-            .resizable()
-            .frame(width: 24, height: 24)
-            .foregroundColor(.accentPurple)
-        }
-      }
-    }
-    .onAppear { // (1)
-      self.viewModel.subscribe()
-    }
-  }
 
   var body: some View {
-    journalListView
+      List(searchResult) { journal in
+        ZStack {
+          NavigationLink(destination: JournalDetailView(journal: journal)) {
+            EmptyView()
+          }
+          JournalCell(journal: journal)
+        }
+      }
+      .listStyle(.plain)
+      .listRowSeparator(Visibility.hidden)
+      .sheet(isPresented: $showForm) {
+        JournalEditView()
+      }
+      .refreshable {
+          self.viewModel.subscribe()
+      }
+      .searchable(text: $searchText)
+      .navigationBarTitle("Jurnal")
+      .toolbar {
+        ToolbarItem(placement: .navigationBarTrailing) {
+          Button {
+            showForm.toggle()
+          } label: {
+            Image(systemName: "square.and.pencil")
+              .resizable()
+              .frame(width: 24, height: 24)
+              .foregroundColor(.accentPurple)
+          }
+        }
+      }
+      .onAppear { // (1)
+        self.viewModel.subscribe()
+      }
   }
 
   var searchResult: [Journal] {
