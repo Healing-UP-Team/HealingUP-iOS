@@ -130,7 +130,7 @@
 		AEB477F2283CA5A1005567CA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB477F1283CA5A1005567CA /* ComplicationController.swift */; };
 		AEB477F4283CA5A2005567CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB477F3283CA5A2005567CA /* Assets.xcassets */; };
 		AEB477F7283CA5A2005567CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB477F6283CA5A2005567CA /* Preview Assets.xcassets */; };
-		AEB477FB283CA5A2005567CA /* Healing UP.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AEB477E0283CA59F005567CA /* Healing UP.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AEB477FB283CA5A2005567CA /* HealingUp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AEB477E0283CA59F005567CA /* HealingUp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AEB47805283CABF9005567CA /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB47804283CABF9005567CA /* HeartRateViewModel.swift */; };
 		AEB47808283CADF4005567CA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB47807283CADF4005567CA /* HealthKit.framework */; };
 		AED86DA6283B181900C62B98 /* HealingUP_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED86DA5283B181900C62B98 /* HealingUP_iOSApp.swift */; };
@@ -210,7 +210,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				AEB477FB283CA5A2005567CA /* Healing UP.app in Embed Watch Content */,
+				AEB477FB283CA5A2005567CA /* HealingUp.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +327,7 @@
 		AEB477D7283C90D8005567CA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		AEB477DA283C91A0005567CA /* HeartRateTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateTabItem.swift; sourceTree = "<group>"; };
 		AEB477DC283C981F005567CA /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateViewModel.swift; sourceTree = "<group>"; };
-		AEB477E0283CA59F005567CA /* Healing UP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Healing UP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB477E0283CA59F005567CA /* HealingUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealingUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB477E2283CA5A0005567CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB477E8283CA5A0005567CA /* HealingUp-Watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HealingUp-Watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB477ED283CA5A1005567CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -972,7 +972,7 @@
 			isa = PBXGroup;
 			children = (
 				AED86DA2283B181900C62B98 /* Healing UP.app */,
-				AEB477E0283CA59F005567CA /* Healing UP.app */,
+				AEB477E0283CA59F005567CA /* HealingUp.app */,
 				AEB477E8283CA5A0005567CA /* HealingUp-Watch WatchKit Extension.appex */,
 				AE93AB6028730A8D006C1B9D /* HealingUP-iOSTests.xctest */,
 				AE93AB6D28730C32006C1B9D /* HealingUP-iOSUITests.xctest */,
@@ -1339,7 +1339,7 @@
 			);
 			name = "HealingUp-Watch";
 			productName = "HealingUp-Watch";
-			productReference = AEB477E0283CA59F005567CA /* Healing UP.app */;
+			productReference = AEB477E0283CA59F005567CA /* HealingUp.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		AEB477E7283CA5A0005567CA /* HealingUp-Watch WatchKit Extension */ = {
@@ -1761,13 +1761,13 @@
 				CODE_SIGN_ENTITLEMENTS = "HealingUp-Watch WatchKit Extension/HealingUp-Watch WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Healing UP";
+				INFOPLIST_KEY_CFBundleDisplayName = HealingUp;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need records your heart rate";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Data yang berkaitan dengan fitur deep breathing akan digunakan untuk tampilan di aplikasi HealingUP";
@@ -1799,13 +1799,13 @@
 				CODE_SIGN_ENTITLEMENTS = "HealingUp-Watch WatchKit Extension/HealingUp-Watch WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"HealingUp-Watch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUp-Watch WatchKit Extension/App/Resource/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Healing UP";
+				INFOPLIST_KEY_CFBundleDisplayName = HealingUp;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = HealingUp_Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need records your heart rate";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Data yang berkaitan dengan fitur deep breathing akan digunakan untuk tampilan di aplikasi HealingUP";
@@ -1838,7 +1838,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
@@ -1846,7 +1846,7 @@
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.healingup.ios;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp;
-				PRODUCT_NAME = "Healing UP";
+				PRODUCT_NAME = HealingUp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1865,7 +1865,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HealingUp_Watch_WatchKit_Extension;
@@ -1873,7 +1873,7 @@
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.healingup.ios;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.healingup.ios.watchkitapp;
-				PRODUCT_NAME = "Healing UP";
+				PRODUCT_NAME = HealingUp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -2008,12 +2008,13 @@
 				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUP-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = HealingUp;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need record your heart rate";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Healing UP need share your heart rate";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Healing UP need record update heart rate";
@@ -2048,12 +2049,13 @@
 				CODE_SIGN_ENTITLEMENTS = "HealingUP-iOS/HealingUP-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4VR7S48W5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HealingUP-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = HealingUp;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Healing UP need record your heart rate";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Healing UP need share your heart rate";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Healing UP need record update heart rate";
